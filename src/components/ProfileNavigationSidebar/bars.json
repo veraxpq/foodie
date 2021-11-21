@@ -1,0 +1,27 @@
+[
+
+    {
+        "link": "../PersonalProfileScreen",
+        "icon":"fas fa-user mt-1",
+        "text": "Account Details",
+        "router": "/personal_profile"
+    },
+
+    {
+        "link": "../CommentsScreen",
+        "icon":"far fa-comments mt-1",
+        "text": "My Comments",
+        "router": "/comments"
+
+
+    },
+
+    {
+        "link": "../SavedRestaurantsScreen",
+        "icon":"fas fa-bookmark mt-1",
+        "text": "Saved Restaurants",
+        "router": "/saved_restaurants"
+    }
+
+
+]

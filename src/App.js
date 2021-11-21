@@ -9,6 +9,7 @@ import Register from "./components/RegisterPage";
 import Login from "./components/LoginPage";
 import PersonalUserProfile from "./components/PersonalUserProfilePage";
 import BusinessUserProfile from "./components/BusinessUserProfilePage";
+import ProfileScreen from "./components/ProfileScreen";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
 
@@ -26,12 +27,14 @@ function App() {
             </Routes>
 
             <Routes>
-                <Route path={"/personal_profile"} element={<PersonalUserProfile/>}/>
+                <Route path={"/personal_profile"} element={<ProfileScreen/>}/>
             </Routes>
 
             <Routes>
                 <Route path={"/business_profile"} element={<BusinessUserProfile/>}/>
             </Routes>
+
+
 
 
             {/*</Provider>*/}
