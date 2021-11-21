@@ -7,24 +7,36 @@ import './vendors/fontawesome/css/all.min.css';
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import Register from "./components/RegisterPage";
 import Login from "./components/LoginPage";
+import PersonalUserProfile from "./components/PersonalUserProfilePage";
+import BusinessUserProfile from "./components/BusinessUserProfilePage";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
 
 // const reducer = combineReducers({})
 // const store = createStore(reducer, applyMiddleware(logger));
 function App() {
-  return (
-      <div>
-          {/*<Provider store={store}>*/}
-              <Routes>
-                  <Route path={"/register"} element={<Register />} />
-              </Routes>
-              <Routes>
-                  <Route path={"/login"} element={<Login />} />
-              </Routes>
-          {/*</Provider>*/}
-      </div>
-  );
+    return (
+        <div>
+            {/*<Provider store={store}>*/}
+            <Routes>
+                <Route path={"/register"} element={<Register/>}/>
+            </Routes>
+            <Routes>
+                <Route path={"/login"} element={<Login/>}/>
+            </Routes>
+
+            <Routes>
+                <Route path={"/personal_profile"} element={<PersonalUserProfile/>}/>
+            </Routes>
+
+            <Routes>
+                <Route path={"/business_profile"} element={<BusinessUserProfile/>}/>
+            </Routes>
+
+
+            {/*</Provider>*/}
+        </div>
+    );
 }
 
 function Home() {
