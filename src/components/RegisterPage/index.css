@@ -1,0 +1,29 @@
+.f-register-form-container {
+    margin-top: 100px;
+}
+.f-register-form-border {
+    padding: 30px 20px 50px 20px;
+    border-radius: 5px;
+    border: solid lightgrey 1pt;
+}
+.f-register-form-title {
+    font-size: 20px;
+    color: white;
+}
+.f-register-submit {
+    width: 100%;
+    margin-top: 20px;
+    color: black;
+}
+.f-form-border {
+    border: solid 1pt;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+.col-form-label {
+    text-align: left;
+}
+.f-register-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}

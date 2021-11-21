@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import './vendors/bootstrap/css/bootstrap.min.css';
+import './vendors/bootstrap/bootstrap.min.css';
+import './vendors/fontawesome/css/all.min.css';
+// import {Provider} from "react-redux";
+import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import Register from "./components/RegisterPage";
+import Login from "./components/LoginPage";
+// import {applyMiddleware, combineReducers, createStore} from "redux";
+// import logger from 'redux-logger';
 
+// const reducer = combineReducers({})
+// const store = createStore(reducer, applyMiddleware(logger));
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+          {/*<Provider store={store}>*/}
+              <Routes>
+                  <Route path={"/register"} element={<Register />} />
+              </Routes>
+              <Routes>
+                  <Route path={"/login"} element={<Login />} />
+              </Routes>
+          {/*</Provider>*/}
+      </div>
   );
+}
+
+function Home() {
+    return (
+        <>
+            <main>
+                <h2>Welcome to the homepage!</h2>
+                <p>You can do this, I believe in you.</p>
+            </main>
+            <nav>
+                <Link to="/about">About</Link>
+            </nav>
+        </>
+    );
 }
 
 export default App;
