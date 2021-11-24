@@ -18,7 +18,7 @@ const PersonalUserProfileComponent = ({profile, setEditProfile}) => {
 
         <div className="container">
             <div className="row mb-3">
-                <h2 className="wd-name-font text-right">Profile Settings</h2>
+                <h2 className="wd-name-font text-right">About Me</h2>
             </div>
             <div className="row">
                 <div className="col-6">
