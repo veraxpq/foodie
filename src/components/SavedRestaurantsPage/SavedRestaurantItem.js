@@ -9,7 +9,7 @@ const SavedRestaurantItem = ({restaurant}) => {
 
                 </div>
                 <div className="col-6">
-                    <h5 className="wd-black-topic-font">{restaurant.name}
+                    <h5>{restaurant.name}
                         <i className="fas fa-check-circle ms-1"></i>
                     </h5>
                     <h6 className="wd-grey-content-font"> Rating: {restaurant.rating}</h6>

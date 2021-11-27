@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import ProfileNavigationSidebar from "../ProfileNavigationSidebar";
+import ProfileNavigationSidebar from "../PersonalProfileNavigationSidebar";
 import PersonalUserProfileComponent from "../PersonalUserProfilePage/PersonalUserProfileComponent";
 
 const ProfileScreen = () => {

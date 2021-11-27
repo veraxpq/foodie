@@ -9,9 +9,10 @@ import Register from "./components/RegisterPage";
 import Login from "./components/LoginPage";
 import PersonalUserProfile from "./components/PersonalUserProfilePage";
 import BusinessUserProfile from "./components/BusinessUserProfilePage";
-import ProfileScreen from "./components/ProfileScreen";
+import ProfileScreen from "./components/PersonalProfileScreen";
 import SavedRestaurantsScreen from "./components/SavedRestaurantsScreen";
-import 'bootswatch/dist/journal/bootstrap.min.css';
+import MyCommentsScreen from "./components/MyCommentsScreen";
+//import 'bootswatch/dist/journal/bootstrap.min.css';
 import HomePage from "./components/HomePage";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
@@ -28,6 +29,7 @@ function App() {
                 <Route path={"/home"} element={<HomePage/>}/>
                 <Route path={"/personal_profile"} element={<ProfileScreen/>}/>
                 <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
+                <Route path={"/comments"} element={<MyCommentsScreen/>}/>
                 <Route path={"/business_profile"} element={<BusinessUserProfile/>}/>
             </Routes>
             {/*</Provider>*/}
