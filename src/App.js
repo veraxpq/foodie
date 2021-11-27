@@ -11,6 +11,8 @@ import PersonalUserProfile from "./components/PersonalUserProfilePage";
 import BusinessUserProfile from "./components/BusinessUserProfilePage";
 import ProfileScreen from "./components/ProfileScreen";
 import SavedRestaurantsScreen from "./components/SavedRestaurantsScreen";
+import 'bootswatch/dist/journal/bootstrap.min.css';
+import HomePage from "./components/HomePage";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
 
@@ -22,26 +24,12 @@ function App() {
             {/*<Provider store={store}>*/}
             <Routes>
                 <Route path={"/register"} element={<Register/>}/>
-            </Routes>
-            <Routes>
                 <Route path={"/login"} element={<Login/>}/>
-            </Routes>
-
-            <Routes>
+                <Route path={"/home"} element={<HomePage/>}/>
                 <Route path={"/personal_profile"} element={<ProfileScreen/>}/>
-            </Routes>
-
-            <Routes>
                 <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
-            </Routes>
-
-            <Routes>
                 <Route path={"/business_profile"} element={<BusinessUserProfile/>}/>
             </Routes>
-
-
-
-
             {/*</Provider>*/}
         </div>
     );
