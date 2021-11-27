@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 
 import ProfileNavigationSidebar from "../PersonalProfileNavigationSidebar";
-import PersonalUserProfileComponent from "../PersonalUserProfilePage/PersonalUserProfileComponent";
+import EditPersonalUserProfile from "../EditPersonalUserProfilePage";
+import PersonalProfile from "../PersonalProfile";
 
 const ProfileScreen = () => {
     const [edit, setEditProfile]=useState(false);
@@ -14,8 +15,10 @@ const ProfileScreen = () => {
 
             <div className="col-11 col-lg-10 col-md-10 col-sm-10 col-xxl-10 col-xl-10 col-xs-11"
                  style={{"position": "relative"}}>
-                <PersonalUserProfileComponent/>
-                {/*{!edit ? <Profile edit={edit} setEditProfile={setEditProfile}/> : <EditProfile edit={edit} setEditProfile={setEditProfile}/>}*/}
+
+                {/*<PersonalProfile/>*/}
+                {/*<EditPersonalUserProfile/>*/}
+                {!edit ? <PersonalProfile edit={edit} setEditProfile={setEditProfile}/> : <EditPersonalUserProfile edit={edit} setEditProfile={setEditProfile}/>}
 
 
 

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import './profile.css'
 import {useDispatch} from "react-redux";
 
-const PersonalUserProfileComponent = ({profile, setEditProfile}) => {
+const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
     // const [localProfile, setLocalProfile] = useState({});
     // useEffect(() => {
     //     setLocalProfile(profile);
@@ -18,7 +18,7 @@ const PersonalUserProfileComponent = ({profile, setEditProfile}) => {
 
         <div className="container">
             <div className="row mb-3">
-                <h2 className="wd-name-font text-right">About Me</h2>
+                <h2 className="wd-name-font text-right">Edit Profile</h2>
             </div>
             <div className="row">
                 <div className="col-6">
@@ -100,4 +100,4 @@ const PersonalUserProfileComponent = ({profile, setEditProfile}) => {
 }
 
 
-export default PersonalUserProfileComponent;
+export default EditPersonalUserProfileComponent;

@@ -1,0 +1,12 @@
+[
+  {
+    "firstName": "Jose",
+    "lastName": "Annunziato",
+    "email": "jannunzi@gmail.com",
+    "location": "Boston, MA",
+    "dateOfBirth": "1968/07/07",
+    "dateJoined": "2009/04",
+    "profilePicture": "/images/jose.jpg",
+    "_id":"123"
+  }
+]

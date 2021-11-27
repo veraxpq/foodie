@@ -7,7 +7,6 @@ import './vendors/fontawesome/css/all.min.css';
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import Register from "./components/RegisterPage";
 import Login from "./components/LoginPage";
-import PersonalUserProfile from "./components/PersonalUserProfilePage";
 import BusinessUserProfile from "./components/BusinessUserProfilePage";
 import ProfileScreen from "./components/PersonalProfileScreen";
 import SavedRestaurantsScreen from "./components/SavedRestaurantsScreen";
