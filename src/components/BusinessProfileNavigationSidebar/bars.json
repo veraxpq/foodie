@@ -3,7 +3,7 @@
     {
         "link": "../BusinessProfileScreen",
         "icon":"fas fa-user mt-1",
-        "text": "My Restaurant",
+        "text": "Account Details",
         "router": "/business_profile"
     },
 
