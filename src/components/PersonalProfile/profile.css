@@ -1,0 +1,15 @@
+
+
+.wd-profile-avatar {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    position: relative;
+
+
+}
+
+.wd-icon-text-font{
+    font-size:15px;
+    color: #3c3b3b;
+}
