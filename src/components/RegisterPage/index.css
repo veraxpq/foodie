@@ -1,5 +1,5 @@
 .f-register-form-container {
-    margin-top: 100px;
+    margin-top: 120px !important;
 }
 .f-register-form-border {
     padding: 30px 20px 50px 20px;
@@ -16,7 +16,7 @@
     color: black;
 }
 .f-form-border {
-    border: solid 1pt;
+    border: solid 1pt darkgray !important;
     border-radius: 5px;
     margin: 5px 0;
 }
@@ -40,9 +40,6 @@
 }
 .dropdown-item {
     border-radius: 0 !important;
-}
-.f-btn-secondary {
-    color:#fff;background-color:#aaa;border-color:#aaa
 }
 .f-home-banner {
     background-image: url("../../images/homeBanner.png");
@@ -78,4 +75,7 @@
     width: 96%;
     margin: auto;
     color: darkgray;
+}
+.f-login-form {
+    margin-bottom: 30px;
 }

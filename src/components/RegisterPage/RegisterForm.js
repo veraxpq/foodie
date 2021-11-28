@@ -7,15 +7,14 @@ const RegisterForm = () => {
             <div className={"row f-register-form-container"}>
                 <div className={"col-sm-1 col-lg-3"}></div>
                 <div className={"col-sm-10 col-lg-6 "}>
-                    <div className={"f-register-title"}>Sign up a Foodie account today</div>
                     <form className={"f-register-form-border"}>
                         <fieldset>
-                            <legend>Legend</legend>
+                            <legend className={"f-login-form"}>Sign up</legend>
                             <div className="form-group row ">
                                 <label htmlFor="staticEmail" className="col-sm-4 col-form-label">Email</label>
                                 <div className="col-sm-8">
                                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="staticEmail"
-                                           value="email@example.com"/>
+                                           value=""/>
                                 </div>
                                 <label htmlFor="username" className="col-sm-4 col-form-label">Username</label>
                                 <div className="col-sm-8">

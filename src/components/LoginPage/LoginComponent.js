@@ -7,15 +7,14 @@ const LoginComponent = () => {
             <div className={"row f-register-form-container"}>
                 <div className={"col-sm-1 col-lg-3"}></div>
                 <div className={"col-sm-10 col-lg-6 "}>
-                    <div className={"f-register-title"}>Login</div>
                     <form className={"f-register-form-border"}>
                         <fieldset>
-                            <legend>Legend</legend>
+                            <legend className={"f-login-form"}>Login</legend>
                             <div className="form-group row ">
-                                <label htmlFor="staticEmail" className="col-sm-4 col-form-label">Email</label>
+                                <label htmlFor="staticEmail" className="col-sm-4 col-form-label ">Email</label>
                                 <div className="col-sm-8">
                                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="staticEmail"
-                                           value="email@example.com"/>
+                                           value=""/>
                                 </div>
                                 <label htmlFor="password" className="col-sm-4 col-form-label">Password</label>
                                 <div className="col-sm-8">
