@@ -1,0 +1,21 @@
+[
+
+    {
+        "link": "../BusinessProfileScreen",
+        "icon":"fas fa-user mt-1",
+        "text": "My Restaurant",
+        "router": "/business_profile"
+    },
+
+
+
+
+    {
+        "link": "../PostRestaurantScreen",
+        "icon":"fas fa-user-plus mt-1",
+        "text": "Post New Restaurant",
+        "router": "/post_restaurant"
+
+
+    }
+]
