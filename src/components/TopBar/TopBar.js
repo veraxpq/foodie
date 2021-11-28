@@ -3,12 +3,13 @@ import {Link} from "react-router-dom";
 
 const TopBarComponent = () => {
     return (
-        <div className={"container "}>
-            <div className={"row"}>
-                <div className={"col-10 f-align-left"}>
+        <>
+            <div className={"f-topbar-occupy"}></div>
+            <div className={"f-location-fix"}>
+                <div className={"f-align-left"}>
                     Foodie
                 </div>
-                <div className={"col-2"}>
+                <div className={"f-align-right"}>
                     {/*<div className="dropdown-divider"></div>*/}
                     <div className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
@@ -96,10 +97,8 @@ const TopBarComponent = () => {
                     {/*</div>*/}
 
                 </div>
-
             </div>
-        </div>
-
+        </>
     )
 }
 

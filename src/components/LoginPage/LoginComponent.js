@@ -21,8 +21,12 @@ const LoginComponent = () => {
                                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="password"
                                            value=""/>
                                 </div>
+                                <Link to={"/findPassword"} className={"f-login-forget"}>
+                                    Forgot password
+                                </Link>
                             </div>
-                            <div className={"mt-4"}><Link to={"/register"}>Create an account</Link></div>
+                            <div className={"mt-4 f-float-left"}><Link to={"/register"}>Create an account</Link></div>
+                            <div className={"mt-4 f-float-right"}><Link to={"/registerForBusiness"}>Post your restaurant in Foodie</Link></div>
                             <button type="submit" className="btn btn-outline-dark f-register-submit">Submit</button>
                         </fieldset>
                     </form>

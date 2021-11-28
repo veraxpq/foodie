@@ -5,7 +5,7 @@ import './vendors/bootstrap/bootstrap.min.css';
 import './vendors/fontawesome/css/all.min.css';
 // import {Provider} from "react-redux";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
-import Register from "./components/RegisterPage";
+import Register from "./components/RegisterPage/Customer/index";
 import Login from "./components/LoginPage";
 import BusinessUserProfile from "./components/BusinessUserProfilePage";
 import ProfileScreen from "./components/PersonalProfileScreen";
@@ -13,6 +13,8 @@ import SavedRestaurantsScreen from "./components/SavedRestaurantsScreen";
 import MyCommentsScreen from "./components/MyCommentsScreen";
 //import 'bootswatch/dist/journal/bootstrap.min.css';
 import HomePage from "./components/HomePage";
+import RegisterPageForBusiness from "./components/RegisterPage/Business/index";
+import ForgotPassword from "./components/LoginPage/ForgotPassword";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
 
@@ -25,7 +27,9 @@ function App() {
             <Routes>
                 <Route path={"/register"} element={<Register/>}/>
                 <Route path={"/login"} element={<Login/>}/>
+                <Route path={"/findPassword"} element={<ForgotPassword/>}/>
                 <Route path={"/home"} element={<HomePage/>}/>
+                <Route path={"/registerForBusiness"} element={<RegisterPageForBusiness/>}/>
                 <Route path={"/personal_profile"} element={<ProfileScreen/>}/>
                 <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
                 <Route path={"/comments"} element={<MyCommentsScreen/>}/>
