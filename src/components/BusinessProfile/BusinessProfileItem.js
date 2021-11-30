@@ -31,7 +31,8 @@ const BusinessProfileItem = ({profile, setEditProfile}) => {
             <div className="row mb-4">
                 <span className="mt-1">
                     <i className="fas fa-map-marker-alt fa-xs ms-2"></i>
-                    <span className="wd-icon-text-font ms-1">{profile.address}, {profile.city}, {profile.state} {profile.zipCode}</span>
+                    {/*<span className="wd-icon-text-font ms-1">{profile.address}, {profile.city}, {profile.state} {profile.zipCode}</span>*/}
+                    <span className="wd-icon-text-font ms-1">{profile.address}</span>
 
                     <i className="far fa-calendar-alt fa-xs ms-3"></i>
 
