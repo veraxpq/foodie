@@ -81,6 +81,7 @@ code {
   font-weight: bold;
   border-radius: 20px;
   padding: 5px 10px 5px 10px;
+  border: none;
 }
 .f-restaurant-item-card {
   width: 18rem;
