@@ -4,7 +4,7 @@ import ProfileNavigationSidebar from "../PersonalProfileNavigationSidebar";
 import EditPersonalUserProfile from "../EditPersonalUserProfilePage";
 import PersonalProfile from "../PersonalProfile";
 
-const ProfileScreen = () => {
+const PersonalProfileScreen = () => {
     const [edit, setEditProfile]=useState(false);
 
     return(
@@ -28,4 +28,4 @@ const ProfileScreen = () => {
     );
 };
 
-export default ProfileScreen;
+export default PersonalProfileScreen;
