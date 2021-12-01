@@ -1,10 +1,19 @@
 import EditPersonalUserProfileComponent from "./EditPersonalUserProfileComponent";
+import React, {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 
-const EditPersonalUserProfile = () => {
+const EditPersonalUserProfile = ({setEditProfile}) => {
+    const profileData = useSelector(state => state.personalProfile);
     return (
         <>
+            {
+                profileData.map((profile, idx) => {
+                    return (
+                        <EditPersonalUserProfileComponent setEditProfile={setEditProfile} key={idx} profile={profile}/>
+                    );
+                })
+            }
 
-            <EditPersonalUserProfileComponent/>
         </>
     )
 }

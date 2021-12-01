@@ -1,12 +1,19 @@
 import React, {useEffect, useState} from "react";
+import {useDispatch} from "react-redux";
+import {updateCurrentBusinessProfile} from "../../services/businessProfileService";
 
 
 const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
+    const [localProfile, setLocalProfile] = useState({});
+    useEffect(() => {
+        setLocalProfile(profile);
+    }, []);
+    const dispatch = useDispatch();
     const updateProfileClickHandler = () => {
-
-        //updateCurrentProfile(dispatch, localProfile);
+        updateCurrentBusinessProfile(dispatch, localProfile);
 
     }
+
 
     return (
 
@@ -32,56 +39,81 @@ const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
             <form className="row g-3">
                 <div className="col-md-6">
                     <label htmlFor="inputFirstName4" className="form-label">First Name</label>
-                    <input type="text" className="form-control" id="inputFirstName4"/>
+                    <input type="text"
+                           onChange={(event) => {
+                               setLocalProfile({...localProfile, firstName: event.target.value})
+                           }}
+                           className="form-control" id="inputFirstName4"
+                           defaultValue={profile.firstName}
+                    />
                 </div>
                 <div className="col-md-6">
                     <label htmlFor="inputLastName4" className="form-label">Last Name</label>
-                    <input type="password" className="form-control" id="inputLastName4"/>
+                    <input type="text"
+                           onChange={(event) => {
+                               setLocalProfile({...localProfile, lastName: event.target.value})
+                           }}
+                           className="form-control" id="inputLastName4" defaultValue={profile.lastName}/>
                 </div>
 
                 <div className="col-12">
                     <label htmlFor="inputUserName" className="form-label">Restaurant Name</label>
-                    <input type="text" className="form-control" id="inputUserName"
-                           placeholder="eg. Water Pig BBQ" title="This is a name that will be shown
-                           whenever you leave a review. Remember to not use your full name or email."/>
+                    <input type="text"
+                           onChange={(event) => {
+                               setLocalProfile({...localProfile, restaurantName: event.target.value})
+                           }}
+                           className="form-control" id="inputUserName"
+                           placeholder="eg. Water Pig BBQ" defaultValue={profile.restaurantName}/>
                 </div>
 
                 <div className="col-12">
                     <label htmlFor="inputUserCategory" className="form-label">Restaurant Category</label>
-                    <input type="text" className="form-control" id="inputUserCategory"
-                           placeholder="eg. American Bar & Grill"/>
+                    <input type="text"
+                           onChange={(event) => {
+                               setLocalProfile({...localProfile, tag: event.target.value})
+                           }}
+                           className="form-control" id="inputUserCategory"
+                           placeholder="eg. American Bar & Grill" defaultValue={profile.tag}/>
                 </div>
 
                 <div className="col-12">
                     <label htmlFor="emailAddress" className="form-label">Email Address</label>
-                    <input type="email" className="form-control" id="emailAddress"
-                           placeholder="example@gmail.com"/>
+                    <input type="email"
+                           onChange={(event) => {
+                               setLocalProfile({...localProfile, email: event.target.value})
+                           }}
+                           className="form-control" id="emailAddress"
+                           placeholder="example@gmail.com" defaultValue={profile.email}/>
                 </div>
 
-                <div className="col-md-6">
-                    <label htmlFor="inputPhone" className="form-label">Phone Number</label>
-                    <input type="tel" className="form-control" id="inputPhone"
-                           placeholder="888-888-8888" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
-                           maxlength="12"  title="Ten digits code" required/>
-                </div>
+                {/*<div className="col-md-6">*/}
+                {/*    <label htmlFor="inputPhone" className="form-label">Phone Number</label>*/}
+                {/*    <input type="tel" className="form-control" id="inputPhone"*/}
+                {/*           placeholder="888-888-8888" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"*/}
+                {/*           maxlength="12"  title="Ten digits code" required/>*/}
+                {/*</div>*/}
                 <div className="col-12">
                     <label htmlFor="inputAddress" className="form-label">Restaurant Address</label>
-                    <input type="text" className="form-control" id="inputAddress"
-                           placeholder="1234 Main St"/>
+                    <input type="text"
+                           onChange={(event) => {
+                               setLocalProfile({...localProfile, address: event.target.value})
+                           }}
+                           className="form-control" id="inputAddress"
+                           placeholder="1234 Main St, Boston, MA" defaultValue={profile.address}/>
                 </div>
 
-                <div className="col-md-6">
-                    <label htmlFor="inputCity" className="form-label">Restaurant City</label>
-                    <input type="text" className="form-control" id="inputCity"/>
-                </div>
-                <div className="col-md-4">
-                    <label htmlFor="inputState" className="form-label">Restaurant State</label>
-                    <input type="text" id="inputState" className="form-control" />
-                </div>
-                <div className="col-md-2">
-                    <label htmlFor="inputZip" className="form-label">Restaurant Zip Code</label>
-                    <input type="text" className="form-control" id="inputZip"/>
-                </div>
+                {/*<div className="col-md-6">*/}
+                {/*    <label htmlFor="inputCity" className="form-label">Restaurant City</label>*/}
+                {/*    <input type="text" className="form-control" id="inputCity"/>*/}
+                {/*</div>*/}
+                {/*<div className="col-md-4">*/}
+                {/*    <label htmlFor="inputState" className="form-label">Restaurant State</label>*/}
+                {/*    <input type="text" id="inputState" className="form-control" />*/}
+                {/*</div>*/}
+                {/*<div className="col-md-2">*/}
+                {/*    <label htmlFor="inputZip" className="form-label">Restaurant Zip Code</label>*/}
+                {/*    <input type="text" className="form-control" id="inputZip"/>*/}
+                {/*</div>*/}
 
             </form>
 

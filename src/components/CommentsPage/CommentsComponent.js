@@ -2,6 +2,7 @@ import './comments.css'
 import {RatingView} from "react-simple-star-rating";
 import React from "react";
 
+
 const CommentItem = ({comment}) => {
 
     return(

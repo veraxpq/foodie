@@ -7,36 +7,41 @@ import './vendors/fontawesome/css/all.min.css';
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import Register from "./components/RegisterPage/Customer/index";
 import Login from "./components/LoginPage";
-import EditBusinessUserProfile from "./components/EditBusinessUserProfilePage";
+
 import PersonalProfileScreen from "./components/PersonalProfileScreen";
 import SavedRestaurantsScreen from "./components/SavedRestaurantsScreen";
 import MyCommentsScreen from "./components/MyCommentsScreen";
-//import 'bootswatch/dist/journal/bootstrap.min.css';
 import HomePage from "./components/HomePage";
 import RegisterPageForBusiness from "./components/RegisterPage/Business/index";
 import ForgotPassword from "./components/LoginPage/ForgotPassword";
 import BusinessProfileScreen from "./components/BusinessProfileScreen";
+import {combineReducers, createStore} from "redux";
+import personalProfile from "./reducers/personalProfile";
+import {Provider} from "react-redux";
+import businessProfile from "./reducers/businessProfile";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
 
 // const reducer = combineReducers({})
 // const store = createStore(reducer, applyMiddleware(logger));
 function App() {
+    const reducer = combineReducers({personalProfile, businessProfile})
+    const store = createStore(reducer);
     return (
         <div>
-            {/*<Provider store={store}>*/}
-            <Routes>
-                <Route path={"/register"} element={<Register/>}/>
-                <Route path={"/login"} element={<Login/>}/>
-                <Route path={"/findPassword"} element={<ForgotPassword/>}/>
-                <Route path={"/home"} element={<HomePage/>}/>
-                <Route path={"/registerForBusiness"} element={<RegisterPageForBusiness/>}/>
-                <Route path={"/personal_profile"} element={<PersonalProfileScreen/>}/>
-                <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
-                <Route path={"/comments"} element={<MyCommentsScreen/>}/>
-                <Route path={"/business_profile"} element={<BusinessProfileScreen/>}/>
-            </Routes>
-            {/*</Provider>*/}
+            <Provider store={store}>
+                <Routes>
+                    <Route path={"/register"} element={<Register/>}/>
+                    <Route path={"/login"} element={<Login/>}/>
+                    <Route path={"/findPassword"} element={<ForgotPassword/>}/>
+                    <Route path={"/home"} element={<HomePage/>}/>
+                    <Route path={"/registerForBusiness"} element={<RegisterPageForBusiness/>}/>
+                    <Route path={"/personal_profile"} element={<PersonalProfileScreen/>}/>
+                    <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
+                    <Route path={"/comments"} element={<MyCommentsScreen/>}/>
+                    <Route path={"/business_profile"} element={<BusinessProfileScreen/>}/>
+                </Routes>
+            </Provider>
         </div>
     );
 }

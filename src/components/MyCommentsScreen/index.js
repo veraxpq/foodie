@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import ProfileNavigationSidebar from "../PersonalProfileNavigationSidebar";
 import MyCommentsList from "../CommentsPage";
 
+
 const MyCommentsScreen = () => {
 
     return(
@@ -13,6 +14,7 @@ const MyCommentsScreen = () => {
 
             <div className="col-11 col-lg-10 col-md-10 col-sm-10 col-xxl-10 col-xl-10 col-xs-11"
                  style={{"position": "relative"}}>
+
                 <MyCommentsList/>
 
 
