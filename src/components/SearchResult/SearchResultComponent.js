@@ -1,5 +1,5 @@
 import React from "react";
-import restaurants from "../data/restaurants.json"
+import restaurants from "../../tempData/restaurants_result.json"
 import RestaurantItem from "./RestaurantItem";
 const SearchResultComponent = () => {
     return(

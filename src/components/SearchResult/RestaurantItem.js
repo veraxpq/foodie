@@ -1,5 +1,4 @@
 import React from "react";
-import "./Restaurants.css";
 import { RatingView } from 'react-simple-star-rating';
 
 const RestaurantItem = (
@@ -44,15 +43,15 @@ const RestaurantItem = (
                             alt="rimg"
                             width="100%"
                             height="100%"
-                            className="float-left wd-restaurant-result-img"
+                            className="float-left f-restaurant-result-img"
                             />
                 </div>
                 <div className="col-7 ms-3 mt-1">
                     <div className="pb-2">
-                        <a href='#' className="wd-restaurant-result-name">{restaurant.name}</a>
+                        <a href='#' className="f-restaurant-result-name">{restaurant.name}</a>
                         <div>{restaurant.price} • {restaurant.categories[0].alias}</div>
 
-                        <a href='#' className="wd-restaurant-result-review">{restaurant.review_count} Reviews</a>
+                        <a href='#' className="f-restaurant-result-review">{restaurant.review_count} Reviews</a>
                         <div>
                             <RatingView className="mt-2" ratingValue={restaurant.rating} /* RatingView Props */ />
                             <span className="number-rating pb-5"> {restaurant.rating} / 5 </span>
