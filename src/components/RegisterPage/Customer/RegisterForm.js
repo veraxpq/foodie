@@ -10,35 +10,25 @@ const RegisterForm = () => {
                     <form className={"f-register-form-border"}>
                         <fieldset>
                             <legend className={"f-login-form"}>Sign up</legend>
-                            <div className="form-group row ">
-                                <label htmlFor="staticEmail" className="col-sm-4 col-form-label">Email</label>
-                                <div className="col-sm-8">
-                                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="staticEmail"
+                            <div className="form-group">
+                                <label htmlFor="staticEmail" className="form-label mt-4">Email</label>
+                                    <input type="text" readOnly="" className="form-control f-form-border" id="staticEmail"
                                            value=""/>
-                                </div>
-                                <label htmlFor="username" className="col-sm-4 col-form-label">Username</label>
-                                <div className="col-sm-8">
-                                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="username"
+                                <label htmlFor="username" className="col-form-label">Username</label>
+                                    <input type="text" readOnly="" className="form-control f-form-border" id="username"
                                            value=""/>
-                                </div>
-                                <label htmlFor="password" className="col-sm-4 col-form-label">Password</label>
-                                <div className="col-sm-8">
+                                <label htmlFor="password" className="col-form-label">Password</label>
+                                    <input type="text" readOnly="" className="form-control f-form-border" id="password"
+                                           value=""/>
+                                <label htmlFor="password" className="col-form-label">Confirm Password</label>
                                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="password"
                                            value=""/>
-                                </div>
-                                <label htmlFor="password" className="col-sm-4 col-form-label">Confirm Password</label>
-                                <div className="col-sm-8">
-                                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="password"
-                                           value=""/>
-                                </div>
-                                <label htmlFor="zipcode" className="col-sm-4 col-form-label">Zip/Postal Code</label>
-                                <div className="col-sm-8">
+                                <label htmlFor="zipcode" className="col-form-label">Zip/Postal Code</label>
                                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="zipcode"
                                            value=""/>
-                                </div>
                             </div>
-                            <div className={"mt-4"}>Already have an account? <Link to={"/login"}>Login</Link></div>
-                            <button type="submit" className="btn btn-outline-dark f-register-submit">Submit</button>
+                            <div className={"mt-5"}>Already have an account? <Link to={"/login"}>Login</Link></div>
+                            <button type="submit" className="btn btn-outline-dark f-register-submit mt-2">Submit</button>
                         </fieldset>
                     </form>
                 </div>

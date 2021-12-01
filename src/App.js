@@ -19,13 +19,14 @@ import {combineReducers, createStore} from "redux";
 import personalProfile from "./reducers/personalProfile";
 import {Provider} from "react-redux";
 import businessProfile from "./reducers/businessProfile";
+import restaurantsInfo from "./reducers/restaurants";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
 
 // const reducer = combineReducers({})
 // const store = createStore(reducer, applyMiddleware(logger));
 function App() {
-    const reducer = combineReducers({personalProfile, businessProfile})
+    const reducer = combineReducers({personalProfile, businessProfile, restaurantsInfo})
     const store = createStore(reducer);
     return (
         <div>
