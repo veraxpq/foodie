@@ -3,15 +3,14 @@ import React, {useEffect} from "react";
 import "./profile.css"
 import {useDispatch, useSelector} from "react-redux";
 import ProfileItem from "./ProfileItem";
-import profileData from "./profile.json"
-//import {fetchAllProfile} from "../../../../services/profileService";
+import {fetchAllPersonalProfile} from "../../services/personalProfileService";
 
 
-const selectAllProfileData = (state) => state.profile;
+const selectAllProfileData = (state) => state.personalProfile;
 const PersonalProfile = ({setEditProfile, edit}) => {
-    //const profileData = useSelector(selectAllProfileData);
-    //const dispatch = useDispatch();
-    //useEffect(() => fetchAllProfile(dispatch), []);
+    const profileData = useSelector(selectAllProfileData);
+    const dispatch = useDispatch();
+    useEffect(() => fetchAllPersonalProfile(dispatch), []);
 
 
     return(

@@ -1,4 +1,7 @@
 import './comments.css'
+import {RatingView} from "react-simple-star-rating";
+import React from "react";
+
 
 const CommentItem = ({comment}) => {
 
@@ -16,7 +19,9 @@ const CommentItem = ({comment}) => {
 
                     <h6 className="wd-comment-title-font">{comment.tag}</h6>
                     <h6 className="wd-comment-title-font">{comment.location}</h6>
-                    <h6>Date: {comment.date} | Rating: {comment.rating}</h6>
+                    <h6>Date: {comment.date} </h6>
+                    <RatingView ratingValue={comment.rating} />
+
                     <h6>{comment.comments}</h6>
 
 
