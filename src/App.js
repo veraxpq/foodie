@@ -19,6 +19,7 @@ import {combineReducers, createStore} from "redux";
 import personalProfile from "./reducers/personalProfile";
 import {Provider} from "react-redux";
 import businessProfile from "./reducers/businessProfile";
+import SearchResult from "./components/SearchResult";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
 
@@ -40,6 +41,7 @@ function App() {
                     <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
                     <Route path={"/comments"} element={<MyCommentsScreen/>}/>
                     <Route path={"/business_profile"} element={<BusinessProfileScreen/>}/>
+                    <Route path={"/result"} element={<SearchResult/>}/>
                 </Routes>
             </Provider>
         </div>
