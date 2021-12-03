@@ -16,12 +16,13 @@ const TopBarComponent = () => {
                            aria-haspopup="true" aria-expanded="false">
                             <i className="fas fa-bars"></i>
                         </a>
+
                         <div className="dropdown-menu dropdown-menu-end">
                             <div className={"f-sidebar-hi"}>
                                 Hi, xxx!
                             </div>
                             <div className="list-group ">
-                                <Link to={"/login"} className={"list-group-item dropdown-item"}>
+                                <Link to={"/home"} className={"list-group-item dropdown-item"}>
                                     <div className="row">
                                         <div className="col-2">
                                             <i className="fas fa-home"></i>
@@ -31,7 +32,7 @@ const TopBarComponent = () => {
                                         </div>
                                     </div>
                                 </Link>
-                                <Link to={"/a9/twitter/explore"} className={"list-group-item "}>
+                                <Link to={"/a9/twitter/explore"} className={"list-group-item dropdown-item"}>
                                     <div className="row">
                                         <div className="col-2">
                                             <i className="fas fa-hashtag"></i>
@@ -41,27 +42,26 @@ const TopBarComponent = () => {
                                         </div>
                                     </div>
                                 </Link>
-                                <div className={"list-group-item "}>
+                                <div className={"list-group-item dropdown-item"}>
                                     <div className="row">
                                         <div className="col-2">
                                             <i className="far fa-bell"></i>
                                         </div>
                                         <div className="d-none d-xl-block col-10">
-                                            Category
+                                            Restaurants
                                         </div>
                                     </div>
                                 </div>
-                                <div className={"list-group-item "}>
+                                <Link to={"/home"} className={"list-group-item dropdown-item"}>
                                     <div className="row">
                                         <div className="col-2">
-                                            <i className="far fa-envelope"></i>
-                                        </div>
+                                            <i className="far fa-user"></i>                                        </div>
                                         <div className="d-none d-xl-block col-10">
                                             Profile
                                         </div>
                                     </div>
-                                </div>
-                                <Link to={"/login"} className={"list-group-item f-sidebar-logout"}>
+                                </Link>
+                                <Link to={"/login"} className={"list-group-item f-sidebar-logout dropdown-item"}>
                                     <div className="row">
                                         <div className="col-2">
                                         </div>

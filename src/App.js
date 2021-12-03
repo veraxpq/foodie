@@ -21,13 +21,17 @@ import {Provider} from "react-redux";
 import businessProfile from "./reducers/businessProfile";
 import RestaurantProfileScreen from "./components/RestaurantProfileScreen";
 import myRestaurantProfile from "./reducers/myRestaurantProfile";
+
+import SearchResult from "./components/SearchResult";
+import restaurantsInfo from "./reducers/restaurants";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
 
 // const reducer = combineReducers({})
 // const store = createStore(reducer, applyMiddleware(logger));
 function App() {
-    const reducer = combineReducers({personalProfile, businessProfile,myRestaurantProfile})
+    const reducer = combineReducers({personalProfile, businessProfile,myRestaurantProfile,restaurantsInfo})
+
     const store = createStore(reducer);
     return (
         <div>
@@ -42,7 +46,10 @@ function App() {
                     <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
                     <Route path={"/comments"} element={<MyCommentsScreen/>}/>
                     <Route path={"/business_profile"} element={<BusinessProfileScreen/>}/>
+
                     <Route path={"/my_restaurant"} element={<RestaurantProfileScreen/>}/>
+
+                    <Route path={"/result"} element={<SearchResult/>}/>
                 </Routes>
             </Provider>
         </div>

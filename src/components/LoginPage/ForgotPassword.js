@@ -13,15 +13,16 @@ const ForgotPassword = () => {
                         <form className={"f-register-form-border"}>
                             <fieldset>
                                 <legend className={"f-login-form"}>Find your password</legend>
-                                <div className="form-group row ">
-                                    <label htmlFor="staticEmail" className="col-sm-4 col-form-label ">Email</label>
-                                    <div className="col-sm-8">
-                                        <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="staticEmail"
-                                               value=""/>
+                                <div className="form-group ">
+                                    <label htmlFor="staticEmail" className="col-form-label ">Email</label>
+                                    <input type="text" readOnly="" className="form-control f-form-border"
+                                           id="staticEmail"
+                                           value=""/>
+                                    <div className={"f-forget-password"}>
+                                        <Link to={"/login"}>
+                                            Login
+                                        </Link>
                                     </div>
-                                    <Link to={"/login"} className={"f-login-forget"}>
-                                        Login
-                                    </Link>
                                 </div>
                                 <button type="submit" className="btn btn-outline-dark f-register-submit">Submit</button>
                             </fieldset>
