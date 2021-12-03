@@ -23,11 +23,8 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
             </div>
             <div className="row">
                 <div className="col-6">
-                    <a href="#">
-                        <i onClick={() => setEditProfile(false)}
-                           className="fas fa-times wd-white ms-3 mb-2 "></i>
-                    </a>
-
+                    <i onClick={() => setEditProfile(false)}
+                       className="fas fa-times wd-white ms-3 mb-2 "></i>
                 </div>
 
                 <div className="col-6">
@@ -105,7 +102,7 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
                 {/*</div>*/}
                 <div className="col-12">
                     <h6>Birth Date</h6>
-                        <input type="date"
+                    <input type="date"
                            onChange={(event) => {
                                setLocalProfile({...localProfile, dateOfBirth: event.target.value})
                            }}
