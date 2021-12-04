@@ -57,7 +57,7 @@ const RegisterForm = () => {
                                            value={zipCode} onChange={e => setZipCode(e.target.value)}/>
                             </div>
                             <div className={"mt-5"}>Already have an account? <Link to={"/login"}>Login</Link></div>
-                            <a   onClick={CreateUser}>Submit</a>
+                            <button onClick={CreateUser} type="submit" className="btn btn-outline-dark f-register-submit mt-2">Submit</button>
                             {/*<Link to={"/register"} type="submit" className="btn btn-outline-dark f-register-submit mt-2" onClick={CreateUser}>Submit</Link>*/}
                         </fieldset>
                     </form>
