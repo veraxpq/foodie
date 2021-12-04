@@ -8,7 +8,7 @@ const ProfileItem = ({profile, setEditProfile}) => {
 
             <div>
 
-                <img src={profile.profilePicture} className="wd-profile-avatar ms-2"></img>
+                <img src={profile.image_url} className="wd-profile-avatar ms-2"></img>
                 <span>
                     <button onClick={()=>setEditProfile(true)} className="fa-pull-right rounded-pill mt-2 me-3 btn-primary">Edit profile</button>
                 </span>
@@ -16,7 +16,7 @@ const ProfileItem = ({profile, setEditProfile}) => {
             </div>
 
             <div className="ms-1">
-                <h5>{profile.firstName} {profile.lastName}</h5>
+                <h5>{profile.name}</h5>
 
             </div>
 
@@ -25,7 +25,6 @@ const ProfileItem = ({profile, setEditProfile}) => {
                     <i className="fas fa-map-marker-alt fa-xs ms-2"></i>
                     <span className="wd-icon-text-font ms-1">{profile.location}</span>
 
-
                     <i className="fas fa-ankh fa-xs ms-3"></i>
 
                     <span className="wd-icon-text-font ms-1">
@@ -33,7 +32,6 @@ const ProfileItem = ({profile, setEditProfile}) => {
                     </span>
 
                     <i className="far fa-calendar-alt fa-xs ms-3"></i>
-
                     <span className="wd-icon-text-font ms-1">
                         {"Joined " + profile.dateJoined}
                     </span>

@@ -7,13 +7,13 @@ const BusinessProfileItem = ({profile, setEditProfile}) => {
         <>
             <li className="list-group-item">
                 <div>
-                    <img src={profile.profilePicture} className="wd-profile-avatar ms-2"></img>
+                    <img src={profile.image_url} className="wd-profile-avatar ms-2"></img>
                     <span><button onClick={() => setEditProfile(true)}
                                   className="fa-pull-right rounded-pill mt-2 me-3 btn-primary">Edit profile</button></span>
                 </div>
 
                 <div className="ms-1">
-                    <h5>{profile.firstName} {profile.lastName}</h5>
+                    <h5>{profile.name}</h5>
                     <h6><i className="fas fa-envelope me-1"></i> {profile.email}</h6>
                     <h6><i className="fas fa-phone-alt me-1"></i> {profile.tel}</h6>
 

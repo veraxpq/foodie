@@ -1,12 +1,17 @@
-import React from "react";
-import comments from "../../reducers/data/myComments.json";
+import React, {useEffect} from "react";
 import CommentItem from "./CommentsComponent";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAllMyComments} from "../../services/myCommentsService";
+
+
+const selectAllCommentsData = (state) => state.myComments;
+
 
 const MyCommentsList = () => {
-    // retrieve state from store
-    //const who = useSelector((state) => state.who);
+    const comments = useSelector(selectAllCommentsData);
+    const dispatch = useDispatch();
+    useEffect(() =>fetchAllMyComments(dispatch), []);
 
-    //const who = useSelector(selectAllWho);
 
     return (
         <ul className="list-group">
