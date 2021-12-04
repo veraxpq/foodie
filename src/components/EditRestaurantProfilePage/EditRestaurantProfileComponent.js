@@ -41,10 +41,10 @@ const EditRestaurantProfileComponent = ({profile, setEditProfile}) => {
                     <input type="text"
                            onChange={(event) => {
                                setLocalProfile(
-                                   {...localProfile, restaurantName: event.target.value})
+                                   {...localProfile, name: event.target.value})
                            }}
                            className="form-control" id="inputUserName"
-                           placeholder="eg. Water Pig BBQ" defaultValue={profile.restaurantName}/>
+                           placeholder="eg. Water Pig BBQ" defaultValue={profile.name}/>
                 </div>
 
                 <div className="col-12">
@@ -52,10 +52,10 @@ const EditRestaurantProfileComponent = ({profile, setEditProfile}) => {
                         Category</label>
                     <input type="text"
                            onChange={(event) => {
-                               setLocalProfile({...localProfile, tag: event.target.value})
+                               setLocalProfile({...localProfile, categories: event.target.value})
                            }}
                            className="form-control" id="inputUserCategory"
-                           placeholder="eg. American Bar & Grill" defaultValue={profile.tag}/>
+                           placeholder="eg. American Bar & Grill" defaultValue={profile.categories}/>
                 </div>
 
 
@@ -63,10 +63,10 @@ const EditRestaurantProfileComponent = ({profile, setEditProfile}) => {
                     <label htmlFor="inputAddress" className="form-label">Address</label>
                     <input type="text"
                            onChange={(event) => {
-                               setLocalProfile({...localProfile, address: event.target.value})
+                               setLocalProfile({...localProfile, location: event.target.value})
                            }}
                            className="form-control" id="inputAddress"
-                           placeholder="1234 Main St, Boston, MA" defaultValue={profile.address}/>
+                           placeholder="1234 Main St, Boston, MA" defaultValue={profile.location}/>
                 </div>
 
 
