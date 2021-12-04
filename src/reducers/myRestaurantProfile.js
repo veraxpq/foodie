@@ -12,6 +12,12 @@ const myRestaurantProfile = (state = profileJSON, action) => {
             return newState;
             break;
 
+        case 'delete-my-restaurant':
+            return (
+                state.filter(restaurant => restaurant._id !== action.RestaurantProfile._id)
+            )
+            break;
+
         default:
             return state;
     }

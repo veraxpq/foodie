@@ -1,7 +1,13 @@
 import React from "react";
 import {RatingView} from "react-simple-star-rating";
+import {useDispatch} from "react-redux";
+import {deleteMyRestaurant} from "../../services/myRestaurantProfileService";
 
 const RestaurantProfileItem = ({profile, setEditProfile}) => {
+    const dispatch = useDispatch();
+    const deleteRestaurantClickHandler = () => {
+        deleteMyRestaurant(dispatch, profile);
+    }
 
     return (
         <>
@@ -13,6 +19,7 @@ const RestaurantProfileItem = ({profile, setEditProfile}) => {
             <li className="list-group-item">
 
                 <div className="row">
+
                     <div className="col-2">
                         <img src={profile.restaurantPicture} width="108"
                              className="img-fluid rounded float-start"/>
@@ -36,11 +43,22 @@ const RestaurantProfileItem = ({profile, setEditProfile}) => {
                         </div>
 
                     </div>
-                    <div className="col-4 text-end">
+                    <div className="col-3">
                         <button onClick={() => setEditProfile(true)}
-                                className="fa-pull-right rounded-pill mt-2 me-3 btn-primary">Edit
+                                className="rounded-pill mt-2 me-3 btn-primary">Edit
                             profile
                         </button>
+
+
+                    </div>
+                    <div className="col-1">
+                        <i onClick={() => deleteRestaurantClickHandler(profile)} className="fas fa-trash-alt fa-pull-right"></i>
+
+                        {/*<button onClick={() => setEditProfile(true)}*/}
+                        {/*        className="fa-pull-right rounded-pill mt-2 me-3 btn-primary">Delete*/}
+                        {/*    Restaurant*/}
+                        {/*</button>*/}
+
                     </div>
                 </div>
             </li>
