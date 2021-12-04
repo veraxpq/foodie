@@ -1,9 +1,16 @@
 import './comments.css'
 import {RatingView} from "react-simple-star-rating";
 import React from "react";
+import {useDispatch} from "react-redux";
+import {deleteComment} from "../../services/myCommentsService";
 
 
 const CommentItem = ({comment}) => {
+    const dispatch = useDispatch();
+    const deleteCommentClickHandler = () => {
+        deleteComment(dispatch, comment);
+    }
+
 
     return(
         <li className="list-group-item">
@@ -28,7 +35,8 @@ const CommentItem = ({comment}) => {
                 </div>
                 <div className="col-4 text-end">
                     {/*<i className="fas fa-trash-alt"></i>*/}
-                    <button className="btn btn-primary mt-1">Delete</button>
+                    <button onClick={() => deleteCommentClickHandler(comment)}
+                            className="btn btn-primary mt-1">Delete</button>
                 </div>
             </div>
         </li>);

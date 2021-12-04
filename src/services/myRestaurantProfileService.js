@@ -24,3 +24,11 @@ export const updateCurrentRestaurantProfile = (dispatch, RestaurantProfile) =>
                              type: 'update-myRestaurant-profile',
                              RestaurantProfile
                          }));
+
+export const deleteMyRestaurant = (dispatch, RestaurantProfile) =>
+    fetch(`${PROFILE_API}/${RestaurantProfile._id}`, {
+        method: 'DELETE'
+    }).then(response => dispatch({
+                                     type: 'delete-my-restaurant',
+                                         RestaurantProfile
+                                 }));

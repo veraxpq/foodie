@@ -1,5 +1,5 @@
 import React from "react";
-import comments from "./comments.json";
+import comments from "../../reducers/data/myComments.json";
 import CommentItem from "./CommentsComponent";
 
 const MyCommentsList = () => {
