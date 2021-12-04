@@ -23,9 +23,9 @@ const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
             </div>
             <div className="row">
                 <div className="col-6">
-                    <a href="#">
+                    {/*<a href="#">*/}
                         <i onClick={()=>setEditProfile(false)} className="fas fa-times wd-white ms-3 mb-2 "></i>
-                    </a>
+                    {/*</a>*/}
 
                 </div>
 
@@ -56,25 +56,25 @@ const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
                            className="form-control" id="inputLastName4" defaultValue={profile.lastName}/>
                 </div>
 
-                <div className="col-12">
-                    <label htmlFor="inputUserName" className="form-label">Restaurant Name</label>
-                    <input type="text"
-                           onChange={(event) => {
-                               setLocalProfile({...localProfile, restaurantName: event.target.value})
-                           }}
-                           className="form-control" id="inputUserName"
-                           placeholder="eg. Water Pig BBQ" defaultValue={profile.restaurantName}/>
-                </div>
+                {/*<div className="col-12">*/}
+                {/*    <label htmlFor="inputUserName" className="form-label">Restaurant Name</label>*/}
+                {/*    <input type="text"*/}
+                {/*           onChange={(event) => {*/}
+                {/*               setLocalProfile({...localProfile, restaurantName: event.target.value})*/}
+                {/*           }}*/}
+                {/*           className="form-control" id="inputUserName"*/}
+                {/*           placeholder="eg. Water Pig BBQ" defaultValue={profile.restaurantName}/>*/}
+                {/*</div>*/}
 
-                <div className="col-12">
-                    <label htmlFor="inputUserCategory" className="form-label">Restaurant Category</label>
-                    <input type="text"
-                           onChange={(event) => {
-                               setLocalProfile({...localProfile, tag: event.target.value})
-                           }}
-                           className="form-control" id="inputUserCategory"
-                           placeholder="eg. American Bar & Grill" defaultValue={profile.tag}/>
-                </div>
+                {/*<div className="col-12">*/}
+                {/*    <label htmlFor="inputUserCategory" className="form-label">Restaurant Category</label>*/}
+                {/*    <input type="text"*/}
+                {/*           onChange={(event) => {*/}
+                {/*               setLocalProfile({...localProfile, tag: event.target.value})*/}
+                {/*           }}*/}
+                {/*           className="form-control" id="inputUserCategory"*/}
+                {/*           placeholder="eg. American Bar & Grill" defaultValue={profile.tag}/>*/}
+                {/*</div>*/}
 
                 <div className="col-12">
                     <label htmlFor="emailAddress" className="form-label">Email Address</label>
@@ -86,14 +86,19 @@ const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
                            placeholder="example@gmail.com" defaultValue={profile.email}/>
                 </div>
 
-                {/*<div className="col-md-6">*/}
-                {/*    <label htmlFor="inputPhone" className="form-label">Phone Number</label>*/}
-                {/*    <input type="tel" className="form-control" id="inputPhone"*/}
-                {/*           placeholder="888-888-8888" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"*/}
-                {/*           maxlength="12"  title="Ten digits code" required/>*/}
-                {/*</div>*/}
+                <div className="col-md-6">
+                    <label htmlFor="inputPhone" className="form-label">Phone Number</label>
+                    <input type="tel"
+                           onChange={(event) => {
+                               setLocalProfile({...localProfile, tel: event.target.value})
+                           }}
+                           className="form-control" id="inputPhone"
+                           placeholder="888-888-8888" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
+                           maxlength="12"  title="Ten digits code" required
+                           defaultValue={profile.tel}/>
+                </div>
                 <div className="col-12">
-                    <label htmlFor="inputAddress" className="form-label">Restaurant Address</label>
+                    <label htmlFor="inputAddress" className="form-label">Address</label>
                     <input type="text"
                            onChange={(event) => {
                                setLocalProfile({...localProfile, address: event.target.value})

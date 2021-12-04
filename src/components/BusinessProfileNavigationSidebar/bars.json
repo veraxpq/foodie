@@ -7,7 +7,12 @@
         "router": "/business_profile"
     },
 
-
+    {
+        "link": "../MyRestaurantScreen",
+        "icon":"fas fa-store-alt mt-1",
+        "text": "My Restaurant",
+        "router": "/my_Restaurant"
+    },
 
 
     {
