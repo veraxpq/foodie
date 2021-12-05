@@ -14,7 +14,18 @@ const myComments = (state = my_comments, action) => {
             )
             break;
 
-
+        case 'create-comment':
+            const comment = {
+                _id: (new Date()).getTime() + '',
+                "restaurant_name": "The Dolar Shop",
+                "rating": 4,
+                "time_created": "12/8/2021",
+                ...action.comment,
+            };
+            return ([
+                comment,
+                ...state,
+            ]);
 
         default:
             return(state);

@@ -18,6 +18,18 @@ const myRestaurantProfile = (state = profileJSON, action) => {
             )
             break;
 
+        case 'create-new-restaurant':
+            const restaurant = {
+                _id: (new Date()).getTime() + '',
+                "rating": 0,
+                "image_url": "/images/restaurant1.png",
+                ...action.restaurant
+            };
+            return ([
+                restaurant,
+                ...state,
+            ]);
+
         default:
             return state;
     }
