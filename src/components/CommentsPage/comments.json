@@ -1,0 +1,19 @@
+[
+  {   "avatarIcon": "/images/Davio.jpg",
+    "name": "Davio's - Seaport",
+    "rating": 4.6,
+    "tag": "Steakhouse",
+    "location": "Boston / Seaport",
+    "date": "2021/11/23",
+    "comments": "Not bad! Good things come for those who are willing to wait. That is definitely a phrase the applies to Neptune Oyster."
+  },
+  {   "avatarIcon": "/images/Joe.jpg",
+    "name": "Joe’s On Newbury",
+    "rating": 4.5,
+    "tag": "American",
+    "location": "Boston / Back Bay",
+    "date": "2021/11/23",
+    "comments": "Not bad! Good things come for those who are willing to wait. That is definitely a phrase the applies to Neptune Oyster."
+  }
+
+]

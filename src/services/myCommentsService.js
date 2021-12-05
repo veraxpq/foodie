@@ -22,6 +22,20 @@ export const deleteComment = (dispatch, comment) =>
                                          comment
                                  }));
 
-
+export const postNewComment = (dispatch, newComment) =>
+    fetch(COMMENT_API, {
+      method: 'POST',
+      body: JSON.stringify(newComment),
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(comment =>
+        dispatch({
+          type: 'create-comment',
+          comment
+        })
+    );
 
 

@@ -2,6 +2,8 @@ import React from "react";
 import SearchResultComponent from "./SearchResultComponent";
 import TopBar from "../TopBar";
 import Category from "../Category";
+import SearchBar from "../SearchBar";
+// import useReactRouter from 'use-react-router';
 
 const SearchResult = () => {
     return(
@@ -10,14 +12,9 @@ const SearchResult = () => {
                 <TopBar/>
             </div>
             <div className="row f-home-search-bar">
-                <div className={"col-10"}>
-                    <input className="f-home-search me-sm-2" type="text" placeholder="What do you want to eat?"/>
-                </div>
-                <div className={"col-2"}>
-                    <button className="f-home-search-btn" type="submit">Search</button>
-                </div>
+                <SearchBar/>
             </div>
-            <div className="row mt-2">
+            <div className="row mt-2 ms-2">
                 <div className="col-1 col-lg-2 col-md-2 col-sm-2 col-xxl-2 col-xl-2 col-xs-1">
                     <Category/>
                 </div>
