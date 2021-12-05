@@ -17,7 +17,7 @@ const SearchResult = () => {
                     <button className="f-home-search-btn" type="submit">Search</button>
                 </div>
             </div>
-            <div className="row mt-2">
+            <div className="row mt-2 ms-2">
                 <div className="col-1 col-lg-2 col-md-2 col-sm-2 col-xxl-2 col-xl-2 col-xs-1">
                     <Category/>
                 </div>
