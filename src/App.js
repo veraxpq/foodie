@@ -17,7 +17,8 @@ import RegisterPageForBusiness from "./components/RegisterPage/Business/index";
 import ForgotPassword from "./components/LoginPage/ForgotPassword";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
-
+import RestaurantDetailPage from "./components/RestaurantDetailPage";
+import PostNewRestaurant from "./components/PostNewRestaurant";
 // const reducer = combineReducers({})
 // const store = createStore(reducer, applyMiddleware(logger));
 function App() {
@@ -34,6 +35,8 @@ function App() {
                 <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
                 <Route path={"/comments"} element={<MyCommentsScreen/>}/>
                 <Route path={"/business_profile"} element={<BusinessUserProfile/>}/>
+                <Route path={"/restaurant_detail"} element={<RestaurantDetailPage/>}/>
+                <Route path={"/post-new-restaurant"} element={<PostNewRestaurant/>}/>
             </Routes>
             {/*</Provider>*/}
         </div>
