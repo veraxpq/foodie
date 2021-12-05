@@ -7,13 +7,13 @@ const SearchBar=()=>{
     const [term, setTerm] = useState(params.term || '');
     const [location, setLocation] = useState(params.location || '');
     function submit(e) {
+        navigate(`/${location}/${term}`);
         if(typeof params.search === 'function') {
             params.search(term, location);
         }
         console.log(term, location);
     }
     return(
-        // <form onSubmit={submit}>
         <div>
             <input className="form-control me-sm-2"
                    type="text"
@@ -27,8 +27,8 @@ const SearchBar=()=>{
                 value={location}
                 onChange={(event)=>setLocation(event.target.value)}></input>
             <button className="f-home-search-btn"
-                    type="submit"
-                    onClick={submit}>Search</button>
+                                       type="submit"
+                                       onClick={submit}>Search</button>
         </div>
     )
 }
