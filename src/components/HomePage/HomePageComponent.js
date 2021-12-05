@@ -16,8 +16,6 @@ const HomePageComponent = () => {
             </div>
             <RestaurantList/>
         </>
-
-
     )
 }
 
