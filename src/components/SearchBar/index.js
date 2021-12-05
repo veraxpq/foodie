@@ -1,11 +1,14 @@
 import React, {useState}  from 'react';
+import {Link, useNavigate, useParams} from "react-router-dom";
 
-const SearchBar=(props)=>{
-    const [term, setTerm] = useState(props.term || '');
-    const [location, setLocation] = useState(props.location || '');
+const SearchBar=()=>{
+    const params = useParams();
+    const navigate = useNavigate();
+    const [term, setTerm] = useState(params.term || '');
+    const [location, setLocation] = useState(params.location || '');
     function submit(e) {
-        if(typeof props.search === 'function') {
-            props.search(term, location);
+        if(typeof params.search === 'function') {
+            params.search(term, location);
         }
         console.log(term, location);
     }
