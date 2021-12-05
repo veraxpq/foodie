@@ -25,13 +25,14 @@ import myRestaurantProfile from "./reducers/myRestaurantProfile";
 import SearchResult from "./components/SearchResult";
 import restaurantsInfo from "./reducers/restaurants";
 import myComments from "./reducers/myComments";
+import userInfo from "./reducers/logIn";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
 
 // const reducer = combineReducers({})
 // const store = createStore(reducer, applyMiddleware(logger));
 function App() {
-    const reducer = combineReducers({personalProfile, businessProfile,myRestaurantProfile,restaurantsInfo, myComments})
+    const reducer = combineReducers({personalProfile, businessProfile,myRestaurantProfile,restaurantsInfo, myComments, userInfo})
 
     const store = createStore(reducer);
     return (
