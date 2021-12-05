@@ -32,3 +32,19 @@ export const deleteMyRestaurant = (dispatch, RestaurantProfile) =>
                                      type: 'delete-my-restaurant',
                                          RestaurantProfile
                                  }));
+
+export const postNewRestaurant = (dispatch, newRestaurant) =>
+    fetch(PROFILE_API, {
+      method: 'POST',
+      body: JSON.stringify(newRestaurant),
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(RestaurantProfile =>
+        dispatch({
+          type: 'create-new-restaurant',
+          RestaurantProfile
+        })
+    );

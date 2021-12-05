@@ -1,7 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
+import {postNewRestaurant} from "../../services/myRestaurantProfileService";
+import {useDispatch} from "react-redux";
 
 const NewRestaurant = () => {
+  const dispatch = useDispatch();
+  const [name, setName] = useState('');
+  const [address, setAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [province, setProvince] = useState('');
+  const [zipCode, setZipCode] = useState('');
+  const [contact, setContact] = useState('');
+  const [description, setDescription] = useState('');
+  const [category, setCategory] = useState('');
+
+  const CreateRestaurant = () => {
+    const restaurant = {
+      name,
+      address,
+      city,
+      province,
+      zipCode,
+      contact,
+      description,
+      category
+    }
+    postNewRestaurant(dispatch, restaurant);
+  }
+
   return (
       <div className={"container"}>
         <div className={"row f-register-form-container"}>
@@ -15,31 +41,38 @@ const NewRestaurant = () => {
 
                   <label htmlFor="restaurantName" className="col-sm-4 col-form-label">Restaurant Name</label>
                   <div className="col-sm-8">
-                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantName"/>
+                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantName"
+                           value={name} onChange={e => setName(e.target.value)}/>
                   </div>
                   <label htmlFor="restaurantAddress" className="col-sm-4 col-form-label">Address</label>
                   <div className="col-sm-8">
-                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantAddress"/>
+                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantAddress"
+                           value={address} onChange={e => setAddress(e.target.value)}/>
                   </div>
                   <label htmlFor="restaurantCity" className="col-sm-4 col-form-label">City</label>
                   <div className="col-sm-8">
-                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantCity"/>
+                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantCity"
+                           value={city} onChange={e => setCity(e.target.value)}/>
                   </div>
                   <label htmlFor="restaurantProvince" className="col-sm-4 col-form-label">Province</label>
                   <div className="col-sm-8">
-                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantProvince"/>
+                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantProvince"
+                           value={province} onChange={e => setProvince(e.target.value)}/>
                   </div>
                   <label htmlFor="restaurantZip" className="col-sm-4 col-form-label">Zip Code</label>
                   <div className="col-sm-8">
-                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantZip"/>
+                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantZip"
+                           value={zipCode} onChange={e => setZipCode(e.target.value)}/>
                   </div>
                   <label htmlFor="restaurantContact" className="col-sm-4 col-form-label">Contact</label>
                   <div className="col-sm-8">
-                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantContact"/>
+                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantContact"
+                           value={contact} onChange={e => setContact(e.target.value)}/>
                   </div>
                   <label htmlFor="description" className="col-sm-4 col-form-label">Description</label>
                   <div className="col-sm-8">
-                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="description"/>
+                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="description"
+                           value={description} onChange={e => setDescription(e.target.value)}/>
                   </div>
                   <label htmlFor="restaurantCategory" className="col-sm-4 col-form-label">Category</label>
                   <div className="col-sm-8">
@@ -51,7 +84,7 @@ const NewRestaurant = () => {
                     </select>
                   </div>
                 </div>
-                <button type="submit" className="btn btn-outline-dark f-register-submit btn-primary">Post</button>
+                <button onClick={CreateRestaurant} type="submit" className="btn btn-outline-dark f-register-submit btn-primary">Post</button>
               </fieldset>
             </form>
           </div>

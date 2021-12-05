@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import ReviewList from "../ReviewList";
 import ImageGallery from 'react-image-gallery';
 import menu from "../../tempData/menu.json";
+import NewComment from "../NewComment";
 
 const rate = {
   size: 25,
@@ -96,29 +97,7 @@ const RestaurantDetailPage = () => {
             <div className={"col-4"}></div>
           </div>
           <div >
-
-            <form className={""}>
-              <fieldset>
-                <div className="form-group row ">
-                  <b className="mb-2">Write a review</b>
-                  <label htmlFor="rating" className="col-sm-2 col-form-label">Rating: </label>
-                  <div className="col-sm-4">
-                    <ReactStars {...rate} />
-                  </div>
-                </div>
-                <div className={"f-margin-right"}>
-                  <label htmlFor="comment" className="col-sm-4 col-form-label">Comment:</label>
-                  <textarea value={""}
-                      //onChange={(event) => setWhatsHappening(event.target.value)}
-                            className="form-control"
-                            style={{width: "100%", color: "white",
-                              padding: "0px",
-                              paddingTop: "15px"}}
-                            placeholder="what do you think about the restaurant?"></textarea>
-                  <button type="submit" className="btn btn-outline-dark btn-primary f-register-submit">Write a review</button>
-                </div>
-              </fieldset>
-            </form>
+            <NewComment/>
           </div>
           <hr className="f-margin-right" style={{color:"darkgray"}}/>
           <ReviewList/>
