@@ -157,6 +157,33 @@ code {
   color: #d9230f;
 }
 
+.f-restaurant-detail-banner {
+  width: 100%;
+  height: 400px;
+}
+.f-restaurant-detail-title {
+  font-size: 50px;
+}
+.f-bold {
+  font-weight: bold;
+}
+.f-margin-left {
+  margin-left: 50px;
+}
+.f-margin-right {
+  margin-right: 50px;
+}
+.f-review-border {
+  padding: 20px 20px 50px 20px;
+  border-radius: 5px;
+  border: solid lightgrey 1pt;
+}
+.f-menu {
+  width: 100%;
+  height: 200px;
+}
+
+
 .f-restaurant-result-name{
   color: royalblue;
   font-weight: bold;

@@ -27,7 +27,8 @@ import restaurantsInfo from "./reducers/restaurants";
 import myComments from "./reducers/myComments";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
-
+import RestaurantDetailPage from "./components/RestaurantDetailPage";
+import PostNewRestaurant from "./components/PostNewRestaurant";
 // const reducer = combineReducers({})
 // const store = createStore(reducer, applyMiddleware(logger));
 function App() {
@@ -51,6 +52,8 @@ function App() {
                     <Route path={"/my_restaurant"} element={<RestaurantProfileScreen/>}/>
 
                     <Route path={"/result"} element={<SearchResult/>}/>
+                    <Route path={"/restaurant_detail"} element={<RestaurantDetailPage/>}/>
+                    <Route path={"/post-new-restaurant"} element={<PostNewRestaurant/>}/>
                 </Routes>
             </Provider>
         </div>

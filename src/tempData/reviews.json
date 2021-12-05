@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Andrea",
+    "date": "11/11/2021",
+    "rating": 5,
+    "description": "Dolar Shop is one of my go-to hot pot outings to impress visiting friends and family. The atmosphere is beautiful and the service feels like you're in a higher scale hot pot restaurant. On top of that, the quality of food is great.",
+    "location": "Seattle, WA"
+  },
+  {
+    "name": "Victor",
+    "date": "11/7/2021",
+    "rating": 4,
+    "description": "In any regard I would say the experience here was very good however the only negative was the lack of communication with servers not telling the other servers that my hot pot wasn't beef and she poured more broth into my pot, but they replaced everything but everything was cooked so I just had to wait to recook everything. 8/10 Otherwise great service.",
+    "location": "Renton, WA"
+  },
+  {
+    "name": "Wendy",
+    "date": "11/23/2020",
+    "rating": 3,
+    "description": "Overall the dining experience itself was decent. They socially distanced the tables and put sauces, side dishes, fruits... anything that you can find at the bar, into individual plastic containers. This made sure that the food inside is not contaminated. We saw our waitress one more time during the entire visit. She was busy catering to another table, asking them if they needed anything else, in Mandarin. But when she passed our table we received no attention whatsoever. There is definitely some preference from this waitress specifically to cater to those who spoke Mandarin.  I guess if I had known that I would have spoken to her in Mandarin as soon as we entered the restaurant. In total we spent $189 for two people. I think it's a hefty price for the experience and the food. I would recommend going elsewhere to spend your money. In fact, I remember telling my friend that we got more service at Boiling Point than we did here, and BP tastes even better.",
+    "location": "Lacey, WA"
+  }
+]
