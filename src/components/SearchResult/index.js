@@ -6,15 +6,6 @@ import SearchBar from "../SearchBar";
 // import useReactRouter from 'use-react-router';
 
 const SearchResult = () => {
-    // const { history } = useReactRouter();
-    //
-    // function search(term, location) {
-    //     const urlEncodedTerm = encodeURI(term);
-    //     const urlEncodedLocation = encodeURI(location);
-    //     history.push(
-    //         `/result?find_desc=${urlEncodedTerm}&find_loc=${urlEncodedLocation}`
-    //     );
-    // }
     return(
         <div>
             <div>
