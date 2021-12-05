@@ -1,0 +1,32 @@
+[
+  {
+    "firstName": "Joe",
+    "lastName": "Lee",
+    "restaurantName": "Joe's",
+    "email": "joe's@gmail.com",
+    "address": "123 Main St",
+    "city": "Boston",
+    "state": "MA",
+    "zipCode": "02134",
+    "dateJoined": "2009/04",
+    "profilePicture": "/images/joe.jpg",
+    "tag": "American Bar & Grill",
+    "rating": 3.9,
+    "_id":"123"
+  },
+  {
+    "firstName": "Joe",
+    "lastName": "Lee",
+    "restaurantName": "Joe's",
+    "email": "joe's@gmail.com",
+    "address": "123 Main St",
+    "city": "Boston",
+    "state": "MA",
+    "zipCode": "02134",
+    "dateJoined": "2009/04",
+    "profilePicture": "/images/joe.jpg",
+    "tag": "American Bar & Grill",
+    "rating": 3.9,
+    "_id":"234"
+  }
+]

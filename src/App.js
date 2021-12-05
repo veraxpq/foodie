@@ -7,14 +7,24 @@ import './vendors/fontawesome/css/all.min.css';
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import Register from "./components/RegisterPage/Customer/index";
 import Login from "./components/LoginPage";
-import BusinessUserProfile from "./components/BusinessUserProfilePage";
-import ProfileScreen from "./components/PersonalProfileScreen";
+
+import PersonalProfileScreen from "./components/PersonalProfileScreen";
 import SavedRestaurantsScreen from "./components/SavedRestaurantsScreen";
 import MyCommentsScreen from "./components/MyCommentsScreen";
-//import 'bootswatch/dist/journal/bootstrap.min.css';
 import HomePage from "./components/HomePage";
 import RegisterPageForBusiness from "./components/RegisterPage/Business/index";
 import ForgotPassword from "./components/LoginPage/ForgotPassword";
+import BusinessProfileScreen from "./components/BusinessProfileScreen";
+import {combineReducers, createStore} from "redux";
+import personalProfile from "./reducers/personalProfile";
+import {Provider} from "react-redux";
+import businessProfile from "./reducers/businessProfile";
+import RestaurantProfileScreen from "./components/RestaurantProfileScreen";
+import myRestaurantProfile from "./reducers/myRestaurantProfile";
+
+import SearchResult from "./components/SearchResult";
+import restaurantsInfo from "./reducers/restaurants";
+import myComments from "./reducers/myComments";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
 import RestaurantDetailPage from "./components/RestaurantDetailPage";
@@ -22,23 +32,30 @@ import PostNewRestaurant from "./components/PostNewRestaurant";
 // const reducer = combineReducers({})
 // const store = createStore(reducer, applyMiddleware(logger));
 function App() {
+    const reducer = combineReducers({personalProfile, businessProfile,myRestaurantProfile,restaurantsInfo, myComments})
+
+    const store = createStore(reducer);
     return (
         <div>
-            {/*<Provider store={store}>*/}
-            <Routes>
-                <Route path={"/register"} element={<Register/>}/>
-                <Route path={"/login"} element={<Login/>}/>
-                <Route path={"/findPassword"} element={<ForgotPassword/>}/>
-                <Route path={"/home"} element={<HomePage/>}/>
-                <Route path={"/registerForBusiness"} element={<RegisterPageForBusiness/>}/>
-                <Route path={"/personal_profile"} element={<ProfileScreen/>}/>
-                <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
-                <Route path={"/comments"} element={<MyCommentsScreen/>}/>
-                <Route path={"/business_profile"} element={<BusinessUserProfile/>}/>
-                <Route path={"/restaurant_detail"} element={<RestaurantDetailPage/>}/>
-                <Route path={"/post-new-restaurant"} element={<PostNewRestaurant/>}/>
-            </Routes>
-            {/*</Provider>*/}
+            <Provider store={store}>
+                <Routes>
+                    <Route path={"/register"} element={<Register/>}/>
+                    <Route path={"/login"} element={<Login/>}/>
+                    <Route path={"/findPassword"} element={<ForgotPassword/>}/>
+                    <Route path={"/home"} element={<HomePage/>}/>
+                    <Route path={"/registerForBusiness"} element={<RegisterPageForBusiness/>}/>
+                    <Route path={"/personal_profile"} element={<PersonalProfileScreen/>}/>
+                    <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
+                    <Route path={"/comments"} element={<MyCommentsScreen/>}/>
+                    <Route path={"/business_profile"} element={<BusinessProfileScreen/>}/>
+
+                    <Route path={"/my_restaurant"} element={<RestaurantProfileScreen/>}/>
+
+                    <Route path={"/result"} element={<SearchResult/>}/>
+                    <Route path={"/restaurant_detail"} element={<RestaurantDetailPage/>}/>
+                    <Route path={"/post-new-restaurant"} element={<PostNewRestaurant/>}/>
+                </Routes>
+            </Provider>
         </div>
     );
 }
