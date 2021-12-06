@@ -47,8 +47,10 @@ function App() {
                     <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
                     <Route path={"/comments"} element={<MyCommentsScreen/>}/>
                     <Route path={"/business_profile"} element={<BusinessProfileScreen/>}/>
+
                     <Route path={"/my_restaurant"} element={<RestaurantProfileScreen/>}/>
-                    <Route path={"/search/:term/:location"} element={<SearchResult/>}/>
+
+                    <Route path={"/result"} element={<SearchResult/>}/>
                     <Route path={"/restaurant_detail"} element={<RestaurantDetailPage/>}/>
                     <Route path={"/post-new-restaurant"} element={<PostNewRestaurant/>}/>
                 </Routes>
