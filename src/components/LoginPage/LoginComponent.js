@@ -1,27 +1,22 @@
 import {Link} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {updateCurrentUser} from "../../services/logInService";
+import {logInUser} from "../../services/logInService";
+import {useNavigate} from "react-router-dom";
 
 const LoginComponent = () => {
-    // useEffect(() => {
-    //     setPassword(user);
-    // }, []);
+
 
     const dispatch = useDispatch();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const updateUser = () => {
+    const [user, setUser] = useState({});
+    const navigate = useNavigate();
 
-        const user = {
-            email,
-            // username,
-            password,
-            // zipCode,
-            // "userType": 1
-        }
-        updateCurrentUser(dispatch, user);
+    const login = () => {
+        logInUser(dispatch, user).then(status => {
+            navigate('/personal_profile')
+        });
     }
+
 
     return (
         <div className={"container"}>
@@ -35,7 +30,7 @@ const LoginComponent = () => {
                                 <label htmlFor="exampleInputEmail1" className="form-label mt-4">Email address</label>
                                 <input type="email" className="form-control" id="exampleInputEmail1"
                                        aria-describedby="emailHelp" placeholder="Enter email"
-                                       onChange={e => setEmail(e.target.value)}/>
+                                       onChange={e => setUser({...user, email: e.target.value})}/>
                                 <small id="emailHelp" className="form-text text-muted">We'll never share your email with
                                     anyone else.</small>
                             </div>
@@ -43,7 +38,7 @@ const LoginComponent = () => {
                                 <label htmlFor="exampleInputPassword1" className="form-label mt-4">Password</label>
                                 <input type="password" className="form-control" id="exampleInputPassword1"
                                        placeholder="Password"
-                                       onChange={e => setPassword(e.target.value)}/>
+                                       onChange={e => setUser({...user, password: e.target.value})}/>
                             </div>
                             <div>
                                 <Link to={"/findPassword"} className={"f-login-forget"}>
@@ -56,7 +51,7 @@ const LoginComponent = () => {
                                     in Foodie</Link></div>
                             </div>
 
-                            <button onClick={updateUser} type="submit" className="btn btn-primary f-register-submit mt-2">Submit</button>
+                            <button onClick={login} type="submit" className="btn btn-primary f-register-submit mt-2">Submit</button>
                         </fieldset>
                     </form>
                 </div>

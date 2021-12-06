@@ -3,11 +3,11 @@ import profileJSON from './data/BusinessProfile.json'
 const userInfo = (state = profileJSON, action) => {
     switch (action.type) {
         case 'fetch-all-user-info':
-            return( action.UserInfo);
+            return( action.user);
             break;
 
-        case 'update-user-info':
-            const newState = [action.UserInfo];
+        case 'log-in-user':
+            const newState = [action.user];
             return newState;
             break;
 
