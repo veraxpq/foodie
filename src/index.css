@@ -64,16 +64,7 @@ code {
 .f-home-search-bar {
   margin: 0 300px 0 300px;
   padding-top: 130px;
-  padding-left: 100px;
   alignment: bottom;
-}
-.f-home-search {
-  padding-left: 20px;
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-  height: 36px;
-  border-radius: 20px;
 }
 .f-home-search-btn {
   background-color: #d9230f;
