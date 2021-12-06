@@ -48,7 +48,7 @@ const SearchResult = () => {
                 </div>
                 <div className="col-10 col-lg-9 col-md-9 col-sm-9 col-xxl-9 col-xl-9 col-xs-10">
                     <div className="ms-5 pb-2 pt-2">
-                        <h2>Search result for you</h2>
+                        <h2>Search {location}</h2>
                     </div>
                     <div className="ms-3 me-3">
                         <SearchResultComponent/>

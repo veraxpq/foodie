@@ -2,15 +2,21 @@ import categories from "../../tempData/categories.json";
 
 const Category=()=>{
     return (
-        <div class="btn-group-vertical">
+        <fieldset className="form-group">
+            <legend className="mt-4">Filter</legend>
             {
                 categories.map(category => {
                     return (
-                        <button type="button" class="btn btn-outline-primary">{category.type}</button>
+                        <div className="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+                            <label className="form-check-label" htmlFor="flexCheckDefault">
+                                {category.type}
+                            </label>
+                        </div>
                     );
                 })
             }
-        </div>
+        </fieldset>
     )
 }
 
