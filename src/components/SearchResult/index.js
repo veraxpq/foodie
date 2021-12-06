@@ -13,7 +13,7 @@ const SearchResult = () => {
     const [location, setLocation] = useState(params.location || '');
     function submit(e) {
         if(term && location) {
-            navigate(`/${location}/${term}`);
+            navigate(`/search/${term}/${location}`);
         }
         console.log(term, location);
     }

@@ -41,7 +41,7 @@ function App() {
                     <Route path={"/register"} element={<Register/>}/>
                     <Route path={"/login"} element={<Login/>}/>
                     <Route path={"/findPassword"} element={<ForgotPassword/>}/>
-                    <Route path={"/"} element={<HomePage/>}/>
+                    <Route path={"/home"} element={<HomePage/>}/>
                     <Route path={"/registerForBusiness"} element={<RegisterPageForBusiness/>}/>
                     <Route path={"/personal_profile"} element={<PersonalProfileScreen/>}/>
                     <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
