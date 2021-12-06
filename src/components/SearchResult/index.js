@@ -9,13 +9,22 @@ const SearchResult = () => {
     const params = useParams();
     const navigate = useNavigate();
     const [term, setTerm] = useState(params.term || '');
-    const [location, setLocation] = useState(params.location || 'seattle');
+    const [location, setLocation] = useState(params.location || '');
     const [restaurants, setRestaurants] = useState([]);
     function submit(e) {
         if(term && location) {
-            navigate(`/search/${term}/${location}`);
+            const encodedTerm = encodeURI(term);
+            const encodedLocation = encodeURI(location);
+            navigate(`/search/${encodedTerm}/${encodedLocation}`);
         }
-        console.log(term, location);
+        if(!term && location) {
+            const encodedLocation = encodeURI(location);
+            navigate(`/search/?/encodedLocation`);
+        }
+        if(!term && !location) {
+            console.log(term, location);
+        }
+        console.log("no input");
     }
     // useEffect()
     return(
@@ -49,7 +58,7 @@ const SearchResult = () => {
                 </div>
                 <div className="col-10 col-lg-9 col-md-9 col-sm-9 col-xxl-9 col-xl-9 col-xs-10">
                     <div className="ms-5 pb-2 pt-2">
-                        <h2>Search {location}</h2>
+                        <h2>Search {params.location}</h2>
                     </div>
                     <div className="ms-3 me-3">
                         <SearchResultComponent/>

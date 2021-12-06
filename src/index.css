@@ -13,6 +13,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.f-logo{
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 22px;
+}
 .f-register-form-container {
   margin-top: 120px !important;
 }
