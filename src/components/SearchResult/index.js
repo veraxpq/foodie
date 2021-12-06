@@ -10,7 +10,7 @@ const SearchResult = () => {
     const params = useParams();
     const navigate = useNavigate();
     const [term, setTerm] = useState(params.term || '');
-    const [location, setLocation] = useState(params.location || '');
+    const [location, setLocation] = useState(params.location || 'seattle');
     function submit(e) {
         if(term && location) {
             navigate(`/search/${term}/${location}`);
@@ -22,31 +22,35 @@ const SearchResult = () => {
             <div>
                 <TopBar/>
             </div>
-            <form className="d-flex">
-                <input className="form-control me-sm-2"
-                       type="text"
-                       placeholder="What do you want to eat?"
-                       value={term}
-                       onChange={(event) => setTerm(event.target.value)}></input>
-                <input
-                    className="form-control me-sm-2"
-                    type="text"
-                    placeholder="Where"
-                    value={location}
-                    onChange={(event)=>setLocation(event.target.value)}></input>
-                <button className="f-home-search-btn"
-                        type="submit"
-                        onClick={submit}>Search</button>
-            </form>
+            <div className={"f-home-banner"}>
+                <div className="f-home-search-bar">
+                    <form className="d-flex">
+                        <input className="form-control me-sm-2"
+                               type="text"
+                               placeholder="What do you want to eat?"
+                               value={term}
+                               onChange={(event) => setTerm(event.target.value)}></input>
+                        <input
+                            className="form-control me-sm-2"
+                            type="text"
+                            placeholder="Where"
+                            value={location}
+                            onChange={(event)=>setLocation(event.target.value)}></input>
+                        <button className="f-home-search-btn"
+                                type="submit"
+                                onClick={submit}>Search</button>
+                    </form>
+                </div>
+            </div>
             <div className="row mt-2 ms-2">
-                <div className="col-1 col-lg-2 col-md-2 col-sm-2 col-xxl-2 col-xl-2 col-xs-1">
+                <div className="d-none col-1 col-lg-2 col-md-2 d-sm-block col-xxl-2 col-xl-2 d-xs-block ms-5 mt-5">
                     <Category/>
                 </div>
                 <div className="col-10 col-lg-9 col-md-9 col-sm-9 col-xxl-9 col-xl-9 col-xs-10">
                     <div className="ms-5 pb-2 pt-2">
                         <h2>Search result for you</h2>
                     </div>
-                    <div className="ms-3">
+                    <div className="ms-3 me-3">
                         <SearchResultComponent/>
                     </div>
                 </div>

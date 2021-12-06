@@ -62,7 +62,7 @@ code {
   height: 300px;
 }
 .f-home-search-bar {
-  margin: 0 300px 0 300px;
+  margin: 0 100px 0 100px;
   padding-top: 130px;
   alignment: bottom;
 }
@@ -73,25 +73,6 @@ code {
   border-radius: 20px;
   padding: 5px 10px 5px 10px;
   border: none;
-}
-.f-search-bar {
-  padding-left: 20px;
-  width: 50%;
-  border-radius: 5px;
-  border: none;
-  height: 36px;
-  border-radius: 20px;
-}
-.f-search-btn {
-  background-color: #d9230f;
-  color: white;
-  font-weight: bold;
-  border-radius: 20px;
-  padding: 5px 10px 5px 10px;
-  border: none;
-}
-.f-search-area{
-  ;
 }
 .f-restaurant-item-card {
   width: 18rem;
