@@ -52,7 +52,7 @@ function App() {
 
                     <Route path={"/my_restaurant"} element={<RestaurantProfileScreen/>}/>
 
-                    <Route path={"/result/:term/:location"} element={<SearchResult/>}/>
+                    <Route path={"/search/:term/:location"} element={<SearchResult/>}/>
                     <Route path={"/restaurant_detail"} element={<RestaurantDetailPage/>}/>
                     <Route path={"/post-new-restaurant"} element={<PostNewRestaurant/>}/>
                 </Routes>

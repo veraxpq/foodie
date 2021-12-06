@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import SearchResultComponent from "./SearchResultComponent";
 import TopBar from "../TopBar";
 import Category from "../Category";
-import SearchBar from "../SearchBar";
 import {useNavigate, useParams} from "react-router-dom";
 // import useReactRouter from 'use-react-router';
 
@@ -11,12 +10,14 @@ const SearchResult = () => {
     const navigate = useNavigate();
     const [term, setTerm] = useState(params.term || '');
     const [location, setLocation] = useState(params.location || 'seattle');
+    const [restaurants, setRestaurants] = useState([]);
     function submit(e) {
         if(term && location) {
             navigate(`/search/${term}/${location}`);
         }
         console.log(term, location);
     }
+    // useEffect()
     return(
         <div>
             <div>
