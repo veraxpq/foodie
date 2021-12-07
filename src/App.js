@@ -30,6 +30,7 @@ import userInfo from "./reducers/logIn";
 // import logger from 'redux-logger';
 import RestaurantDetailPage from "./components/RestaurantDetailPage";
 import PostNewRestaurant from "./components/PostNewRestaurant";
+import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
 // const reducer = combineReducers({})
 // const store = createStore(reducer, applyMiddleware(logger));
 function App() {
@@ -49,6 +50,7 @@ function App() {
                     <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
                     <Route path={"/comments"} element={<MyCommentsScreen/>}/>
                     <Route path={"/business_profile"} element={<BusinessProfileScreen/>}/>
+                    <Route path={"/privacy_policy"} element={<PrivacyPolicyPage/>}/>
 
                     <Route path={"/my_restaurant"} element={<RestaurantProfileScreen/>}/>
 
