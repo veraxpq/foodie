@@ -6,9 +6,9 @@ const TopBarComponent = () => {
         <>
             <div className={"f-topbar-occupy"}></div>
             <div className={"f-location-fix"}>
-                <div className={"f-align-left"}>
+                <Link to={"/home"} className={"f-align-left f-logo"}>
                     Foodie
-                </div>
+                </Link>
                 <div className={"f-align-right"}>
                     {/*<div className="dropdown-divider"></div>*/}
                     <div className="nav-item dropdown">
