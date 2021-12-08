@@ -50,11 +50,12 @@ function App() {
                     <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
                     <Route path={"/comments"} element={<MyCommentsScreen/>}/>
                     <Route path={"/business_profile"} element={<BusinessProfileScreen/>}/>
+
                     <Route path={"/privacy_policy"} element={<PrivacyPolicyPage/>}/>
 
                     <Route path={"/my_restaurant"} element={<RestaurantProfileScreen/>}/>
-
-                    <Route path={"/result/:term/:location"} element={<SearchResult/>}/>
+                    <Route path={"/search/:term/:location"} element={<SearchResult/>}/>
+                    <Route path={"/search"} element={<SearchResult/>}/>
                     <Route path={"/restaurant_detail"} element={<RestaurantDetailPage/>}/>
                     <Route path={"/post-new-restaurant"} element={<PostNewRestaurant/>}/>
                 </Routes>

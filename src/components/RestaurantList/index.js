@@ -14,13 +14,14 @@ const RestaurantList = () => {
         <>
             <div className={"f-restaurant-list-category-title"}>
                 <span className={"f-float-left"}>Restaurants Near You</span>
-                <Link to={"/saved_restaurants"} className={"f-home-view-all"}>View All</Link>
+                <Link to={"/search"} className={"f-home-view-all"}>View All</Link>
             </div>
             <hr className="f-hr"/>
             <ul className={"f-restaurant-list-ul"}>
                 {
                     restaurants.map(restaurant => {
                         return <RestaurantListItem restaurant = {restaurant}/>
+                        
                     })
                 }
             </ul>

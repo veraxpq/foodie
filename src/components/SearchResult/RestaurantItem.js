@@ -1,5 +1,6 @@
 import React from "react";
 import { RatingView } from 'react-simple-star-rating';
+import {Link} from "react-router-dom";
 
 const RestaurantItem = (
     {
@@ -39,16 +40,21 @@ const RestaurantItem = (
         <li className="list-group-item">
             <div className="row">
                 <div className="col-3">
-                    <img src={restaurant.image_url}
-                            alt="rimg"
-                            width="100%"
-                            height="100%"
-                            className="float-left f-restaurant-result-img"
-                            />
+                    <Link to={`/restaurant_detail/${restaurant.name}`}>
+                        <img src={restaurant.image_url}
+                             alt="rimg"
+                             width="100%"
+                             height="100%"
+                             className="float-left f-restaurant-result-img"
+                        />
+                    </Link>
+
                 </div>
                 <div className="col-7 ms-3 mt-1">
                     <div className="pb-2">
-                        <a href='#' className="f-restaurant-result-name">{restaurant.name}</a>
+                        <Link to={`/restaurant_detail/${restaurant.name}`} className="f-restaurant-result-name">
+                        <div>{restaurant.name}</div>
+                        </Link>
                         <div>{restaurant.price} • {restaurant.categories[0].alias}</div>
 
                         <a href='#' className="f-restaurant-result-review">{restaurant.review_count} Reviews</a>
