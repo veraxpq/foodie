@@ -21,7 +21,7 @@ const RestaurantList = () => {
                 {
                     restaurants.map(restaurant => {
                         return <RestaurantListItem restaurant = {restaurant}/>
-                        
+
                     })
                 }
             </ul>

@@ -14,7 +14,7 @@ const SearchBar=()=>{
         }
         if (!term && location){
             const encodedLocation = encodeURI(location);
-            navigate(`/search/?/${encodedLocation}`)
+            navigate(`/search/restaurant/${encodedLocation}`)
         }
         console.log(term, location);
     }
