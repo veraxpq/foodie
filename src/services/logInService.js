@@ -22,6 +22,10 @@ export const logInUser = (dispatch,user) =>
             'content-type': 'application/json'
         }
     }).then(response=>response.json())
+        .then((data) => dispatch({
+            type: 'check-log-in-status',
+            data
+        }))
 
         // {
         //     console.log(response)

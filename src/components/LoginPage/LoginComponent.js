@@ -16,19 +16,21 @@ const LoginComponent = () => {
     const [errorMsg, setErrorMsg]=useState("");
 
     const login = () => {
+        logInUser(dispatch, user)
+            .then(() => {
+                console.log("userData", userData);
+                if (userData.status===0){
+                    alert(userData.errorMsg)
+                }
+                else {
+                    if (userData.userType===1) {
+                        navigate('/home')
+                    } else if (userData.userType === 0) {
+                        navigate('/business_profile')
+                    }
+                }
+            })
         console.log("in component", userData)
-
-        if (userData.status===0){
-            alert(userData.errorMsg)
-
-        }
-        else if (userData.status===1){
-            logInUser(dispatch, user).then(status => {
-                navigate('/personal_profile')
-            }).catch(()=>{
-                setErrorMsg("Unable to login");
-            });
-        }
     }
 
 

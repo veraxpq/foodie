@@ -7,19 +7,21 @@ const userInfo = (state = logInJSON, action) => {
             break;
 
         case 'check-log-in-status':
-            console.log("in reducer", action)
+            console.log("in reducer", action.data)
 
-            if (action.response.status===0){
+            if (action.data.status===0){
                 console.log("wrong password!")
                 return {
                     ...state,
-                    "status":action.response.status,
+                    "status":action.data.status,
                     "errorMsg": "Wrong password!"}
             }
 
-            if (action.response.status===1){
-                return action.data;
-
+            if (action.data.status===1){
+                console.log("correct password")
+                return action.data.data.data;
+            } else {
+                return state;
             }
 
             // const newState = [action.user];
