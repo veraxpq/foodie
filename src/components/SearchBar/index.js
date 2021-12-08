@@ -8,7 +8,13 @@ const SearchBar=()=>{
     const [location, setLocation] = useState(params.location || '');
     function submit(e) {
         if(term && location) {
-            navigate(`/search/${term}/${location}`);
+            const encodedTerm = encodeURI(term);
+            const encodedLocation = encodeURI(location);
+            navigate(`/search/${encodedTerm}/${encodedLocation}`);
+        }
+        if (!term && location){
+            const encodedLocation = encodeURI(location);
+            navigate(`/search/?/${encodedLocation}`)
         }
         console.log(term, location);
     }
