@@ -11,19 +11,35 @@ const USER_API = "http://localhost:18081/foodie/login";
 //                            })
 //         );
 
+
+
 export const logInUser = (dispatch,user) =>
     fetch(`${USER_API}`, {
         method: 'POST',
         body: JSON.stringify(user),
-        credentials: 'include',
+        // credentials: 'include',
         headers: {
             'content-type': 'application/json'
         }
-    }).then(response =>
-                dispatch({
-                             type: 'log-in-user',
-                             user
-                         }));
+    }).then(response=>response.json())
+
+        // {
+        //     console.log(response)
+        //     if (response.status ===1){
+        //     dispatch({
+        //                  type: 'log-in-success',
+        //                  response.data
+        //              })
+        //
+        // }
+        //     else if (response.status ===0){
+        //         dispatch({
+        //                      type: 'log-in-failed',
+        //                      user
+        //                  })
+        //     }
+        // })
+
 
 
 

@@ -11,15 +11,30 @@ const LoginComponent = () => {
     const [user, setUser] = useState({});
     const navigate = useNavigate();
 
+    const selectAllUserData = (state) => state.userInfo;
+    const userData = useSelector(selectAllUserData);
+    const [errorMsg, setErrorMsg]=useState("");
+
     const login = () => {
-        logInUser(dispatch, user).then(status => {
-            navigate('/personal_profile')
-        });
+        console.log("in component", userData)
+
+        if (userData.status===0){
+            alert(userData.errorMsg)
+
+        }
+        else if (userData.status===1){
+            logInUser(dispatch, user).then(status => {
+                navigate('/personal_profile')
+            }).catch(()=>{
+                setErrorMsg("Unable to login");
+            });
+        }
     }
 
 
     return (
         <div className={"container"}>
+            <h2>{errorMsg}</h2>
             <div className={"row f-register-form-container"}>
                 <div className={"col-sm-1 col-lg-3"}></div>
                 <div className={"col-sm-10 col-lg-6 "}>
@@ -51,7 +66,10 @@ const LoginComponent = () => {
                                     in Foodie</Link></div>
                             </div>
 
-                            <button onClick={login} type="submit" className="btn btn-primary f-register-submit mt-2">Submit</button>
+                            <button onClick={login} type="submit" className="btn btn-primary f-register-submit mt-2 mb-5">Submit</button>
+
+                            <div onClick={login}>ddghdhjdh</div>
+
                         </fieldset>
                     </form>
                 </div>

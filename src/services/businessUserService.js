@@ -1,5 +1,5 @@
 const RESTAURANT_API = 'http://localhost:5000/rest/restaurantsService';
-const USER_API = "http://localhost:18081/foodie/createBusinessUser";
+const USER_API = "http://localhost:18081/foodie/createNewBusinessUser";
 
 // export const fetchAllRestaurants = (dispatch) =>
 //     fetch(RESTAURANT_API)
@@ -26,17 +26,17 @@ export const createNewBusinessUser = (dispatch, user) =>
                      })
         })
 
-export const createNewRestaurant = (dispatch, restaurant) =>
-    fetch(RESTAURANT_API, {
-        method: 'POST',
-        body: JSON.stringify(restaurant),
-        headers: {
-            'content-type': 'application/json'
-        }
-    })
-        .then(() => {
-            dispatch({
-                         type: 'create-restaurant',
-                         restaurant
-                     })
-        })
+// export const createNewRestaurant = (dispatch, restaurant) =>
+//     fetch(RESTAURANT_API, {
+//         method: 'POST',
+//         body: JSON.stringify(restaurant),
+//         headers: {
+//             'content-type': 'application/json'
+//         }
+//     })
+//         .then(() => {
+//             dispatch({
+//                          type: 'create-restaurant',
+//                          restaurant
+//                      })
+//         })
