@@ -20,7 +20,7 @@ const LoginComponent = () => {
             .then(() => {
                 console.log("userData", userData);
                 if (userData.status===0){
-                    alert(userData.errorMsg)
+                    alert(userData)
                 }
                 else {
                     if (userData.userType===1) {

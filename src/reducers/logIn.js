@@ -15,11 +15,9 @@ const userInfo = (state = logInJSON, action) => {
                     ...state,
                     "status":action.data.status,
                     "errorMsg": "Wrong password!"}
-            }
-
-            if (action.data.status===1){
+            } else if (action.data.status===1){
                 console.log("correct password")
-                return action.data.data.data;
+                return action.data.data;
             } else {
                 return state;
             }
