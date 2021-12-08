@@ -24,13 +24,17 @@ import myRestaurantProfile from "./reducers/myRestaurantProfile";
 
 import SearchResult from "./components/SearchResult";
 import restaurantsInfo from "./reducers/restaurants";
+import myComments from "./reducers/myComments";
+import userInfo from "./reducers/logIn";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
-
+import RestaurantDetailPage from "./components/RestaurantDetailPage";
+import PostNewRestaurant from "./components/PostNewRestaurant";
+import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
 // const reducer = combineReducers({})
 // const store = createStore(reducer, applyMiddleware(logger));
 function App() {
-    const reducer = combineReducers({personalProfile, businessProfile,myRestaurantProfile,restaurantsInfo})
+    const reducer = combineReducers({personalProfile, businessProfile,myRestaurantProfile,restaurantsInfo, myComments, userInfo})
 
     const store = createStore(reducer);
     return (
@@ -47,9 +51,13 @@ function App() {
                     <Route path={"/comments"} element={<MyCommentsScreen/>}/>
                     <Route path={"/business_profile"} element={<BusinessProfileScreen/>}/>
 
-                    <Route path={"/my_restaurant"} element={<RestaurantProfileScreen/>}/>
+                    <Route path={"/privacy_policy"} element={<PrivacyPolicyPage/>}/>
 
-                    <Route path={"/result"} element={<SearchResult/>}/>
+                    <Route path={"/my_restaurant"} element={<RestaurantProfileScreen/>}/>
+                    <Route path={"/search/:term/:location"} element={<SearchResult/>}/>
+                    <Route path={"/search"} element={<SearchResult/>}/>
+                    <Route path={"/restaurant_detail"} element={<RestaurantDetailPage/>}/>
+                    <Route path={"/post-new-restaurant"} element={<PostNewRestaurant/>}/>
                 </Routes>
             </Provider>
         </div>

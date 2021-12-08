@@ -23,9 +23,9 @@ const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
             </div>
             <div className="row">
                 <div className="col-6">
-                    {/*<a href="#">*/}
+
                         <i onClick={()=>setEditProfile(false)} className="fas fa-times wd-white ms-3 mb-2 "></i>
-                    {/*</a>*/}
+
 
                 </div>
 
@@ -37,24 +37,24 @@ const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
 
 
             <form className="row g-3">
-                <div className="col-md-6">
-                    <label htmlFor="inputFirstName4" className="form-label">First Name</label>
+                <div className="col-md-12">
+                    <label htmlFor="inputFirstName4" className="form-label">Name</label>
                     <input type="text"
                            onChange={(event) => {
-                               setLocalProfile({...localProfile, firstName: event.target.value})
+                               setLocalProfile({...localProfile, name: event.target.value})
                            }}
                            className="form-control" id="inputFirstName4"
-                           defaultValue={profile.firstName}
+                           defaultValue={profile.name}
                     />
                 </div>
-                <div className="col-md-6">
-                    <label htmlFor="inputLastName4" className="form-label">Last Name</label>
-                    <input type="text"
-                           onChange={(event) => {
-                               setLocalProfile({...localProfile, lastName: event.target.value})
-                           }}
-                           className="form-control" id="inputLastName4" defaultValue={profile.lastName}/>
-                </div>
+                {/*<div className="col-md-6">*/}
+                {/*    <label htmlFor="inputLastName4" className="form-label">Last Name</label>*/}
+                {/*    <input type="text"*/}
+                {/*           onChange={(event) => {*/}
+                {/*               setLocalProfile({...localProfile, lastName: event.target.value})*/}
+                {/*           }}*/}
+                {/*           className="form-control" id="inputLastName4" defaultValue={profile.lastName}/>*/}
+                {/*</div>*/}
 
                 {/*<div className="col-12">*/}
                 {/*    <label htmlFor="inputUserName" className="form-label">Restaurant Name</label>*/}
@@ -86,7 +86,7 @@ const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
                            placeholder="example@gmail.com" defaultValue={profile.email}/>
                 </div>
 
-                <div className="col-md-6">
+                <div className="col-md-12">
                     <label htmlFor="inputPhone" className="form-label">Phone Number</label>
                     <input type="tel"
                            onChange={(event) => {

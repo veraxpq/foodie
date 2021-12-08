@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import {createNewUser} from "../../../services/restaurantsService";
 import {useDispatch} from "react-redux";
+import "./style.css";
 
 const RegisterForm = () => {
     const dispatch = useDispatch();
@@ -35,8 +36,10 @@ const RegisterForm = () => {
     return (
         <div className={"container"}>
             <div className={"row f-register-form-container"}>
-                <div className={"col-sm-1 col-lg-3"}></div>
-                <div className={"col-sm-10 col-lg-6 "}>
+                {/*<div className={"col-sm-1 col-lg-3"}>*/}
+
+                {/*</div>*/}
+                <div className={"col-sm-10 col-lg-8 "}>
                     <form className={"f-register-form-border"}>
                         <fieldset>
                             <legend className={"f-login-form"}>Sign up</legend>
@@ -48,22 +51,24 @@ const RegisterForm = () => {
                                     <input type="text" readOnly="" className="form-control f-form-border" id="username"
                                            value={username} onChange={e => setUsername(e.target.value)}/>
                                 <label htmlFor="password" className="col-form-label">Password</label>
-                                    <input type="text" readOnly="" className="form-control f-form-border" id="password"
+                                    <input type="password" readOnly="" className="form-control f-form-border" id="password"
                                            value={password} onChange={e => setPassword(e.target.value)}/>
                                 <label htmlFor="confirmPassword" className="col-form-label">Confirm Password</label>
-                                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="confirmPassword"
+                                    <input type="password" readOnly="" className="form-control-plaintext f-form-border" id="confirmPassword"
                                            value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}/>
                                 <label htmlFor="zipcode" className="col-form-label">Zip/Postal Code</label>
                                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="zipcode"
                                            value={zipCode} onChange={e => setZipCode(e.target.value)}/>
                             </div>
                             <div className={"mt-5"}>Already have an account? <Link to={"/login"}>Login</Link></div>
-                            <button onClick={CreateUser} type="submit" className="btn btn-outline-dark f-register-submit mt-2">Submit</button>
+                            <button onClick={CreateUser} type="submit" className="btn btn-primary f-register-submit mt-2">Submit</button>
                             {/*<Link to={"/register"} type="submit" className="btn btn-outline-dark f-register-submit mt-2" onClick={CreateUser}>Submit</Link>*/}
                         </fieldset>
                     </form>
                 </div>
-                <div className={"col-sm-1 col-lg-3"}></div>
+                <div className={"col-sm-2 col-lg-4"}>
+                    <img src="./images/customer-register-bg.jpg" className="img-fluid wd-customer-bg-img"></img>
+                </div>
 
             </div>
         </div>

@@ -1,5 +1,5 @@
 //const PROFILE_API = 'https://my-node-on-heroku.herokuapp.com/api/profile';
-//const PROFILE_API = 'http://localhost:4000/api/profile';
+//const PROFILE_API = 'http://localhost:18081/getRestaurant?cityName=sanjose';
 const PROFILE_API = 'http://localhost:5000/rest/my_restaurant_profile';
 
 export const fetchAllRestaurantProfile = (dispatch) =>
@@ -24,3 +24,27 @@ export const updateCurrentRestaurantProfile = (dispatch, RestaurantProfile) =>
                              type: 'update-myRestaurant-profile',
                              RestaurantProfile
                          }));
+
+export const deleteMyRestaurant = (dispatch, RestaurantProfile) =>
+    fetch(`${PROFILE_API}/${RestaurantProfile._id}`, {
+        method: 'DELETE'
+    }).then(response => dispatch({
+                                     type: 'delete-my-restaurant',
+                                         RestaurantProfile
+                                 }));
+
+export const postNewRestaurant = (dispatch, newRestaurant) =>
+    fetch(PROFILE_API, {
+      method: 'POST',
+      body: JSON.stringify(newRestaurant),
+      headers: {
+        'content-type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(RestaurantProfile =>
+        dispatch({
+          type: 'create-new-restaurant',
+          RestaurantProfile
+        })
+    );

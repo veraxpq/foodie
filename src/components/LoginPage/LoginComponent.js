@@ -1,9 +1,40 @@
 import {Link} from "react-router-dom";
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {logInUser} from "../../services/logInService";
+import {useNavigate} from "react-router-dom";
 
 const LoginComponent = () => {
+
+
+    const dispatch = useDispatch();
+    const [user, setUser] = useState({});
+    const navigate = useNavigate();
+
+    const selectAllUserData = (state) => state.userInfo;
+    const userData = useSelector(selectAllUserData);
+    const [errorMsg, setErrorMsg]=useState("");
+
+    const login = () => {
+        console.log("in component", userData)
+
+        if (userData.status===0){
+            alert(userData.errorMsg)
+
+        }
+        else if (userData.status===1){
+            logInUser(dispatch, user).then(status => {
+                navigate('/personal_profile')
+            }).catch(()=>{
+                setErrorMsg("Unable to login");
+            });
+        }
+    }
+
+
     return (
         <div className={"container"}>
+            <h2>{errorMsg}</h2>
             <div className={"row f-register-form-container"}>
                 <div className={"col-sm-1 col-lg-3"}></div>
                 <div className={"col-sm-10 col-lg-6 "}>
@@ -13,14 +44,16 @@ const LoginComponent = () => {
                             <div className="form-group">
                                 <label htmlFor="exampleInputEmail1" className="form-label mt-4">Email address</label>
                                 <input type="email" className="form-control" id="exampleInputEmail1"
-                                       aria-describedby="emailHelp" placeholder="Enter email"/>
+                                       aria-describedby="emailHelp" placeholder="Enter email"
+                                       onChange={e => setUser({...user, email: e.target.value})}/>
                                 <small id="emailHelp" className="form-text text-muted">We'll never share your email with
                                     anyone else.</small>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="exampleInputPassword1" className="form-label mt-4">Password</label>
                                 <input type="password" className="form-control" id="exampleInputPassword1"
-                                       placeholder="Password"/>
+                                       placeholder="Password"
+                                       onChange={e => setUser({...user, password: e.target.value})}/>
                             </div>
                             <div>
                                 <Link to={"/findPassword"} className={"f-login-forget"}>
@@ -33,7 +66,10 @@ const LoginComponent = () => {
                                     in Foodie</Link></div>
                             </div>
 
-                            <button type="submit" className="btn btn-outline-dark f-register-submit mt-2">Submit</button>
+                            <button onClick={login} type="submit" className="btn btn-primary f-register-submit mt-2 mb-5">Submit</button>
+
+                            <div onClick={login}>ddghdhjdh</div>
+
                         </fieldset>
                     </form>
                 </div>
