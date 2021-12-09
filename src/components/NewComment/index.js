@@ -1,28 +1,44 @@
-import React, {useState} from "react";
-import {useDispatch} from "react-redux";
+import React, {useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
 import {postNewComment} from "../../services/myCommentsService";
 import ReactStars from "react-rating-stars-component";
+import {fetchAllPersonalProfile} from "../../services/personalProfileService";
+import {fetchAllDetail} from "../../services/restaurantDetailService";
 
-const rate = {
-  size: 25,
-  count: 5,
-  isHalf: false,
-  value: 0,
-  color: "lightgray",
-  activeColor: "orange",
-  onChange: newValue => {
-    console.log(`Example 3: new value is ${newValue}`);
-  }
-};
+
+
 
 const NewComment = () => {
-  let [newComment, setNewComment] = useState('');
+  const rate = {
+    size: 25,
+    count: 5,
+    isHalf: false,
+    value: 0,
+    color: "lightgray",
+    activeColor: "orange",
+    onChange: newValue => {
+      console.log(`Example 3: new value is ${newValue}`);
+    }
+  };
+  const [newComment, setNewComment] = useState('');
   const dispatch = useDispatch();
+  const profileData = useSelector(state => state.personalProfile); //locate current user
+  useEffect(() =>fetchAllPersonalProfile(dispatch), [])
+  const restaurant = useSelector(state => state.restaurantDetail); // locate current restaurant
+  useEffect(() =>fetchAllDetail(dispatch), [])
+
   const commentClickHandler = () => {
-    postNewComment(dispatch, {
-      comment: newComment
-    });
+    const comment = {
+      rating: rate.value,
+      text: newComment,
+      user: {
+        name: profileData.name
+      },
+      restaurantName: restaurant.name
+    }
+    postNewComment(dispatch, comment);
   }
+
   return(
       <>
         <form className={""}>

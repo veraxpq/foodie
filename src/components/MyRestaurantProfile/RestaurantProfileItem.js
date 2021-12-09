@@ -21,7 +21,7 @@ const RestaurantProfileItem = ({profile, setEditProfile}) => {
                 <div className="row">
 
                     <div className="col-2">
-                        <img src={profile.image_url} width="108"
+                        <img src={profile.imageUrl} width="108"
                              className="img-fluid rounded float-start"/>
 
                     </div>

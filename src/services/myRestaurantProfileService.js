@@ -3,7 +3,7 @@ const PROFILE_API = "https://foodie-mysql-database.herokuapp.com/";
 //const PROFILE_API = 'http://localhost:5000/rest/my_restaurant_profile';
 
 export const fetchAllRestaurantProfile = (dispatch) =>
-    fetch(PROFILE_API)
+    fetch(`${PROFILE_API}/foodie/getRestaurantByUserId?id=5`)
         .then(response => response.json())
         .then(RestaurantProfile =>
                   dispatch({
@@ -13,8 +13,8 @@ export const fetchAllRestaurantProfile = (dispatch) =>
         );
 
 export const updateCurrentRestaurantProfile = (dispatch, RestaurantProfile) =>
-    fetch(`${PROFILE_API}/${RestaurantProfile._id}`, {
-        method: 'PUT',
+    fetch(`${PROFILE_API}/foodie/updateRestaurantByRestaurantId?id=${RestaurantProfile.id}`, {
+        method: 'POST',
         body: JSON.stringify(RestaurantProfile),
         headers: {
             'content-type': 'application/json'
@@ -26,17 +26,17 @@ export const updateCurrentRestaurantProfile = (dispatch, RestaurantProfile) =>
                          }));
 
 export const deleteMyRestaurant = (dispatch, RestaurantProfile) =>
-    fetch(`${PROFILE_API}/${RestaurantProfile._id}`, {
+    fetch(`${PROFILE_API}/${RestaurantProfile.id}`, {
         method: 'DELETE'
     }).then(response => dispatch({
                                      type: 'delete-my-restaurant',
                                          RestaurantProfile
                                  }));
 
-export const postNewRestaurant = (dispatch, newRestaurant) =>
+export const postNewRestaurant = (dispatch, restaurant) =>
     fetch(PROFILE_API, {
       method: 'POST',
-      body: JSON.stringify(newRestaurant),
+      body: JSON.stringify(restaurant),
       headers: {
         'content-type': 'application/json'
       }

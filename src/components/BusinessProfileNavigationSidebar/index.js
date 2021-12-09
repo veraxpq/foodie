@@ -13,9 +13,9 @@ const BusinessProfileNavigationSidebar = (
     return (
         <>
             <div className="list-group">
-                <Link to="/"
+                <Link to="/home"
                       className="list-group-item">
-                    <i className="fas fa-utensils"></i>
+                    <i className="fas fa-utensils"></i> Home
                 </Link>
 
                 
