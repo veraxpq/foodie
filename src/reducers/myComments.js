@@ -1,16 +1,22 @@
 import my_comments from './data/myComments.json';
 
 const myComments = (state = my_comments, action) => {
+    console.log(state)
+    // console.log("action.comment",action.comment)
     switch (action.type) {
         case 'fetch-all-comments':
-
+            console.log("action.comments",action.comments)
             return(action.comments);
             break;
 
 
         case 'delete-comment':
+            console.log("state.data.filter",state.data.filter(comment => comment.id!== action.comment.id))
+            // state.data=state.data.filter(comment => comment.id!== action.comment.id)
             return (
-                state.filter(comment => comment._id !== action.comment._id)
+                // state.data.filter(comment => comment.id!== action.comment.id)
+                {...state,"data":state.data.filter(comment => comment.id!== action.comment.id)}
+
             )
             break;
 

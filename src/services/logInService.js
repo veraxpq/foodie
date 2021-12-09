@@ -1,4 +1,5 @@
-const USER_API = "http://localhost:18081/foodie/login";
+// const USER_API = "http://localhost:18081/foodie/login";
+const USER_API = "https://foodie-mysql-database.herokuapp.com/"
 
 
 // export const fetchAllUser = (dispatch) =>

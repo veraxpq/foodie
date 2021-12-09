@@ -11,6 +11,7 @@ const MyCommentsList = () => {
     const comments = useSelector(selectAllCommentsData);
     const dispatch = useDispatch();
     useEffect(() =>fetchAllMyComments(dispatch), []);
+    console.log("all comments",comments)
 
 
     return (
@@ -18,7 +19,7 @@ const MyCommentsList = () => {
             <li className="list-group-item">
                 <h3>My Comments</h3>
             </li>
-            {comments.map(comment => {
+            {comments.data&&comments.data.map(comment => {
                 return (
                     <CommentItem comment={comment}/>
                 );

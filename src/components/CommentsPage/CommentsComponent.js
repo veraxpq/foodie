@@ -12,6 +12,7 @@ const CommentItem = ({comment}) => {
     }
 
 
+
     return(
         <li className="list-group-item">
             <div className="row">
@@ -20,13 +21,13 @@ const CommentItem = ({comment}) => {
 
                 {/*</div>*/}
                 <div className="col-8">
-                    <h5 className="wd-black-topic-font">{comment.restaurant_name}
+                    <h5 className="wd-black-topic-font">{comment.restaurantName}
                         <i className="fas fa-check-circle ms-1"></i>
                     </h5>
 
                     {/*<h6 className="wd-comment-title-font">{comment.tag}</h6>*/}
                     {/*<h6 className="wd-comment-title-font">{comment.location}</h6>*/}
-                    <h6>Time Created: {comment.time_created} </h6>
+                    <h6>Time Created: {comment.timeCreated} </h6>
                     <RatingView ratingValue={comment.rating} />
 
                     <h6>{comment.text}</h6>

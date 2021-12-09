@@ -25,7 +25,7 @@ const TopBarComponent = () => {
 
                         <div className="dropdown-menu dropdown-menu-end">
                             <div className={"f-sidebar-hi"}>
-                                Hi, {userData.email}!
+                                Hi, {userData.username}!
                             </div>
                             <div className="list-group ">
                                 <Link to={"/home"} className={"list-group-item dropdown-item"}>

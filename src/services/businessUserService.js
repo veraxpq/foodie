@@ -1,5 +1,5 @@
-const RESTAURANT_API = 'http://localhost:5000/rest/restaurantsService';
-const USER_API = "http://localhost:18081/foodie/createNewBusinessUser";
+const USER_API = 'https://foodie-mysql-database.herokuapp.com/foodie/createNewBusinessUser';
+//const USER_API = "http://localhost:18081/foodie/createNewBusinessUser";
 
 // export const fetchAllRestaurants = (dispatch) =>
 //     fetch(RESTAURANT_API)
