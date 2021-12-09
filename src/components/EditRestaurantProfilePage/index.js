@@ -8,7 +8,7 @@ const EditRestaurantProfile = ({setEditProfile}) => {
         <>
 
             {
-                profileData.map((profile, idx) => {
+                profileData.data&&profileData.data.map((profile, idx) => {
                     return (
                         <EditRestaurantProfileComponent setEditProfile={setEditProfile} key={idx} profile={profile}/>
                     );

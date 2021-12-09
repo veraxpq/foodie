@@ -36,12 +36,12 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
 
             <form className="row g-3">
                 <div className="col-md-12">
-                    <label htmlFor="inputFirstName4" className="form-label">Name</label>
+                    <label htmlFor="inputFirstName4" className="form-label">User Name</label>
                     <input type="text" onChange={(event) => {
-                        setLocalProfile({...localProfile, name: event.target.value})
+                        setLocalProfile({...localProfile, username: event.target.value})
                     }}
                            className="form-control" id="inputFirstName4"
-                           defaultValue={profile.name}/>
+                           defaultValue={profile.username}/>
                 </div>
                 {/*<div className="col-md-6">*/}
                 {/*    <label htmlFor="inputLastName4" className="form-label">Last Name</label>*/}
@@ -75,12 +75,12 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
                 {/*           maxlength="12"  title="Ten digits code" required/>*/}
                 {/*</div>*/}
                 <div className="col-12">
-                    <label htmlFor="inputAddress" className="form-label">Location</label>
+                    <label htmlFor="inputAddress" className="form-label">Zip Code</label>
                     <input type="text" className="form-control" id="inputAddress"
                            onChange={(event) => {
-                               setLocalProfile({...localProfile, location: event.target.value})
+                               setLocalProfile({...localProfile, zipCode: event.target.value})
                            }}
-                           placeholder="1234 Main St" defaultValue={profile.location}/>
+                           placeholder="12345" defaultValue={profile.zipCode}/>
                 </div>
                 {/*<div className="col-12">*/}
                 {/*    <label htmlFor="inputAddress2" className="form-label">Address 2</label>*/}
@@ -99,14 +99,14 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
                 {/*    <label htmlFor="inputZip" className="form-label">Zip Code</label>*/}
                 {/*    <input type="text" className="form-control" id="inputZip"/>*/}
                 {/*</div>*/}
-                <div className="col-12">
+                {/*<div className="col-12">*/}
                     <h6>Birth Date</h6>
                     <input type="date"
                            onChange={(event) => {
-                               setLocalProfile({...localProfile, dateOfBirth: event.target.value})
+                               setLocalProfile({...localProfile, dayOfBirth: event.target.value})
                            }}
-                           defaultValue={profile.dateOfBirth}/>
-                </div>
+                           defaultValue={profile.dayOfBirth}/>
+                {/*</div>*/}
 
             </form>
 
