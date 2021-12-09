@@ -53,7 +53,7 @@ const PrivacyPolicyComponent = () => {
                     </li>
 
                 </ul>
-                <Link to={"/login"}>
+                <Link to={"/home"}>
                     <h4 className={"mt-5 btn btn-primary pull-right"}>Acknowledge</h4>
                 </Link>
 

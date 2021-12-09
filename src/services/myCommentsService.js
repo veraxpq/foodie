@@ -1,8 +1,14 @@
-const COMMENT_API = 'http://localhost:5000/rest/my_comments';
+//const COMMENT_API = 'http://localhost:5000/rest/my_comments';
+import userInfo from "../reducers/logIn";
+import {useSelector} from "react-redux";
+
+const COMMENT_API = 'https://foodie-mysql-database.herokuapp.com/foodie';
 
 
-export const fetchAllMyComments = (dispatch) =>
-    fetch(COMMENT_API)
+export const fetchAllMyComments = (dispatch,userId) =>
+    // ${comment.userId}
+
+    fetch(`${COMMENT_API}/getReviewsByUserId?id=${userId}`)
         .then(response => response.json())
         .then(comments =>
                   dispatch({
@@ -15,7 +21,7 @@ export const fetchAllMyComments = (dispatch) =>
 
 
 export const deleteComment = (dispatch, comment) =>
-    fetch(`${COMMENT_API}/${comment._id}`, {
+    fetch(`${COMMENT_API}/deleteReviewById?reviewId=${comment.id}`, {
         method: 'DELETE'
     }).then(response => dispatch({
                                      type: 'delete-comment',

@@ -1,4 +1,5 @@
-const USER_API = "http://localhost:18081/foodie/login";
+// const USER_API = "http://localhost:18081/foodie/login";
+const USER_API = "https://foodie-mysql-database.herokuapp.com/foodie/login"
 
 
 // export const fetchAllUser = (dispatch) =>
@@ -11,19 +12,39 @@ const USER_API = "http://localhost:18081/foodie/login";
 //                            })
 //         );
 
-export const logInUser = (dispatch,user) =>
+
+
+export const logInUser = (dispatch,user,id) =>
     fetch(`${USER_API}`, {
         method: 'POST',
         body: JSON.stringify(user),
-        credentials: 'include',
+        // credentials: 'include',
         headers: {
             'content-type': 'application/json'
         }
-    }).then(response =>
-                dispatch({
-                             type: 'log-in-user',
-                             user
-                         }));
+    }).then(response=>response.json())
+        .then((data) => dispatch({
+            type: 'check-log-in-status',
+            data
+        }))
+
+        // {
+        //     console.log(response)
+        //     if (response.status ===1){
+        //     dispatch({
+        //                  type: 'log-in-success',
+        //                  response.data
+        //              })
+        //
+        // }
+        //     else if (response.status ===0){
+        //         dispatch({
+        //                      type: 'log-in-failed',
+        //                      user
+        //                  })
+        //     }
+        // })
+
 
 
 

@@ -23,6 +23,7 @@ const RegisterForm = () => {
             zipCode,
             "userType": 1
         }
+        
         createNewUser(dispatch, user);
     }
     // const bioChangeHandler = (event) => {
@@ -60,8 +61,8 @@ const RegisterForm = () => {
                                            value={zipCode} onChange={e => setZipCode(e.target.value)}/>
                             </div>
                             <div className={"mt-5"}>Already have an account? <Link to={"/login"}>Login</Link></div>
-                            <button onClick={CreateUser} type="submit" className="btn btn-primary f-register-submit mt-2">Submit</button>
-                            {/*<Link to={"/register"} type="submit" className="btn btn-outline-dark f-register-submit mt-2" onClick={CreateUser}>Submit</Link>*/}
+                            {/*<button onClick={CreateUser} type="submit" className="btn btn-primary f-register-submit mt-2">Submit</button>*/}
+                            <Link to={"/login"} type="submit" className="btn btn-primary f-register-submit mt-2" onClick={CreateUser}>Submit</Link>
                         </fieldset>
                     </form>
                 </div>

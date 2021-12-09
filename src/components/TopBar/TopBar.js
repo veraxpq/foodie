@@ -1,7 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
+
+
 
 const TopBarComponent = () => {
+    const selectAllUserData = (state) => state.userInfo;
+    const userData = useSelector(selectAllUserData);
+    console.log(userData)
     return (
         <>
             <div className={"f-topbar-occupy"}></div>
@@ -19,7 +25,7 @@ const TopBarComponent = () => {
 
                         <div className="dropdown-menu dropdown-menu-end">
                             <div className={"f-sidebar-hi"}>
-                                Hi, xxx!
+                                Hi, {userData.username}!
                             </div>
                             <div className="list-group ">
                                 <Link to={"/home"} className={"list-group-item dropdown-item"}>
@@ -32,17 +38,17 @@ const TopBarComponent = () => {
                                         </div>
                                     </div>
                                 </Link>
-                                <Link to={"/a9/twitter/explore"} className={"list-group-item dropdown-item"}>
-                                    <div className="row">
-                                        <div className="col-2">
-                                            <i className="fas fa-hashtag"></i>
-                                        </div>
-                                        <div className="d-none d-xl-block col-10">
-                                            Explore
-                                        </div>
-                                    </div>
-                                </Link>
-                                <div className={"list-group-item dropdown-item"}>
+                                {/*<Link to={"/a9/twitter/explore"} className={"list-group-item dropdown-item"}>*/}
+                                {/*    <div className="row">*/}
+                                {/*        <div className="col-2">*/}
+                                {/*            <i className="fas fa-hashtag"></i>*/}
+                                {/*        </div>*/}
+                                {/*        <div className="d-none d-xl-block col-10">*/}
+                                {/*            Explore*/}
+                                {/*        </div>*/}
+                                {/*    </div>*/}
+                                {/*</Link>*/}
+                                <Link to={"/search"} className={"list-group-item dropdown-item"}>
                                     <div className="row">
                                         <div className="col-2">
                                             <i className="far fa-bell"></i>
@@ -51,13 +57,22 @@ const TopBarComponent = () => {
                                             Restaurants
                                         </div>
                                     </div>
-                                </div>
-                                <Link to={"/home"} className={"list-group-item dropdown-item"}>
+                                </Link>
+                                <Link to={"/personal_profile"} className={"list-group-item dropdown-item"}>
                                     <div className="row">
                                         <div className="col-2">
                                             <i className="far fa-user"></i>                                        </div>
                                         <div className="d-none d-xl-block col-10">
                                             Profile
+                                        </div>
+                                    </div>
+                                </Link>
+                                <Link to={"/privacy_policy"} className={"list-group-item dropdown-item"}>
+                                    <div className="row">
+                                        <div className="col-2">
+                                            <i className="fas fa-user-secret"></i>                                       </div>
+                                        <div className="d-none d-xl-block col-10">
+                                            Privacy Policy
                                         </div>
                                     </div>
                                 </Link>
