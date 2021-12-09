@@ -80,6 +80,11 @@ code {
   padding: 5px 10px 5px 10px;
   border: none;
 }
+.f-home-restaurant-pic{
+  width: 270px;
+  height: 270px;
+  object-fit: cover;
+}
 .f-restaurant-item-card {
   width: 18rem;
   float: left;

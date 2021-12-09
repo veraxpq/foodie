@@ -39,18 +39,18 @@ const RestaurantItem = (
     return (
         <li className="list-group-item">
             <div className="row">
-                <div className="col-3">
+                <div className="col-4">
                     <Link to={`/restaurant_detail/${restaurant.name}`}>
                         <img src={restaurant.image_url}
                              alt="rimg"
                              width="100%"
                              height="100%"
-                             className="float-left f-restaurant-result-img"
+                             className="float-left f-home-restaurant-pic"
                         />
                     </Link>
 
                 </div>
-                <div className="col-7 ms-3 mt-1">
+                <div className="col-4 ms-3 mt-1">
                     <div className="pb-2">
                         <Link to={`/restaurant_detail/${restaurant.name}`} className="f-restaurant-result-name">
                         <div>{restaurant.name}</div>
