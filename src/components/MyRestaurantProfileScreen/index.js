@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 import BusinessProfileNavigationSidebar from "../BusinessProfileNavigationSidebar";
 import EditRestaurantProfile from "../EditRestaurantProfilePage";
-import RestaurantProfile from "../RestaurantProfile";
+import RestaurantProfile from "../MyRestaurantProfile";
 
 const RestaurantProfileScreen = () => {
     const [edit, setEditProfile]=useState(false);

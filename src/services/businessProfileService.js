@@ -12,7 +12,7 @@ export const fetchAllBusinessProfile = (dispatch) =>
         );
 
 export const updateCurrentBusinessProfile = (dispatch, BusinessProfile) =>
-    fetch(`${PROFILE_API}/${BusinessProfile._id}`, {
+    fetch(`${PROFILE_API}/foodie/updateUserInfo?id=${BusinessProfile.id}`, {
         method: 'PUT',
         body: JSON.stringify(BusinessProfile),
         headers: {

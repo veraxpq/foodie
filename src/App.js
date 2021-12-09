@@ -19,7 +19,7 @@ import {combineReducers, createStore} from "redux";
 import personalProfile from "./reducers/personalProfile";
 import {Provider} from "react-redux";
 import businessProfile from "./reducers/businessProfile";
-import RestaurantProfileScreen from "./components/RestaurantProfileScreen";
+import RestaurantProfileScreen from "./components/MyRestaurantProfileScreen";
 import myRestaurantProfile from "./reducers/myRestaurantProfile";
 
 import SearchResult from "./components/SearchResult";

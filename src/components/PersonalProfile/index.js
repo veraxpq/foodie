@@ -11,13 +11,14 @@ const PersonalProfile = ({setEditProfile, edit}) => {
     const profileData = useSelector(selectAllProfileData);
     const dispatch = useDispatch();
     useEffect(() => fetchAllPersonalProfile(dispatch), []);
+    console.log("profileData",profileData)
 
 
     return(
         <>
 
-            {
-                profileData.map((profile, idx) => {
+            { // profileData.data&&profileData.data
+                profileData&&profileData.map((profile, idx) => {
                     return (
                         <ProfileItem edit={edit} setEditProfile={setEditProfile} key={idx} profile={profile}/>
                     );
