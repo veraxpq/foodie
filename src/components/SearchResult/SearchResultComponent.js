@@ -3,18 +3,26 @@ import {useDispatch, useSelector} from "react-redux";
 // import restaurants from "../../tempData/restaurants_result.json"
 import RestaurantItem from "./RestaurantItem";
 import {getRestaurantByLocation, getRestaurantByTermAndLocation} from "../../services/searchRestaurantsServices";
+import {useParams} from "react-router-dom";
 
-const restaurants = (state) => state.restaurants.restaurants;
+
+const selectAllRestaurants = (state) => state.searchRestaurants;
 const SearchResultComponent = () => {
-    const term = useSelector((state)=>state.location);
-    const location = useSelector((state)=>state.location);
+    const params = useParams();
+    const term = params.term;
+    const location = params.location;
+    console.log("search page params", term, location);
+    const restaurants = useSelector(selectAllRestaurants);
     const dispatch = useDispatch();
     useEffect(()=>{
-        getRestaurantByTermAndLocation(dispatch, term, location)},[dispatch])
+        getRestaurantByTermAndLocation(dispatch,term,location)},[dispatch])
+    const allRestaurants = restaurants.data;
+    console.log("allRestaurants", restaurants);
     return(
+        // <div></div>
         <ul className="list-group">
             {
-                restaurants.map(restaurant=>{
+                restaurants.data.businesses.map(restaurant=>{
                     return(<RestaurantItem restaurant={restaurant}/>);
                 })
             }

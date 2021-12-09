@@ -1,6 +1,7 @@
+const API = 'https://foodie-mysql-database.herokuapp.com';
 
-export const getRestaurantByLocation = (dispatch, location) =>
-    fetch(`localhost:18081/getRestaurantByLocation?cityName=${location}&term=restaurants`)
+export const getRestaurantByLocation = (dispatch, location) =>{
+    fetch(`${API}/getRestaurantByLocation?cityName=${location}`)
         .then(response => response.json())
         .then(restaurants =>
             dispatch({
@@ -8,9 +9,18 @@ export const getRestaurantByLocation = (dispatch, location) =>
                 restaurants
             })
         );
+}
 
-export const getRestaurantByTermAndLocation = (dispatch, term, location) =>
-    fetch(`localhost:18081/getRestaurantByLocation?cityName=${location}&term=${term}`)
+export const getRestaurantByTermAndLocation = (dispatch,term, location) =>
+    fetch(`${API}/getRestaurantByTermAndLocation`, {
+        method:'POST',
+        body: JSON.stringify({
+            "location": location,
+            "term": [term]}),
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
         .then(response => response.json())
         .then(restaurants =>
             dispatch({
