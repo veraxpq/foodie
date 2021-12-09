@@ -21,7 +21,6 @@ import {Provider} from "react-redux";
 import businessProfile from "./reducers/businessProfile";
 import RestaurantProfileScreen from "./components/MyRestaurantProfileScreen";
 import myRestaurantProfile from "./reducers/myRestaurantProfile";
-
 import SearchResult from "./components/SearchResult";
 import myComments from "./reducers/myComments";
 import userInfo from "./reducers/logIn";
