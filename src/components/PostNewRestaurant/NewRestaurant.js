@@ -6,24 +6,33 @@ import {useDispatch} from "react-redux";
 const NewRestaurant = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [display_phone, setDisplay_phone] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
-  const [province, setProvince] = useState('');
+  const [state, setState] = useState('');
   const [zipCode, setZipCode] = useState('');
-  const [contact, setContact] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
 
   const CreateRestaurant = () => {
     const restaurant = {
-      name,
-      address,
-      city,
-      province,
-      zipCode,
-      contact,
-      description,
-      category
+      "name": name,
+      "phone": phone,
+      "display_phone" :display_phone,
+      "location":{
+        "address1": address,
+        "city": city,
+        "state": state,
+        "zip_code": zipCode,
+        "display_address": `${address}, ${city}, ${state} ${zipCode}`
+      },
+      "messaging":{
+        "use_case_text": description,
+      },
+      "categories":[
+        {"title": category}
+      ]
     }
     postNewRestaurant(dispatch, restaurant);
   }
@@ -44,6 +53,16 @@ const NewRestaurant = () => {
                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantName"
                            value={name} onChange={e => setName(e.target.value)}/>
                   </div>
+                  <label htmlFor="restaurantContact" className="col-sm-4 col-form-label">Phone</label>
+                  <div className="col-sm-8">
+                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantContact"
+                           value={phone} onChange={e => setPhone(e.target.value)}/>
+                  </div>
+                  <label htmlFor="restaurantPhone" className="col-sm-4 col-form-label">Display_phone</label>
+                  <div className="col-sm-8">
+                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantPhone"
+                           value={display_phone} onChange={e => setDisplay_phone(e.target.value)}/>
+                  </div>
                   <label htmlFor="restaurantAddress" className="col-sm-4 col-form-label">Address</label>
                   <div className="col-sm-8">
                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantAddress"
@@ -57,17 +76,12 @@ const NewRestaurant = () => {
                   <label htmlFor="restaurantProvince" className="col-sm-4 col-form-label">Province</label>
                   <div className="col-sm-8">
                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantProvince"
-                           value={province} onChange={e => setProvince(e.target.value)}/>
+                           value={state} onChange={e => setState(e.target.value)}/>
                   </div>
                   <label htmlFor="restaurantZip" className="col-sm-4 col-form-label">Zip Code</label>
                   <div className="col-sm-8">
                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantZip"
                            value={zipCode} onChange={e => setZipCode(e.target.value)}/>
-                  </div>
-                  <label htmlFor="restaurantContact" className="col-sm-4 col-form-label">Contact</label>
-                  <div className="col-sm-8">
-                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantContact"
-                           value={contact} onChange={e => setContact(e.target.value)}/>
                   </div>
                   <label htmlFor="description" className="col-sm-4 col-form-label">Description</label>
                   <div className="col-sm-8">
@@ -76,14 +90,11 @@ const NewRestaurant = () => {
                   </div>
                   <label htmlFor="restaurantCategory" className="col-sm-4 col-form-label">Category</label>
                   <div className="col-sm-8">
-                    <select  className={"mt-2"} id="restaurantCategory">
-                      <option value="Chinese">Chinese</option>
-                      <option value="American">American</option>
-                      <option selected value="Italian">Italian</option>
-                      <option value="Korean">Korean</option>
-                    </select>
+                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantCategory"
+                           value={category} onChange={e => setCategory(e.target.value)}/>
                   </div>
                 </div>
+                <br/>
                 <button onClick={CreateRestaurant} type="submit" className="btn btn-outline-dark f-register-submit btn-primary">Post</button>
               </fieldset>
             </form>

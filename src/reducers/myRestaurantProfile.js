@@ -22,7 +22,7 @@ const myRestaurantProfile = (state = profileJSON, action) => {
             const restaurant = {
                 _id: (new Date()).getTime() + '',
                 "rating": 0,
-                "image_url": "/images/restaurant1.png",
+                "image_url": "/images/restaurant1.png", //need update
                 ...action.restaurant
             };
             return ([
