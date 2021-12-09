@@ -37,7 +37,7 @@ import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
 // const reducer = combineReducers({})
 // const store = createStore(reducer, applyMiddleware(logger));
 function App() {
-    const reducer = combineReducers({personalProfile, businessProfile,myRestaurantProfile,restaurantsInfo, myComments, userInfo, searchRestaurants, restaurantDetail, restaurantReviewList, savedRestaurants})
+    const reducer = combineReducers({personalProfile, businessProfile,myRestaurantProfile, myComments, userInfo, searchRestaurants, restaurantDetail, restaurantReviewList, savedRestaurants})
     const store = createStore(reducer);
     return (
         <div>
