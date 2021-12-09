@@ -1,9 +1,14 @@
 //const COMMENT_API = 'http://localhost:5000/rest/my_comments';
+import userInfo from "../reducers/logIn";
+import {useSelector} from "react-redux";
+
 const COMMENT_API = 'https://foodie-mysql-database.herokuapp.com/foodie';
 
 
-export const fetchAllMyComments = (dispatch,comment) =>
-    fetch(`${COMMENT_API}/getReviewsByUserId?id=5`)
+export const fetchAllMyComments = (dispatch,userId) =>
+    // ${comment.userId}
+
+    fetch(`${COMMENT_API}/getReviewsByUserId?id=${userId}`)
         .then(response => response.json())
         .then(comments =>
                   dispatch({

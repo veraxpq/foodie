@@ -1,5 +1,5 @@
 // const USER_API = "http://localhost:18081/foodie/login";
-const USER_API = "https://foodie-mysql-database.herokuapp.com/"
+const USER_API = "https://foodie-mysql-database.herokuapp.com/foodie/login"
 
 
 // export const fetchAllUser = (dispatch) =>
@@ -14,7 +14,7 @@ const USER_API = "https://foodie-mysql-database.herokuapp.com/"
 
 
 
-export const logInUser = (dispatch,user) =>
+export const logInUser = (dispatch,user,id) =>
     fetch(`${USER_API}`, {
         method: 'POST',
         body: JSON.stringify(user),

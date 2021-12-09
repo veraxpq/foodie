@@ -1,7 +1,7 @@
 import my_comments from './data/myComments.json';
 
 const myComments = (state = my_comments, action) => {
-    console.log(state)
+    console.log("state",state)
     // console.log("action.comment",action.comment)
     switch (action.type) {
         case 'fetch-all-comments':

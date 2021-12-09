@@ -14,9 +14,11 @@ const LoginComponent = () => {
     const selectAllUserData = (state) => state.userInfo;
     const userData = useSelector(selectAllUserData);
     const [errorMsg, setErrorMsg]=useState("");
+    const userId = userData.id
+    console.log(userId)
 
     const login = () => {
-        logInUser(dispatch, user)
+        logInUser(dispatch, user,userId)
             .then(() => {
                 console.log("userData", userData);
                 if (userData.status===0){
