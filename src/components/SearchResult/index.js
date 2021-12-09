@@ -3,30 +3,14 @@ import SearchResultComponent from "./SearchResultComponent";
 import TopBar from "../TopBar";
 import Category from "../Category";
 import {useNavigate, useParams} from "react-router-dom";
-// import useReactRouter from 'use-react-router';
-
+import {useSelector} from "react-redux";
+import SearchBar from "../SearchBar";
+import {getRestaurantByLocation, getRestaurantByTermAndLocation} from "../../services/searchRestaurantsServices";
 const SearchResult = () => {
     const params = useParams();
-    const navigate = useNavigate();
-    const [term, setTerm] = useState(params.term || '');
+    const [searchedTerm, setSearchedTerm] = useState(params.term || '');
     const [location, setLocation] = useState(params.location || '');
-    const [restaurants, setRestaurants] = useState([]);
-    function submit(e) {
-        if(term && location) {
-            const encodedTerm = encodeURI(term);
-            const encodedLocation = encodeURI(location);
-            navigate(`/search/${encodedTerm}/${encodedLocation}`);
-        }
-        if(!term && location) {
-            const encodedLocation = encodeURI(location);
-            navigate(`/search/?/encodedLocation`);
-        }
-        if(!term && !location) {
-            console.log(term, location);
-        }
-        console.log("no input");
-    }
-    // useEffect()
+    console.log(searchedTerm, location);
     return(
         <div>
             <div>
@@ -34,22 +18,7 @@ const SearchResult = () => {
             </div>
             <div className={"f-home-banner"}>
                 <div className="f-home-search-bar">
-                    <form className="d-flex">
-                        <input className="form-control me-sm-2"
-                               type="text"
-                               placeholder="What do you want to eat?"
-                               value={term}
-                               onChange={(event) => setTerm(event.target.value)}></input>
-                        <input
-                            className="form-control me-sm-2"
-                            type="text"
-                            placeholder="Where"
-                            value={location}
-                            onChange={(event)=>setLocation(event.target.value)}></input>
-                        <button className="f-home-search-btn"
-                                type="submit"
-                                onClick={submit}>Search</button>
-                    </form>
+                    <SearchBar/>
                 </div>
             </div>
             <div className="row mt-2 ms-2">
@@ -58,7 +27,7 @@ const SearchResult = () => {
                 </div>
                 <div className="col-10 col-lg-9 col-md-9 col-sm-9 col-xxl-9 col-xl-9 col-xs-10">
                     <div className="ms-5 pb-2 pt-2">
-                        <h2>Search {params.location}</h2>
+                        <h2>Search {location}</h2>
                     </div>
                     <div className="ms-3 me-3">
                         <SearchResultComponent/>

@@ -1,0 +1,161 @@
+{
+  "data": {
+    "total": 202,
+    "region": {
+      "center": {
+        "latitude": 37.31648115417059,
+        "longitude": -121.88507080078125
+      }
+    },
+    "businesses": [
+      {
+        "distance": 4305.837194858549,
+        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/g2kEHVeJ6evBfoEESScQqA/o.jpg",
+        "rating": 2.5,
+        "coordinates": {
+          "latitude": 37.3276772923756,
+          "longitude": -121.931685
+        },
+        "review_count": 92,
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "url": "https://www.yelp.com/biz/kfc-san-jose-25?adjust_creative=W70yu8CkVtJTt84eiF-g2w&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=W70yu8CkVtJTt84eiF-g2w",
+        "display_phone": "(408) 286-4537",
+        "phone": "+14082864537",
+        "price": "$",
+        "name": "KFC",
+        "alias": "kfc-san-jose-25",
+        "location": {
+          "country": "US",
+          "address3": "",
+          "address2": "",
+          "city": "San Jose",
+          "address1": "250 N Bascom Ave",
+          "display_address": [
+            "250 N Bascom Ave",
+            "San Jose, CA 95128"
+          ],
+          "state": "CA",
+          "zip_code": "95128"
+        },
+        "id": "V_VROeNXu5KIm20n4FJJ8w",
+        "categories": [
+          {
+            "alias": "hotdogs",
+            "title": "Fast Food"
+          },
+          {
+            "alias": "chicken_wings",
+            "title": "Chicken Wings"
+          },
+          {
+            "alias": "chickenshop",
+            "title": "Chicken Shop"
+          }
+        ],
+        "is_closed": false
+      },
+      {
+        "distance": 9712.28399558625,
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/9h8ZRkv7FG8ul4H_Fk3dtg/o.jpg",
+        "rating": 2.5,
+        "coordinates": {
+          "latitude": 37.40372,
+          "longitude": -121.88058
+        },
+        "review_count": 113,
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "url": "https://www.yelp.com/biz/kfc-san-jose-8?adjust_creative=W70yu8CkVtJTt84eiF-g2w&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=W70yu8CkVtJTt84eiF-g2w",
+        "display_phone": "(408) 262-4444",
+        "phone": "+14082624444",
+        "price": "$",
+        "name": "KFC",
+        "alias": "kfc-san-jose-8",
+        "location": {
+          "country": "US",
+          "address3": "",
+          "address2": "",
+          "city": "San Jose",
+          "address1": "2672 Cropley Avenue",
+          "display_address": [
+            "2672 Cropley Avenue",
+            "San Jose, CA 95132"
+          ],
+          "state": "CA",
+          "zip_code": "95132"
+        },
+        "id": "FAMhn9mZvQ90CM-bGsEJvw",
+        "categories": [
+          {
+            "alias": "hotdogs",
+            "title": "Fast Food"
+          },
+          {
+            "alias": "chicken_wings",
+            "title": "Chicken Wings"
+          },
+          {
+            "alias": "chickenshop",
+            "title": "Chicken Shop"
+          }
+        ],
+        "is_closed": false
+      },
+      {
+        "distance": 7381.761981926832,
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/QHbzX0CD0nchKeFApy6n3Q/o.jpg",
+        "rating": 3.0,
+        "coordinates": {
+          "latitude": 37.266664,
+          "longitude": -121.940225
+        },
+        "review_count": 146,
+        "transactions": [
+          "delivery",
+          "pickup"
+        ],
+        "url": "https://www.yelp.com/biz/kfc-san-jose-28?adjust_creative=W70yu8CkVtJTt84eiF-g2w&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=W70yu8CkVtJTt84eiF-g2w",
+        "display_phone": "(408) 371-0944",
+        "phone": "+14083710944",
+        "price": "$",
+        "name": "KFC",
+        "alias": "kfc-san-jose-28",
+        "location": {
+          "country": "US",
+          "address3": "",
+          "address2": "",
+          "city": "San Jose",
+          "address1": "3144 S Bascom Ave",
+          "display_address": [
+            "3144 S Bascom Ave",
+            "San Jose, CA 95124"
+          ],
+          "state": "CA",
+          "zip_code": "95124"
+        },
+        "id": "Kl7tw36Mj2-Xac_OcfO_5Q",
+        "categories": [
+          {
+            "alias": "hotdogs",
+            "title": "Fast Food"
+          },
+          {
+            "alias": "chicken_wings",
+            "title": "Chicken Wings"
+          },
+          {
+            "alias": "chickenshop",
+            "title": "Chicken Shop"
+          }
+        ],
+        "is_closed": false
+      }
+    ]
+  },
+  "status": 1
+}

@@ -2,14 +2,15 @@ import React, {useEffect} from "react";
 import RestaurantListItem from "./RestaurantListItem";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchAllRestaurants} from "../../services/restaurantsService";
+import {getRestaurantByLocation} from "../../services/searchRestaurantsServices";
 
-const selectAllRestaurants = (state) => state.restaurantsInfo;
+const selectAllRestaurants = (state) => state.searchRestaurants;
 const RestaurantList = () => {
     const restaurants = useSelector(selectAllRestaurants);
     const dispatch = useDispatch();
-    // useEffect(() => fetchAllRestaurants(dispatch, []));
-
+    const location = "seattle";
+    useEffect(() => {getRestaurantByLocation(dispatch,location)} ,[dispatch]);
+    console.log("HomeRestaurants", restaurants);
     return (
         <>
             <div className={"f-restaurant-list-category-title"}>
@@ -19,9 +20,9 @@ const RestaurantList = () => {
             <hr className="f-hr"/>
             <ul className={"f-restaurant-list-ul"}>
                 {
-                    restaurants.map(restaurant => {
+                    restaurants.data.businesses.map(restaurant => {
                         return <RestaurantListItem restaurant = {restaurant}/>
-                        
+
                     })
                 }
             </ul>

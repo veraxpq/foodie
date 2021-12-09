@@ -17,9 +17,6 @@ export const fetchAllMyComments = (dispatch,userId) =>
                            })
         );
 
-
-
-
 export const deleteComment = (dispatch, comment) =>
     fetch(`${COMMENT_API}/deleteReviewById?reviewId=${comment.id}`, {
         method: 'DELETE'
