@@ -8,9 +8,10 @@ import {fetchAllRestaurantProfile} from "../../services/myRestaurantProfileServi
 const selectAllProfileData = (state) => state.myRestaurantProfile;
 
 const RestaurantProfile = ({setEditProfile, edit}) => {
-    const profile = useSelector(selectAllProfileData);
+    const profileData = useSelector(selectAllProfileData);
     const dispatch = useDispatch();
     useEffect(() => fetchAllRestaurantProfile(dispatch), []);
+    console.log("res profile data",profileData)
 
     return (
 
@@ -20,7 +21,7 @@ const RestaurantProfile = ({setEditProfile, edit}) => {
             </li>
 
             {
-                profile.map((profile, idx) => {
+                profileData.data&&profileData.data.map((profile, idx) => {
                     return (
                         <RestaurantProfileItem edit={edit} setEditProfile={setEditProfile} key={idx}
                                              profile={profile}/>

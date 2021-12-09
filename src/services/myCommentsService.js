@@ -8,7 +8,7 @@ const COMMENT_API = 'https://foodie-mysql-database.herokuapp.com/foodie';
 export const fetchAllMyComments = (dispatch,userId) =>
     // ${comment.userId}
 
-    fetch(`${COMMENT_API}/getReviewsByUserId?id=${userId}`)
+    fetch(`${COMMENT_API}/getReviewsByUserId?id=5`)
         .then(response => response.json())
         .then(comments =>
                   dispatch({

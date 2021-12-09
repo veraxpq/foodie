@@ -26,7 +26,7 @@ const LoginComponent = () => {
                 }
                 else {
                     if (userData.userType===1) {
-                        navigate('/home')
+                        navigate('/personal_profile')
                     } else if (userData.userType === 0) {
                         navigate('/business_profile')
                     }
