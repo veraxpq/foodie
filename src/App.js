@@ -23,7 +23,6 @@ import RestaurantProfileScreen from "./components/MyRestaurantProfileScreen";
 import myRestaurantProfile from "./reducers/myRestaurantProfile";
 
 import SearchResult from "./components/SearchResult";
-import restaurantsInfo from "./reducers/restaurants";
 import myComments from "./reducers/myComments";
 import userInfo from "./reducers/logIn";
 import searchRestaurants from "./reducers/searchRestaurants";
@@ -39,7 +38,6 @@ import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
 // const store = createStore(reducer, applyMiddleware(logger));
 function App() {
     const reducer = combineReducers({personalProfile, businessProfile,myRestaurantProfile,restaurantsInfo, myComments, userInfo, searchRestaurants, restaurantDetail, restaurantReviewList, savedRestaurants})
-
     const store = createStore(reducer);
     return (
         <div>
