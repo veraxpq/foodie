@@ -16,7 +16,6 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
     }
 
     return (
-
         <div className="container">
             <div className="row mb-3">
                 <h2 className="wd-name-font text-right">Edit Profile</h2>

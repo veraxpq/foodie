@@ -5,14 +5,12 @@ import Category from "../Category";
 import {useNavigate, useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
 import SearchBar from "../SearchBar";
-
+import {getRestaurantByLocation, getRestaurantByTermAndLocation} from "../../services/searchRestaurantsServices";
 const SearchResult = () => {
-    // const term = useSelector((state)=>state.location);
-    // const location = useSelector((state)=>state.location);
     const params = useParams();
     const [searchedTerm, setSearchedTerm] = useState(params.term || '');
-    const [searchedLocation, setSearchedLocation] = useState(params.location || '');
-    console.log(searchedTerm, searchedLocation);
+    const [location, setLocation] = useState(params.location || '');
+    console.log(searchedTerm, location);
     return(
         <div>
             <div>
@@ -29,7 +27,7 @@ const SearchResult = () => {
                 </div>
                 <div className="col-10 col-lg-9 col-md-9 col-sm-9 col-xxl-9 col-xl-9 col-xs-10">
                     <div className="ms-5 pb-2 pt-2">
-                        <h2>Search {searchedLocation}</h2>
+                        <h2>Search {location}</h2>
                     </div>
                     <div className="ms-3 me-3">
                         <SearchResultComponent/>

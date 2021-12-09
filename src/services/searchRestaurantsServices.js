@@ -1,8 +1,6 @@
-const RESTAURANT_API = 'http://localhost:5000/rest/restaurantsService';
-
 
 export const getRestaurantByLocation = (dispatch, location) =>
-    fetch(`localhost:18081/getRestaurantByLocation?cityName={location}&term=restaurants`)
+    fetch(`localhost:18081/getRestaurantByLocation?cityName=${location}&term=restaurants`)
         .then(response => response.json())
         .then(restaurants =>
             dispatch({
@@ -16,7 +14,7 @@ export const getRestaurantByTermAndLocation = (dispatch, term, location) =>
         .then(response => response.json())
         .then(restaurants =>
             dispatch({
-                type: 'fetch-all-restaurants-by-location',
+                type: 'fetch-all-restaurants-by-term-and-location',
                 restaurants
             })
         );
