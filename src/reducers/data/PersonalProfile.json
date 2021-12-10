@@ -1,10 +1,14 @@
 [
   {
-    "id": 5,
-    "email": "12@gmail.com",
-    "username": "eeee",
-    "password": "asdf",
     "zipCode": "123",
-    "userType": 1
+    "password": "asdf",
+    "dayOfBirth": null,
+    "description": null,
+    "avatar": null,
+    "id": 5,
+    "userType": 1,
+    "savedRestaurants": null,
+    "email": "12@gmail.com",
+    "username": "eeee"
   }
 ]

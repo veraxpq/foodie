@@ -11,13 +11,13 @@ const SearchResultComponent = () => {
     const params = useParams();
     const term = params.term;
     const location = params.location;
-    console.log("search page params", term, location);
+    //console.log("search page params", term, location);
     const restaurants = useSelector(selectAllRestaurants);
     const dispatch = useDispatch();
     useEffect(()=>{
         getRestaurantByTermAndLocation(dispatch,term,location)},[dispatch])
     const allRestaurants = restaurants.data;
-    console.log("allRestaurants", restaurants);
+    //console.log("allRestaurants", restaurants);
     return(
         // <div></div>
         <ul className="list-group">
