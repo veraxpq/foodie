@@ -5,6 +5,7 @@ const myComments = (state = my_comments, action) => {
     // console.log("action.comment",action.comment)
     switch (action.type) {
         case 'fetch-all-comments':
+            console.log("action", action)
             console.log("action.comments",action.comments)
             return(action.comments);
             break;
