@@ -7,11 +7,13 @@ const EditPersonalUserProfile = ({setEditProfile}) => {
     return (
         <>
             {
-                profileData.map((profile, idx) => {
-                    return (
-                        <EditPersonalUserProfileComponent setEditProfile={setEditProfile} key={idx} profile={profile}/>
-                    );
-                })
+                // profileData.map((profile, idx) => {
+                //     return (
+                //         <EditPersonalUserProfileComponent setEditProfile={setEditProfile} key={idx} profile={profile}/>
+                //     );
+                // })
+                profileData&&profileData.data&&
+                <EditPersonalUserProfileComponent setEditProfile={setEditProfile} profile={profileData.data}/>
             }
 
         </>

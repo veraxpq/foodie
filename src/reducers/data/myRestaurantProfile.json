@@ -1,21 +1,22 @@
 [
   {
-    "restaurantName": "Joe's",
-    "address": "123 Main St, Boston, MA",
-    "restaurantPicture": "/images/joe.jpg",
-    "tag": "American Bar & Grill",
-    "rating": 3.9,
-    "_id":"123"
+    "id": 15,
+    "email": "12@gmail.com",
+    "username": "asfd",
+    "password": "asdf",
+    "zipCode": "123",
+    "userType": 1,
+    "name": "panda express",
+    "userId": 5
   },
   {
-    "firstName": "Joe",
-    "lastName": "Lee",
-    "restaurantName": "Joe's",
-    "email": "joe's@gmail.com",
-    "address": "345 Main St, Boston, MA",
-    "restaurantPicture": "/images/joe.jpg",
-    "tag": "American Bar & Grill",
-    "rating": 2.9,
-    "_id":"234"
+    "id": 16,
+    "email": "12@gmail.com",
+    "username": "asfd",
+    "password": "asdf",
+    "zipCode": "123",
+    "userType": 1,
+    "name": "cafe",
+    "userId": 5
   }
 ]

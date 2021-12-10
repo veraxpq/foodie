@@ -15,7 +15,7 @@ const LoginComponent = () => {
     const userData = useSelector(selectAllUserData);
     const [errorMsg, setErrorMsg]=useState("");
     const userId = userData.id
-    console.log(userId)
+    console.log("login user id",userId)
 
     const login = () => {
         logInUser(dispatch, user,userId)

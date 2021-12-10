@@ -1,14 +1,10 @@
 [
   {
-    "zipCode": "123",
-    "password": "asdf",
-    "dayOfBirth": "2001-09-01",
-    "description": null,
-    "avatar": "./images/foodie.jpg",
     "id": 5,
-    "userType": 1,
-    "savedRestaurants": null,
     "email": "12@gmail.com",
-    "username": "eeee"
+    "username": "eeee",
+    "password": "asdf",
+    "zipCode": "123",
+    "userType": 1
   }
 ]
