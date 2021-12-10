@@ -5,13 +5,13 @@ const savedRestaurants = (state = saved_restaurants, action) => {
 
   switch (action.type) {
     case 'fetch-all-saved':
-      return(action.saved_restaurants);
+      return(action.saveRestaurants);
       break;
 
     case 'save':
       const added = {
         _id: (new Date()).getTime() + '',
-        ...action.saved_restaurant,
+        ...action.saveRestaurant,
       };
       return ([
         added,
