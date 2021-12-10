@@ -2,23 +2,21 @@ const LOGIN_API = "https://foodie-mysql-database.herokuapp.com/foodie/login"
 const USER_INFO_API = "https://foodie-mysql-database.herokuapp.com/foodie/userInfo"
 const CREATE_USER_API = "https://foodie-mysql-database.herokuapp.com/foodie/createUser";
 const UPDATE_USER_API = "https://foodie-mysql-database.herokuapp.com/foodie/updateUserInfo";
-import { userConstants } from '../_constants';
 
-export const login = (dispatch, email, password) => {
-    const requestOptions = {
+export const login = (dispatch, email, password) =>
+    fetch(`${LOGIN_API}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
-    };
-    fetch(`${LOGIN_API}`, requestOptions)
+        body: JSON.stringify({ email, password })
+    })
         .then(response=>response.json())
         .then(user =>
             dispatch({
                 type: 'USERS_LOGIN_REQUEST',
                 user
-            });
+            })
         );
-}
+
 
 // export const logout() {
 //     // remove user from local storage to log user out

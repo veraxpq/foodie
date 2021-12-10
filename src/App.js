@@ -28,6 +28,7 @@ import searchRestaurants from "./reducers/searchRestaurants";
 import restaurantDetail from "./reducers/restaurantDetail";
 import restaurantReviewList from "./reducers/restaurantReviews";
 import savedRestaurants from "./reducers/savedRestaurants";
+import userReducer from "./reducers/userReducer";
 // import {applyMiddleware, combineReducers, createStore} from "redux";
 // import logger from 'redux-logger';
 import RestaurantDetailPage from "./components/RestaurantDetailPage";
@@ -36,7 +37,7 @@ import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
 // const reducer = combineReducers({})
 // const store = createStore(reducer, applyMiddleware(logger));
 function App() {
-    const reducer = combineReducers({personalProfile, businessProfile,myRestaurantProfile, myComments, userInfo, searchRestaurants, restaurantDetail, restaurantReviewList, savedRestaurants})
+    const reducer = combineReducers({personalProfile, businessProfile,myRestaurantProfile, myComments, userInfo, searchRestaurants, restaurantDetail, restaurantReviewList, savedRestaurants, userReducer})
     const store = createStore(reducer);
     return (
         <div>
