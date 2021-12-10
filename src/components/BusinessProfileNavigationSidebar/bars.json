@@ -19,7 +19,7 @@
         "link": "../PostRestaurantScreen",
         "icon":"fas fa-user-plus mt-1",
         "text": "Post New Restaurant",
-        "router": "/post_restaurant"
+        "router": "/post-new-restaurant"
 
 
     }
