@@ -7,7 +7,7 @@ import {addSaved} from "../../services/savedRestaurantsService";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllReviews} from "../../services/restaurantReviewService";
 
-const selectAllReviews = (state) => state.restaurantReviewList;
+
 
 const RestaurantDetailComponent = ({restaurant}) => {
   const dispatch = useDispatch();
@@ -21,7 +21,8 @@ const RestaurantDetailComponent = ({restaurant}) => {
     }
     addSaved(dispatch, save_restaurant);
   }
-  const id = restaurant.data.id;
+  const id = restaurant.data && restaurant.data.id;
+  const selectAllReviews = (state) => state.restaurantReviewList;
   const reviewList = useSelector(selectAllReviews);
   useEffect(() =>fetchAllReviews(dispatch,id), []);
   const reviews = reviewList.data && reviewList.data[0] && reviewList.data[0].reviews;
@@ -60,7 +61,7 @@ const RestaurantDetailComponent = ({restaurant}) => {
 
         </div>
         <div className={"f-margin-left"} style={{top: "-160px", position: "relative"}}>
-          <h2 className="f-bold mt-3">Menu</h2>
+          <h2 className="f-bold mt-3">Photos</h2>
           <hr className="f-margin-right" style={{color:"darkgray"}}/>
           <div className={"row"}>
             {
