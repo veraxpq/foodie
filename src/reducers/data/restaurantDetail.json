@@ -1,9 +1,97 @@
-[
-  {
-    "name": "Late night Chocol",
-    "rating": 4,
-    "image": "../../../images/restaurant2.png",
-    "description": "We invite you to enjoy our Spanish inspired cuisine, made with the best and most natural ingredients available from both Spain and California. Mat Schuster, Canela’s executive chef, has dedicated his life to creating sophisticated and unforgettable flavors using the",
-    "location": "Milpitas 95011"
-  }
-]
+{
+  "data": {
+    "hours": [
+      {
+        "is_open_now": false,
+        "hours_type": "REGULAR",
+        "open": [
+          {
+            "is_overnight": false,
+            "start": "0800",
+            "end": "2000",
+            "day": 0
+          },
+          {
+            "is_overnight": false,
+            "start": "0800",
+            "end": "2000",
+            "day": 1
+          },
+          {
+            "is_overnight": false,
+            "start": "0800",
+            "end": "2000",
+            "day": 2
+          },
+          {
+            "is_overnight": false,
+            "start": "0800",
+            "end": "2000",
+            "day": 3
+          },
+          {
+            "is_overnight": false,
+            "start": "0800",
+            "end": "2000",
+            "day": 4
+          },
+          {
+            "is_overnight": false,
+            "start": "0800",
+            "end": "2000",
+            "day": 5
+          },
+          {
+            "is_overnight": false,
+            "start": "0800",
+            "end": "2000",
+            "day": 6
+          }
+        ]
+      }
+    ],
+    "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
+    "rating": 4.5,
+    "coordinates": {
+      "latitude": 40.779961,
+      "longitude": -73.980299
+    },
+    "review_count": 8594,
+    "transactions": [],
+    "photos": [
+      "https://s3-media3.fl.yelpcdn.com/bphoto/hCp7TJqo1m_rGPkvso4dxw/o.jpg",
+      "https://s3-media2.fl.yelpcdn.com/bphoto/k4_WRSwdG0OOmuP7xJtM6g/o.jpg",
+      "https://s3-media1.fl.yelpcdn.com/bphoto/ElQFlcl5wBXfn1qbfweYsg/o.jpg"
+    ],
+    "url": "https://www.yelp.com/biz/levain-bakery-new-york?adjust_creative=W70yu8CkVtJTt84eiF-g2w&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=W70yu8CkVtJTt84eiF-g2w",
+    "is_claimed": true,
+    "display_phone": "(917) 464-3769",
+    "phone": "+19174643769",
+    "price": "$$",
+    "name": "Levain Bakery",
+    "alias": "levain-bakery-new-york",
+    "location": {
+      "country": "US",
+      "cross_streets": "Columbus Ave & Amsterdam Ave",
+      "address3": "",
+      "address2": "",
+      "city": "New York",
+      "address1": "167 W 74th St",
+      "display_address": [
+        "167 W 74th St",
+        "New York, NY 10023"
+      ],
+      "state": "NY",
+      "zip_code": "10023"
+    },
+    "id": "H4jJ7XB3CetIr1pg56CczQ",
+    "categories": [
+      {
+        "alias": "bakeries",
+        "title": "Bakeries"
+      }
+    ],
+    "is_closed": false
+  },
+  "status": 1
+}

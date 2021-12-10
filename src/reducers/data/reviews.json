@@ -1,23 +1,53 @@
-[
-  {
-    "name": "Andrea",
-    "time_created": "11/11/2021",
-    "rating": 5,
-    "text": "Dolar Shop is one of my go-to hot pot outings to impress visiting friends and family. The atmosphere is beautiful and the service feels like you're in a higher scale hot pot restaurant. On top of that, the quality of food is great.",
-    "location": "Seattle, WA"
-  },
-  {
-    "name": "Victor",
-    "time_created": "11/7/2021",
-    "rating": 4,
-    "text": "In any regard I would say the experience here was very good however the only negative was the lack of communication with servers not telling the other servers that my hot pot wasn't beef and she poured more broth into my pot, but they replaced everything but everything was cooked so I just had to wait to recook everything. 8/10 Otherwise great service.",
-    "location": "Renton, WA"
-  },
-  {
-    "name": "Wendy",
-    "time_created": "11/23/2020",
-    "rating": 3,
-    "text": "Overall the dining experience itself was decent. They socially distanced the tables and put sauces, side dishes, fruits... anything that you can find at the bar, into individual plastic containers. This made sure that the food inside is not contaminated. We saw our waitress one more time during the entire visit. She was busy catering to another table, asking them if they needed anything else, in Mandarin. But when she passed our table we received no attention whatsoever. There is definitely some preference from this waitress specifically to cater to those who spoke Mandarin.  I guess if I had known that I would have spoken to her in Mandarin as soon as we entered the restaurant. In total we spent $189 for two people. I think it's a hefty price for the experience and the food. I would recommend going elsewhere to spend your money. In fact, I remember telling my friend that we got more service at Boiling Point than we did here, and BP tastes even better.",
-    "location": "Lacey, WA"
-  }
-]
+{
+  "data": [
+    {
+      "total": 1485,
+      "possible_languages": [
+        "en",
+        "es"
+      ],
+      "reviews": [
+        {
+          "rating": 4,
+          "time_created": "2021-12-03 05:13:18",
+          "id": "rG1PYfs0kGM-hGK53NWwbQ",
+          "text": "We have celebrated my birthday here. Since it was a surprise I wasn't the one who made the reservation. When my bf placed the reservation he told me if we...",
+          "user": {
+            "profile_url": "https://www.yelp.com/user_details?userid=AUeb_LE04wcVeJpz6l-tfQ",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/photo/YjwOQ3j4JyX8pMXxzUbfLg/o.jpg",
+            "name": "Ruby Jade M.",
+            "id": "AUeb_LE04wcVeJpz6l-tfQ"
+          },
+          "url": "https://www.yelp.com/biz/the-grandview-restaurant-san-jose?adjust_creative=W70yu8CkVtJTt84eiF-g2w&hrid=rG1PYfs0kGM-hGK53NWwbQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=W70yu8CkVtJTt84eiF-g2w"
+        },
+        {
+          "rating": 5,
+          "time_created": "2021-11-28 10:48:14",
+          "id": "bm2ekOjA1teRF182GwsLgA",
+          "text": "I honestly couldn't wait to write a review for this place after dining here.\n\nFrom how easy it was to make a reservation to being taken care of attentively...",
+          "user": {
+            "profile_url": "https://www.yelp.com/user_details?userid=0yrELbYZgQa-89OiJXAulg",
+            "image_url": "https://s3-media1.fl.yelpcdn.com/photo/MzuWPpMNqA0acu52N6GNGQ/o.jpg",
+            "name": "Elise R.",
+            "id": "0yrELbYZgQa-89OiJXAulg"
+          },
+          "url": "https://www.yelp.com/biz/the-grandview-restaurant-san-jose?adjust_creative=W70yu8CkVtJTt84eiF-g2w&hrid=bm2ekOjA1teRF182GwsLgA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=W70yu8CkVtJTt84eiF-g2w"
+        },
+        {
+          "rating": 3,
+          "time_created": "2021-11-20 09:20:35",
+          "id": "89CBX5OX-1k8uz4YYV1gTw",
+          "text": "Been here twice. People don't come for the food, but more so the view and exclusivity. Very good spot for birthdays and/or celebrations. \n\nThe food was...",
+          "user": {
+            "profile_url": "https://www.yelp.com/user_details?userid=ZhkLKuxDXaKG-iRfVvt8OA",
+            "image_url": "https://s3-media3.fl.yelpcdn.com/photo/EzUyeNSBpcCFyPJcUvJz7Q/o.jpg",
+            "name": "Kimberly N.",
+            "id": "ZhkLKuxDXaKG-iRfVvt8OA"
+          },
+          "url": "https://www.yelp.com/biz/the-grandview-restaurant-san-jose?adjust_creative=W70yu8CkVtJTt84eiF-g2w&hrid=89CBX5OX-1k8uz4YYV1gTw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=W70yu8CkVtJTt84eiF-g2w"
+        }
+      ]
+    }
+  ],
+  "status": 1
+}

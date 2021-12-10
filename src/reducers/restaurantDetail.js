@@ -4,7 +4,7 @@ import restaurant from './data/restaurantDetail.json'
 const restaurantDetail = (state = restaurant, action) => {
   switch (action.type) {
     case 'fetch-all-detail':
-      return( action.restaurantDetail);
+      return( action.RestaurantDetail);
       break;
 
     default:
