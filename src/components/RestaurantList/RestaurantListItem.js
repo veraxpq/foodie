@@ -14,12 +14,12 @@ const RestaurantListItem = (restaurant) => {
     return (
         <li className="card f-restaurant-item-card col-3 align-items-stretch">
             <div>
-                <Link to={`/restaurant_detail/${restaurant.name}`}>
+                <Link to={`/restaurant_detail/${restaurant.id}`}>
                     <img
                         src={restaurant.image_url} className="card-img-top f-home-restaurant-pic" alt="Fogo de Chao"/>
                 </Link>
                 <div className="card-body">
-                    <Link to={`/restaurant_detail/${restaurant.name}`} className="f-restaurant-result-name">
+                    <Link to={`/restaurant_detail/${restaurant.id}`} className="f-restaurant-result-name">
                         <h5 className="card-title">{restaurant.name}</h5>
                     </Link>
                     <div>

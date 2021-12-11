@@ -1,13 +1,29 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {useSelector} from "react-redux";
-
+import {useNavigate} from "react-router-dom";
 
 
 const TopBarComponent = () => {
-    const selectAllUserData = (state) => state.userInfo;
-    const userData = useSelector(selectAllUserData);
-    console.log(userData)
+    // const selectAllUserData = (state) => state.userInfo;
+    const navigate = useNavigate();
+    const userName = localStorage.getItem("username");
+    console.log("usename at topbar", userName)
+
+    function submit(e) {
+        if (localStorage.getItem('userId')) {
+            localStorage.clear();
+            navigate(`/home`);
+        }
+        else navigate(`/login`)
+    }
+    function loginCondition() {
+        if (localStorage.getItem('userId')){
+            return  <div>LogOut</div>;
+        }
+        else return <div>Login</div>;
+    }
+
     return (
         <>
             <div className={"f-topbar-occupy"}></div>
@@ -15,6 +31,9 @@ const TopBarComponent = () => {
                 <Link to={"/home"} className={"f-align-left f-logo"}>
                     Foodie
                 </Link>
+                <div className="f-login-align-right">
+                    <button onClick={submit} className="btn btn-primary btn-sm">{loginCondition()}</button>
+                </div>
                 <div className={"f-align-right"}>
                     {/*<div className="dropdown-divider"></div>*/}
                     <div className="nav-item dropdown">
@@ -22,10 +41,9 @@ const TopBarComponent = () => {
                            aria-haspopup="true" aria-expanded="false">
                             <i className="fas fa-bars"></i>
                         </a>
-
                         <div className="dropdown-menu dropdown-menu-end">
                             <div className={"f-sidebar-hi"}>
-                                Hi, {userData.username}!
+                                Hi {userName}!
                             </div>
                             <div className="list-group ">
                                 <Link to={"/home"} className={"list-group-item dropdown-item"}>
@@ -48,7 +66,7 @@ const TopBarComponent = () => {
                                 {/*        </div>*/}
                                 {/*    </div>*/}
                                 {/*</Link>*/}
-                                <Link to={"/search"} className={"list-group-item dropdown-item"}>
+                                <Link to={"/search/restaurant/seattle"} className={"list-group-item dropdown-item"}>
                                     <div className="row">
                                         <div className="col-2">
                                             <i className="far fa-bell"></i>
@@ -70,47 +88,16 @@ const TopBarComponent = () => {
                                 <Link to={"/privacy_policy"} className={"list-group-item dropdown-item"}>
                                     <div className="row">
                                         <div className="col-2">
-                                            <i className="fas fa-user-secret"></i>                                       </div>
+                                            <i className="fas fa-user-secret"></i>
+                                        </div>
                                         <div className="d-none d-xl-block col-10">
                                             Privacy Policy
                                         </div>
                                     </div>
                                 </Link>
-                                <Link to={"/login"} className={"list-group-item f-sidebar-logout dropdown-item"}>
-                                    <div className="row">
-                                        <div className="col-2">
-                                        </div>
-                                        <div className="d-none d-xl-block col-10">
-                                            Log out
-                                        </div>
-                                    </div>
-                                </Link>
-                                {/*<div className={"list-group-item wd-left-bg" +*/}
-                                {/*(active.status === 'Lists' ? ' active' : '')}>*/}
-                                {/*    <div className="row">*/}
-                                {/*        <div className="col-2">*/}
-                                {/*            <i className="far fa-list-alt"></i>*/}
-                                {/*        </div>*/}
-                                {/*        <div className="d-none d-xl-block col-10">*/}
-                                {/*            Lists*/}
-                                {/*        </div>*/}
-                                {/*    </div>*/}
-                                {/*</div>*/}
                             </div>
                         </div>
                     </div>
-                    {/*<div className="btn-group">*/}
-                    {/*    <button type="button" className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"*/}
-                    {/*            aria-expanded="false">*/}
-                    {/*        <i className="fas fa-bars"></i>*/}
-                    {/*    </button>*/}
-                    {/*    <ul className="dropdown-menu dropdown-menu-end">*/}
-                    {/*        <li><a className="dropdown-item" href="#">Menu item</a></li>*/}
-                    {/*        <li><a className="dropdown-item" href="#">Menu item</a></li>*/}
-                    {/*        <li><a className="dropdown-item" href="#">Menu item</a></li>*/}
-                    {/*    </ul>*/}
-                    {/*</div>*/}
-
                 </div>
             </div>
         </>

@@ -1,17 +1,15 @@
 import {Link} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {login} from "../../services/userService";
 import {useNavigate} from "react-router-dom";
 
 const LOGIN_API = "https://foodie-mysql-database.herokuapp.com/foodie/login";
 const selectUsers = (state) => state.userReducer;
 const LoginComponent2 = () => {
-    // localStorage.clear();
+
     const [email, setEmail] = useState({});
     const [password, setPassword] = useState({});
     const [redirect, setRedirect] = useState(false);
-
     const loggedInUser = useSelector(selectUsers);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -32,12 +30,14 @@ const LoginComponent2 = () => {
         localStorage.setItem('userId',user.data.id);
         localStorage.setItem('token',user.data.token);
         localStorage.setItem('userType',user.data.userType);
+        localStorage.setItem('username',user.data.username);
         console.log('current userId', localStorage.getItem('userId'))
         console.log('current token', localStorage.getItem('token'))
         console.log('current dataType', localStorage.getItem('userType'))
+        console.log('current username', localStorage.getItem('username'))
+
         setRedirect(true);
     }
-
 
     if (redirect){
         if (localStorage.getItem('userType') === "1") {navigate(`/personal_profile`);}
