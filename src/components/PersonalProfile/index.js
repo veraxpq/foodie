@@ -10,9 +10,10 @@ const selectUser = (state) => state.userReducer;
 const PersonalProfile = ({setEditProfile, edit}) => {
     const loggedInUser = useSelector(selectUser);
     const dispatch = useDispatch();
-    useEffect(() => getCompleteUserProfileById(dispatch, loggedInUser), []);
+    let userId = localStorage.getItem("userId");
+    console.log("Get userId from personal profile", userId)
+    useEffect(() => getCompleteUserProfileById(dispatch, userId), []);
     console.log("Complete User profile", loggedInUser)
-
     return(
         <div>
 

@@ -7,6 +7,7 @@ import {useNavigate} from "react-router-dom";
 const LOGIN_API = "https://foodie-mysql-database.herokuapp.com/foodie/login";
 const selectUsers = (state) => state.userReducer;
 const LoginComponent2 = () => {
+    // localStorage.clear();
     const [email, setEmail] = useState({});
     const [password, setPassword] = useState({});
     const [redirect, setRedirect] = useState(false);
@@ -23,19 +24,25 @@ const LoginComponent2 = () => {
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include',
             body: JSON.stringify({ email, password })
-        }).then(response => response.json());
+        })
+            .then(response => response.json());
         const user = await response;
         console.log("USER_LOGIN_API return", user);
-        localStorage.setItem('token',user.data.token);
+        if (user.status === 0) alert("Incorrect email and password combination");
         localStorage.setItem('userId',user.data.id);
-        console.log('curren userId', localStorage.getItem('userId'))
-        console.log('current token', localStorage.getItem('token'));
+        localStorage.setItem('token',user.data.token);
+        localStorage.setItem('userType',user.data.userType);
+        console.log('current userId', localStorage.getItem('userId'))
+        console.log('current token', localStorage.getItem('token'))
+        console.log('current dataType', localStorage.getItem('userType'))
         setRedirect(true);
     }
 
-    // if (redirect){
-    //     navigate('/personal_profile');
-    // }
+
+    if (redirect){
+        if (localStorage.getItem('userType') === "1") {navigate(`/personal_profile`);}
+        if (localStorage.getItem('userType') === "0") {navigate(`/business_profile`);}
+    }
 
     return (
         <div className={"container"}>

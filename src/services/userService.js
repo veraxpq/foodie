@@ -3,22 +3,22 @@ const USER_INFO_API = "https://foodie-mysql-database.herokuapp.com/foodie/userIn
 const CREATE_USER_API = "https://foodie-mysql-database.herokuapp.com/foodie/createUser";
 const UPDATE_USER_API = "https://foodie-mysql-database.herokuapp.com/foodie/updateUserInfo";
 
-export const login = (dispatch, email, password) =>
-    fetch(`${LOGIN_API}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-    })
-        .then(response=>response.json())
-        .then(user =>
-            dispatch({
-                type: 'USERS_LOGIN_REQUEST',
-                user
-            })
-        );
+// export const login = (dispatch, email, password) =>
+//     fetch(`${LOGIN_API}`, {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ email, password })
+//     })
+//         .then(response=>response.json())
+//         .then(user =>
+//             dispatch({
+//                 type: 'USERS_LOGIN_REQUEST',
+//                 user
+//             })
+//         );
 
-export const getCompleteUserProfileById = (dispatch, userState) =>{
-    fetch(`${USER_INFO_API}?id=${userState.data.id}`)
+export const getCompleteUserProfileById = (dispatch, userId) =>{
+    fetch(`${USER_INFO_API}?id=${userId}`)
         .then(response => response.json())
         .then(user=>
             dispatch({
