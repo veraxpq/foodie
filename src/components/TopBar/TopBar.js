@@ -84,7 +84,7 @@ const TopBarComponent = () => {
                                         </div>
                                     </div>
                                 </Link>
-                                <div onClick={submitProfile} className={"list-group-item dropdown-item"}>
+                                <div onClick={submitProfile} className={"list-group-item dropdown-item f-hand-cursor"}>
                                     <div className="row">
                                         <div className="col-2">
                                             <i className="far fa-user"></i>                                        </div>

@@ -80,8 +80,6 @@ const LoginComponent2 = () => {
 
                             <button onClick={loginClickHandler} type="submit" className="btn btn-primary f-register-submit mt-2 mb-5">Submit</button>
 
-                            <div onClick={loginClickHandler}>ddghdhjdh</div>
-
                         </fieldset>
                     </form>
                 </div>
