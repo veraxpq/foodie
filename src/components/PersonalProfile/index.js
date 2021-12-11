@@ -12,7 +12,7 @@ const PersonalProfile = ({setEditProfile, edit}) => {
     const dispatch = useDispatch();
     const selectUserProfile = (state) => state.personalProfile;
     const profileData = useSelector(selectUserProfile);
-    console.log(profileData);
+    console.log("personal profileData before effect", profileData);
 
     // useEffect(async() => {
     //     const userInfo = await fetch(`${USER_INFO_API}?id=${userId}`)
@@ -20,7 +20,7 @@ const PersonalProfile = ({setEditProfile, edit}) => {
     //     };
     // });
     useEffect(()=>{fetchAllPersonalProfile(dispatch,userId)},[dispatch])
-    console.log(profileData);
+    console.log("personal profileData after effect", profileData);
     return(
         <div>
             {

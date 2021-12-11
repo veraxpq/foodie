@@ -5,19 +5,17 @@ import {useDispatch, useSelector} from "react-redux";
 import BusinessProfileItem from "./BusinessProfileItem";
 import {fetchAllBusinessProfile} from "../../services/businessProfileService";
 
-
-const selectAllProfileData = (state) => state.businessProfile;
-
+const USER_INFO_API = "https://foodie-mysql-database.herokuapp.com/foodie/userInfo";
 const BusinessProfile = ({setEditProfile, edit}) => {
-    const profileData = useSelector(selectAllProfileData);
+    let userId = localStorage.getItem("userId");
+    console.log("Get userId from localStorage in business profile", userId)
     const dispatch = useDispatch();
 
-    const selectAllUserData = (state) => state.userInfo;
-    const userData = useSelector(selectAllUserData);
-    const userId = userData.id
-    useEffect(() => fetchAllBusinessProfile(dispatch, userId), []);
-    console.log("id",userId )
-    console.log("business profileData",profileData)
+    const selectBusinessProfile = (state) => state.businessProfile;
+    const profileData = useSelector(selectBusinessProfile);
+    console.log("business profileData before effect",profileData)
+    useEffect(() => fetchAllBusinessProfile(dispatch, userId), [dispatch]);
+    console.log("business profileData after effect",profileData)
 
 //     return (
 //
