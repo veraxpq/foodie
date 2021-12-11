@@ -9,8 +9,11 @@ const personalProfile = (state = profileJSON, action) => {
             break;
 
         case 'update-personal-profile':
-            const newState = [action.PersonalProfile];
-            return newState;
+            console.log("new state11111111111111111")
+            const newState = (action.PersonalProfile);
+            console.log("new state", newState)
+            //return newState;
+            return ({...state,"data":newState});
             break;
 
         default:

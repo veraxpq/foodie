@@ -23,7 +23,7 @@ const ProfileItem = ({profile, setEditProfile}) => {
             <div className="row">
                 <span className="mt-1">
                     <i className="fas fa-map-marker-alt fa-xs ms-2"></i>
-                    <span className="wd-icon-text-font ms-1">{"Zipcode" + profile.zipCode}</span>
+                    <span className="wd-icon-text-font ms-1">{profile.zipCode}</span>
 
                     {/*<i className="fas fa-ankh fa-xs ms-3"></i>*/}
                     {/*<span className="wd-icon-text-font ms-1">*/}

@@ -17,7 +17,7 @@ export const logInUser = (dispatch,user,id) =>
     fetch(`${USER_API}`, {
         method: 'POST',
         body: JSON.stringify(user),
-        //credentials: 'include',
+        credentials: 'include',
         headers: {
             'content-type': 'application/json'
         }

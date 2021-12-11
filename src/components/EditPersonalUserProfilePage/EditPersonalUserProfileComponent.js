@@ -13,12 +13,13 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
     const selectAllUserData = (state) => state.userInfo;
     const userData = useSelector(selectAllUserData);
     const userToken = userData.token
-    console.log("token", userToken)
+    // console.log("token", userToken)
     const updateProfileClickHandler = () => {
 
         updateCurrentPersonalProfile(dispatch, localProfile,userToken);
 
     }
+
 
     return (
         <div className="container">
@@ -85,7 +86,7 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
                            onChange={(event) => {
                                setLocalProfile({...localProfile, zipCode: event.target.value})
                            }}
-                           placeholder="12345" defaultValue={profile.zipCode}/>
+                           placeholder="MA12345" defaultValue={profile.zipCode}/>
                 </div>
                 {/*<div className="col-12">*/}
                 {/*    <label htmlFor="inputAddress2" className="form-label">Address 2</label>*/}
