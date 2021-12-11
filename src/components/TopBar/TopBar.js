@@ -17,12 +17,20 @@ const TopBarComponent = () => {
         }
         else navigate(`/login`)
     }
+    function submitProfile(e){
+        if (localStorage.getItem('userType') === "1") {
+            localStorage.clear();
+            navigate(`/personal_profile`);
+        }
+        else navigate(`/business_profile`)
+    }
     function loginCondition() {
         if (localStorage.getItem('userId')){
             return  <div>LogOut</div>;
         }
         else return <div>Login</div>;
     }
+
 
     return (
         <>
@@ -76,7 +84,7 @@ const TopBarComponent = () => {
                                         </div>
                                     </div>
                                 </Link>
-                                <Link to={"/personal_profile"} className={"list-group-item dropdown-item"}>
+                                <div onClick={submitProfile} className={"list-group-item dropdown-item"}>
                                     <div className="row">
                                         <div className="col-2">
                                             <i className="far fa-user"></i>                                        </div>
@@ -84,7 +92,7 @@ const TopBarComponent = () => {
                                             Profile
                                         </div>
                                     </div>
-                                </Link>
+                                </div>
                                 <Link to={"/privacy_policy"} className={"list-group-item dropdown-item"}>
                                     <div className="row">
                                         <div className="col-2">
