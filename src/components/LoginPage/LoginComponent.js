@@ -72,7 +72,16 @@ const LoginComponent = () => {
 
                             <button onClick={login} type="submit" className="btn btn-primary f-register-submit mt-2 mb-5">Submit</button>
 
-                            <div onClick={login}>ddghdhjdh</div>
+                            {/*<div onClick={login}>ddghdhjdh</div>*/}
+
+                            <button className="btn btn-primary btn-block"
+                                    type="submit"
+                                    onClick={(e) => {
+                                        e.preventDefault()
+                                        login()
+                                    }}>
+                                Log in
+                            </button>
 
                         </fieldset>
                     </form>

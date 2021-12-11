@@ -25,10 +25,10 @@ const ProfileItem = ({profile, setEditProfile}) => {
                     <i className="fas fa-map-marker-alt fa-xs ms-2"></i>
                     <span className="wd-icon-text-font ms-1">{"Zipcode" + profile.zipCode}</span>
 
-                    <i className="fas fa-ankh fa-xs ms-3"></i>
-                    <span className="wd-icon-text-font ms-1">
-                        {"Born " + profile.dayOfBirth}
-                    </span>
+                    {/*<i className="fas fa-ankh fa-xs ms-3"></i>*/}
+                    {/*<span className="wd-icon-text-font ms-1">*/}
+                    {/*    {"Born " + profile.dayOfBirth}*/}
+                    {/*</span>*/}
                     <i className="fas fa-envelope-square fa-xs ms-3"></i>
                     <span className="wd-icon-text-font ms-1">
                         {profile.email}
