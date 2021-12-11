@@ -1,6 +1,7 @@
 import logInJSON from './data/LognIn.json'
 
-const users = (state = logInJSON, action) => {
+// return user from LOGIN_API
+const userReducer = (state = logInJSON, action) => {
     switch (action.type) {
         case 'USERS_LOGIN_REQUEST':
             console.log("user log in get action", action)
@@ -8,9 +9,12 @@ const users = (state = logInJSON, action) => {
                 alert("Your email/password does not exists!")
             }
             else {return action.user};
+        case 'GET_USER_BY_ID':
+            console.log("user profile page get action", action)
+            return action.user;
         default:
             return state;
     }
 };
 
-export default users;
+export default userReducer;

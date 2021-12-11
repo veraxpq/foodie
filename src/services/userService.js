@@ -17,6 +17,15 @@ export const login = (dispatch, email, password) =>
             })
         );
 
+export const getCompleteUserProfileById = (dispatch, userState) =>{
+    fetch(`${USER_INFO_API}?id=${userState.data.id}`)
+        .then(response => response.json())
+        .then(user=>
+            dispatch({
+                type: 'GET_USER_BY_ID',
+                user
+            }));
+}
 
 // export const logout() {
 //     // remove user from local storage to log user out

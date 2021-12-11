@@ -4,26 +4,38 @@ import {useDispatch, useSelector} from "react-redux";
 import {login} from "../../services/userService";
 import {useNavigate} from "react-router-dom";
 
+const LOGIN_API = "https://foodie-mysql-database.herokuapp.com/foodie/login";
+const selectUsers = (state) => state.userReducer;
 const LoginComponent2 = () => {
     const [email, setEmail] = useState({});
     const [password, setPassword] = useState({});
-    const [user, setUser] = useState({});
+    const [redirect, setRedirect] = useState(false);
 
+    const loggedInUser = useSelector(selectUsers);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    // const selectAllUserData = (state) => state.userInfo;
-    // const userData = useSelector(selectAllUserData);
-    // const [errorMsg, setErrorMsg]=useState("");
-    // const userId = userData.id
-    // console.log("login user id",userId)
-    console.log("user input for login", email, password)
-
-    const loginClickHandler = () => {
-        login(dispatch, email, password)
-        console.log(user)
+    const loginClickHandler = async (e:SyntheticEvent) => {
+        e.preventDefault();
+        console.log("user input at logging in", {email, password})
+        const response = await fetch(`${LOGIN_API}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify({ email, password })
+        }).then(response => response.json());
+        const user = await response;
+        console.log("USER_LOGIN_API return", user);
+        localStorage.setItem('token',user.data.token);
+        localStorage.setItem('userId',user.data.id);
+        console.log('curren userId', localStorage.getItem('userId'))
+        console.log('current token', localStorage.getItem('token'));
+        setRedirect(true);
     }
 
+    // if (redirect){
+    //     navigate('/personal_profile');
+    // }
 
     return (
         <div className={"container"}>
