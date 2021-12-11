@@ -3,22 +3,17 @@ import React, {useEffect} from "react";
 import "./profile.css"
 import {useDispatch, useSelector} from "react-redux";
 import ProfileItem from "./ProfileItem";
-import {fetchAllPersonalProfile} from "../../services/personalProfileService";
+import {getCompleteUserProfileById} from "../../services/userService";
 
 
-const selectAllProfileData = (state) => state.personalProfile;
+const selectUser = (state) => state.userReducer;
 const PersonalProfile = ({setEditProfile, edit}) => {
-    const profileData = useSelector(selectAllProfileData);
+    const loggedInUser = useSelector(selectUser);
     const dispatch = useDispatch();
-
-    const selectAllUserData = (state) => state.userInfo;
-    const userData = useSelector(selectAllUserData);
-    const userId = userData.id
-    useEffect(() => fetchAllPersonalProfile(dispatch, userId), []);
-    console.log("profileData",profileData)
-
-
-
+    let userId = localStorage.getItem("userId");
+    console.log("Get userId from personal profile", userId)
+    useEffect(() => getCompleteUserProfileById(dispatch, userId), []);
+    console.log("Complete User profile", loggedInUser)
     return(
         <div>
 
@@ -35,8 +30,8 @@ const PersonalProfile = ({setEditProfile, edit}) => {
                 // })
 
 
-                profileData&&profileData.data&&
-                <ProfileItem edit={edit} setEditProfile={setEditProfile} profile={profileData.data}/>
+                // profileData&&profileData.data&&
+                // <ProfileItem edit={edit} setEditProfile={setEditProfile} profile={profileData.data}/>
 
             }
 
