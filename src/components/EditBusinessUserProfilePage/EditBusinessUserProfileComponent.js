@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {updateCurrentBusinessProfile} from "../../services/businessProfileService";
 
 
@@ -9,8 +9,13 @@ const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
         setLocalProfile(profile);
     }, []);
     const dispatch = useDispatch();
+
+    const selectAllUserData = (state) => state.userInfo;
+    const userData = useSelector(selectAllUserData);
+    const userToken = userData.token
+
     const updateProfileClickHandler = () => {
-        updateCurrentBusinessProfile(dispatch, localProfile);
+        updateCurrentBusinessProfile(dispatch, localProfile,userToken);
 
     }
 
@@ -38,13 +43,13 @@ const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
 
             <form className="row g-3">
                 <div className="col-md-12">
-                    <label htmlFor="inputFirstName4" className="form-label">Name</label>
+                    <label htmlFor="inputFirstName4" className="form-label">User Name</label>
                     <input type="text"
                            onChange={(event) => {
-                               setLocalProfile({...localProfile, name: event.target.value})
+                               setLocalProfile({...localProfile, username: event.target.value})
                            }}
                            className="form-control" id="inputFirstName4"
-                           defaultValue={profile.name}
+                           defaultValue={profile.username}
                     />
                 </div>
                 {/*<div className="col-md-6">*/}
@@ -86,25 +91,25 @@ const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
                            placeholder="example@gmail.com" defaultValue={profile.email}/>
                 </div>
 
-                <div className="col-md-12">
-                    <label htmlFor="inputPhone" className="form-label">Phone Number</label>
-                    <input type="tel"
-                           onChange={(event) => {
-                               setLocalProfile({...localProfile, tel: event.target.value})
-                           }}
-                           className="form-control" id="inputPhone"
-                           placeholder="888-888-8888" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"
-                           maxlength="12"  title="Ten digits code" required
-                           defaultValue={profile.tel}/>
-                </div>
+                {/*<div className="col-md-12">*/}
+                {/*    <label htmlFor="inputPhone" className="form-label">Phone Number</label>*/}
+                {/*    <input type="tel"*/}
+                {/*           onChange={(event) => {*/}
+                {/*               setLocalProfile({...localProfile, tel: event.target.value})*/}
+                {/*           }}*/}
+                {/*           className="form-control" id="inputPhone"*/}
+                {/*           placeholder="888-888-8888" pattern="[0-9]{3} [0-9]{3} [0-9]{4}"*/}
+                {/*           maxlength="12"  title="Ten digits code" required*/}
+                {/*           defaultValue={profile.tel}/>*/}
+                {/*</div>*/}
                 <div className="col-12">
-                    <label htmlFor="inputAddress" className="form-label">Address</label>
+                    <label htmlFor="inputAddress" className="form-label">Zip Code</label>
                     <input type="text"
                            onChange={(event) => {
-                               setLocalProfile({...localProfile, address: event.target.value})
+                               setLocalProfile({...localProfile, zipCode: event.target.value})
                            }}
                            className="form-control" id="inputAddress"
-                           placeholder="1234 Main St, Boston, MA" defaultValue={profile.address}/>
+                           placeholder="MA02135" defaultValue={profile.zipCode}/>
                 </div>
 
                 {/*<div className="col-md-6">*/}

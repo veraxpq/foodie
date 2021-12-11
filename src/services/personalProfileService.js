@@ -1,6 +1,5 @@
 const PROFILE_API = 'https://foodie-mysql-database.herokuapp.com';
-//const PROFILE_API = 'http://localhost:4000/api/profile';
-//const PROFILE_API = 'http://localhost:5000/rest/personalprofile';
+
 
 export const fetchAllPersonalProfile = (dispatch, id) =>
     // ${PROFILE_API}/foodie/userInfo?id=5
@@ -13,13 +12,15 @@ export const fetchAllPersonalProfile = (dispatch, id) =>
                            })
         );
 
-export const updateCurrentPersonalProfile = (dispatch, PersonalProfile) =>
-    fetch(`${PROFILE_API}/foodie/updateUserInfo?id=${PersonalProfile.id}`, {
+export const updateCurrentPersonalProfile = (dispatch, PersonalProfile,token) =>
+        // ?id=${PersonalProfile.id}
+    fetch(`${PROFILE_API}/foodie/updateUserInfo`, {
+        // mode: 'no-cors',
         method: 'PUT',
         body: JSON.stringify(PersonalProfile),
         headers: {
             'content-type': 'application/json',
-            // 'authorization':userInfo.token
+            'authorization':`${token}`
         }
     }).then(response =>
                 dispatch({

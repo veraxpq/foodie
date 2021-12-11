@@ -1,38 +1,42 @@
-import React, {useEffect} from "react";
-
+import React, {useEffect, useState} from "react";
 import "./profile.css"
 import {useDispatch, useSelector} from "react-redux";
 import ProfileItem from "./ProfileItem";
-import {getCompleteUserProfileById} from "../../services/userService";
+import {fetchAllPersonalProfile} from "../../services/personalProfileService";
 
+const USER_INFO_API = "https://foodie-mysql-database.herokuapp.com/foodie/userInfo";
 
-const selectUser = (state) => state.userReducer;
 const PersonalProfile = ({setEditProfile, edit}) => {
-    const loggedInUser = useSelector(selectUser);
-    const dispatch = useDispatch();
     let userId = localStorage.getItem("userId");
-    console.log("Get userId from personal profile", userId)
-    useEffect(() => getCompleteUserProfileById(dispatch, userId), []);
-    console.log("Complete User profile", loggedInUser)
+    console.log("Get userId from localStorage in personal profile", userId)
+    const dispatch = useDispatch();
+    const selectUserProfile = (state) => state.personalProfile;
+    const profileData = useSelector(selectUserProfile);
+    console.log(profileData);
+
+    // useEffect(async() => {
+    //     const userInfo = await fetch(`${USER_INFO_API}?id=${userId}`)
+    //         .then(response => response.json());
+    //     };
+    // });
+    useEffect(()=>{fetchAllPersonalProfile(dispatch,userId)},[dispatch])
+    console.log(profileData);
     return(
         <div>
-
             {
-                // <span>{JSON.stringify(profileData.data)}</span>
                 // profileData.data&&profileData.data
-                //profileData.data={} 不能被map因为他是一个json object， not an array
+                // // profileData.data={} 不能被map因为他是一个json object， not an array
                 // profileData&&profileData.data&& profileData.data
-
+                //
                 // profileData.data.map((profile, idx) => {
                 //     return (
                 //         <ProfileItem edit={edit} setEditProfile={setEditProfile} key={idx} profile={profile}/>
                 //     );
                 // })
-
-
-                // profileData&&profileData.data&&
-                // <ProfileItem edit={edit} setEditProfile={setEditProfile} profile={profileData.data}/>
-
+                //
+                //
+                profileData&&profileData.data&&
+                <ProfileItem edit={edit} setEditProfile={setEditProfile} profile={profileData.data}/>
             }
 
 

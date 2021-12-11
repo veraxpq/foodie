@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import './profile.css'
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {updateCurrentPersonalProfile} from "../../services/personalProfileService";
 
 const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
@@ -9,11 +9,17 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
         setLocalProfile(profile);
     }, []);
     const dispatch = useDispatch();
+
+    const selectAllUserData = (state) => state.userInfo;
+    const userData = useSelector(selectAllUserData);
+    const userToken = userData.token
+    // console.log("token", userToken)
     const updateProfileClickHandler = () => {
 
-        updateCurrentPersonalProfile(dispatch, localProfile);
+        updateCurrentPersonalProfile(dispatch, localProfile,userToken);
 
     }
+
 
     return (
         <div className="container">
@@ -80,7 +86,7 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
                            onChange={(event) => {
                                setLocalProfile({...localProfile, zipCode: event.target.value})
                            }}
-                           placeholder="12345" defaultValue={profile.zipCode}/>
+                           placeholder="MA12345" defaultValue={profile.zipCode}/>
                 </div>
                 {/*<div className="col-12">*/}
                 {/*    <label htmlFor="inputAddress2" className="form-label">Address 2</label>*/}
@@ -100,12 +106,13 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
                 {/*    <input type="text" className="form-control" id="inputZip"/>*/}
                 {/*</div>*/}
                 {/*<div className="col-12">*/}
-                    <h6>Birth Date</h6>
-                    <input type="date"
-                           onChange={(event) => {
-                               setLocalProfile({...localProfile, dayOfBirth: event.target.value})
-                           }}
-                           defaultValue={profile.dayOfBirth}/>
+                {/*    <h6>Birth Date</h6>*/}
+                {/*    <input type="date"*/}
+                {/*           onChange={(event) => {*/}
+                {/*               setLocalProfile({...localProfile, dayOfBirth: event.target.value})*/}
+                {/*           }}*/}
+                {/*           defaultValue={profile.dayOfBirth}/>*/}
+
                 {/*</div>*/}
 
             </form>

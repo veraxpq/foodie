@@ -13,12 +13,11 @@ const USER_API = "https://foodie-mysql-database.herokuapp.com/foodie/login"
 //         );
 
 
-
 export const logInUser = (dispatch,user,id) =>
     fetch(`${USER_API}`, {
         method: 'POST',
         body: JSON.stringify(user),
-        // credentials: 'include',
+        credentials: 'include',
         headers: {
             'content-type': 'application/json'
         }
