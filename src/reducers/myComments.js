@@ -25,12 +25,16 @@ const myComments = (state = my_comments, action) => {
             const comment = {
                 _id: (new Date()).getTime() + '',
                 "time_created": "12/15/2021",
-                ...action.comment,
+                ...action.text,
+                "rating": 3,
+                "userId": 5,
+                "username": "jose"
             };
-            return ([
-                comment,
-                ...state,
-            ]);
+            return (
+                {...state,
+                    "data":state.data.push(comment)
+                }
+            );
 
         default:
             return(state);

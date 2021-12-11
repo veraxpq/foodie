@@ -26,6 +26,7 @@ const RestaurantDetailComponent = ({restaurant}) => {
   const reviewList = useSelector(selectAllReviews);
   useEffect(() =>fetchAllReviews(dispatch,id), []);
   const reviews = reviewList.data && reviewList.data[0] && reviewList.data[0].reviews;
+  //console.log("restaurant reviews",reviews)
   return (
       <>
         <TopBar/>

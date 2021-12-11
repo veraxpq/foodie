@@ -2,6 +2,7 @@ import profileJSON from './data/myRestaurantProfile.json'
 
 
 const myRestaurantProfile = (state = profileJSON, action) => {
+    //action.preventDefault();
     switch (action.type) {
         case 'fetch-all-myRestaurant-profile':
             return(action.RestaurantProfile);
@@ -14,21 +15,27 @@ const myRestaurantProfile = (state = profileJSON, action) => {
 
         case 'delete-my-restaurant':
             return (
-                state.filter(restaurant => restaurant._id !== action.RestaurantProfile._id)
+                {...state, data: state.data.filter(restaurant => restaurant._id !== action.RestaurantProfile._id)
+                }
             )
             break;
 
         case 'create-new-restaurant':
             const restaurant = {
                 _id: (new Date()).getTime() + '',
-                "rating": 0,
+                "rating": 2,
                 "image_url": "/images/restaurant1.png", //need update
-                ...action.restaurant
+                "userid": 5,
+                ...action.name,
             };
-            return ([
-                restaurant,
-                ...state,
-            ]);
+            // const name=action.name;
+            // console.log("post new restaurant",restaurant);
+            // console.log("post new name",name);
+            return (
+                {...state,
+                    data:[restaurant, ...state.data]
+                }
+            );
 
         default:
             return state;
