@@ -9,31 +9,61 @@ import {fetchAllBusinessProfile} from "../../services/businessProfileService";
 const selectAllProfileData = (state) => state.businessProfile;
 
 const BusinessProfile = ({setEditProfile, edit}) => {
-    const profile = useSelector(selectAllProfileData);
+    const profileData = useSelector(selectAllProfileData);
     const dispatch = useDispatch();
-    useEffect(() => fetchAllBusinessProfile(dispatch), []);
 
-    return (
+    const selectAllUserData = (state) => state.userInfo;
+    const userData = useSelector(selectAllUserData);
+    const userId = userData.id
+    useEffect(() => fetchAllBusinessProfile(dispatch, userId), []);
+    console.log("id",userId )
+    console.log("business profileData",profileData)
 
-        <ul className="list-group">
-            <li className="list-group-item">
-                <h3>Account Details</h3>
-            </li>
+//     return (
+//
+//         // profileData&&profileData.data&&
+//
+//         <ul className="list-group">
+//             <li className="list-group-item">
+//                 <h3>Account Details</h3>
+//             </li>
+//
+//             {
+//                 profileData&&profileData.data&&profileData.map((profile, idx) => {
+//                     return (
+//                         <BusinessProfileItem edit={edit} setEditProfile={setEditProfile} key={idx}
+//                                              profile={profile}/>
+//                     );
+//                 })
+//             }
+//
+//
+//         </ul>
+//
+//     );
+//
+// }
 
-            {
-                profile.map((profile, idx) => {
-                    return (
-                        <BusinessProfileItem edit={edit} setEditProfile={setEditProfile} key={idx}
-                                             profile={profile}/>
-                    );
-                })
-            }
 
 
-        </ul>
 
-    );
+return(
+    <div>
 
+        {
+
+            profileData&&profileData.data&&
+            <BusinessProfileItem edit={edit} setEditProfile={setEditProfile} profile={profileData.data}/>
+
+        }
+
+    </div>
+
+);
 }
+
+
+
+
 
 export default BusinessProfile;

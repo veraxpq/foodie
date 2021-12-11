@@ -1,8 +1,8 @@
-const PROFILE_API = 'https://foodie-mysql-database.herokuapp.com/';
+const PROFILE_API = 'https://foodie-mysql-database.herokuapp.com';
 //const PROFILE_API = 'http://localhost:5000/rest/businessprofile';
 
-export const fetchAllBusinessProfile = (dispatch) =>
-    fetch(PROFILE_API)
+export const fetchAllBusinessProfile = (dispatch,id) =>
+    fetch(`${PROFILE_API}/foodie/userInfo?id=${id}`)
         .then(response => response.json())
         .then(BusinessProfile =>
                   dispatch({
@@ -11,12 +11,13 @@ export const fetchAllBusinessProfile = (dispatch) =>
                            })
         );
 
-export const updateCurrentBusinessProfile = (dispatch, BusinessProfile) =>
-    fetch(`${PROFILE_API}/foodie/updateUserInfo?id=${BusinessProfile.id}`, {
+export const updateCurrentBusinessProfile = (dispatch, BusinessProfile,token) =>
+    fetch(`${PROFILE_API}/foodie/updateUserInfo`, {
         method: 'PUT',
         body: JSON.stringify(BusinessProfile),
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            'authorization':`${token}`
         }
     }).then(response =>
                 dispatch({

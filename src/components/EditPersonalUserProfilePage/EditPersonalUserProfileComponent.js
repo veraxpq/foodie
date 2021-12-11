@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import './profile.css'
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {updateCurrentPersonalProfile} from "../../services/personalProfileService";
 
 const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
@@ -9,9 +9,14 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
         setLocalProfile(profile);
     }, []);
     const dispatch = useDispatch();
+
+    const selectAllUserData = (state) => state.userInfo;
+    const userData = useSelector(selectAllUserData);
+    const userToken = userData.token
+    console.log("token", userToken)
     const updateProfileClickHandler = () => {
 
-        updateCurrentPersonalProfile(dispatch, localProfile);
+        updateCurrentPersonalProfile(dispatch, localProfile,userToken);
 
     }
 
@@ -100,12 +105,13 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
                 {/*    <input type="text" className="form-control" id="inputZip"/>*/}
                 {/*</div>*/}
                 {/*<div className="col-12">*/}
-                    <h6>Birth Date</h6>
-                    <input type="date"
-                           onChange={(event) => {
-                               setLocalProfile({...localProfile, dayOfBirth: event.target.value})
-                           }}
-                           defaultValue={profile.dayOfBirth}/>
+                {/*    <h6>Birth Date</h6>*/}
+                {/*    <input type="date"*/}
+                {/*           onChange={(event) => {*/}
+                {/*               setLocalProfile({...localProfile, dayOfBirth: event.target.value})*/}
+                {/*           }}*/}
+                {/*           defaultValue={profile.dayOfBirth}/>*/}
+
                 {/*</div>*/}
 
             </form>

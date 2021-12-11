@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {updateCurrentBusinessProfile} from "../../services/businessProfileService";
 
 
@@ -9,8 +9,13 @@ const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
         setLocalProfile(profile);
     }, []);
     const dispatch = useDispatch();
+
+    const selectAllUserData = (state) => state.userInfo;
+    const userData = useSelector(selectAllUserData);
+    const userToken = userData.token
+
     const updateProfileClickHandler = () => {
-        updateCurrentBusinessProfile(dispatch, localProfile);
+        updateCurrentBusinessProfile(dispatch, localProfile,userToken);
 
     }
 
@@ -38,13 +43,13 @@ const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
 
             <form className="row g-3">
                 <div className="col-md-12">
-                    <label htmlFor="inputFirstName4" className="form-label">Name</label>
+                    <label htmlFor="inputFirstName4" className="form-label">User Name</label>
                     <input type="text"
                            onChange={(event) => {
-                               setLocalProfile({...localProfile, name: event.target.value})
+                               setLocalProfile({...localProfile, username: event.target.value})
                            }}
                            className="form-control" id="inputFirstName4"
-                           defaultValue={profile.name}
+                           defaultValue={profile.username}
                     />
                 </div>
                 {/*<div className="col-md-6">*/}
