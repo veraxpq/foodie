@@ -4,6 +4,7 @@ import {postNewComment} from "../../services/myCommentsService";
 import ReactStars from "react-rating-stars-component";
 import {fetchAllPersonalProfile} from "../../services/personalProfileService";
 import {fetchAllDetail} from "../../services/restaurantDetailService";
+import {useParams} from "react-router-dom";
 
 
 
@@ -24,17 +25,19 @@ const NewComment = () => {
   const dispatch = useDispatch();
   const profileData = useSelector(state => state.personalProfile); //locate current user
   useEffect(() =>fetchAllPersonalProfile(dispatch), [])
-  const restaurant = useSelector(state => state.restaurantDetail); // locate current restaurant
-  useEffect(() =>fetchAllDetail(dispatch), [])
+  const params = useParams();
+  const id = params.restaurantId;
+  const selectRestaurant = (state) => state.restaurantDetail
+  const restaurant = useSelector(selectRestaurant);
+  useEffect(() =>fetchAllDetail(dispatch, id), []);
 
   const commentClickHandler = () => {
     const comment = {
       rating: rate.value,
       text: newComment,
-      user: {
-        name: profileData.name
-      },
-      restaurantName: restaurant.name
+      username: profileData.username,
+      restaurantName: restaurant.data.name,
+      restaurantId: id
     }
     postNewComment(dispatch, comment);
   }

@@ -1,22 +1,56 @@
-[
-  {
-    "id": 15,
-    "email": "12@gmail.com",
-    "username": "asfd",
-    "password": "asdf",
-    "zipCode": "123",
-    "userType": 1,
-    "name": "panda express",
-    "userId": 5
-  },
-  {
-    "id": 16,
-    "email": "12@gmail.com",
-    "username": "asfd",
-    "password": "asdf",
-    "zipCode": "123",
-    "userType": 1,
-    "name": "cafe",
-    "userId": 5
-  }
-]
+{
+  "data": [
+    {
+      "displayPhone": null,
+      "distance": null,
+      "coordinates": null,
+      "rating": null,
+      "transactions": null,
+      "userId": 5,
+      "url": null,
+      "phone": null,
+      "reviewCount": null,
+      "price": null,
+      "imageUrl": null,
+      "name": "panda express",
+      "location": "123 Main St, Boston, MA",
+      "categories": "Chinese",
+      "id": 15
+    },
+    {
+      "displayPhone": null,
+      "distance": null,
+      "coordinates": null,
+      "rating": null,
+      "transactions": null,
+      "userId": 5,
+      "url": null,
+      "phone": null,
+      "reviewCount": null,
+      "price": null,
+      "imageUrl": null,
+      "name": "kfc",
+      "location": null,
+      "categories": null,
+      "id": 25
+    },
+    {
+      "displayPhone": null,
+      "distance": null,
+      "coordinates": null,
+      "rating": null,
+      "transactions": null,
+      "userId": 5,
+      "url": null,
+      "phone": null,
+      "reviewCount": null,
+      "price": null,
+      "imageUrl": null,
+      "name": "kfc",
+      "location": null,
+      "categories": null,
+      "id": 35
+    }
+  ],
+  "status": 1
+}

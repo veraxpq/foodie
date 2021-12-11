@@ -3,6 +3,7 @@ import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import RestaurantProfileItem from "./RestaurantProfileItem";
 import {fetchAllRestaurantProfile} from "../../services/myRestaurantProfileService";
+import NewRestaurant from "../PostNewRestaurant/NewRestaurant";
 
 
 const selectAllProfileData = (state) => state.myRestaurantProfile;
@@ -11,7 +12,7 @@ const RestaurantProfile = ({setEditProfile, edit}) => {
     const profileData = useSelector(selectAllProfileData);
     const dispatch = useDispatch();
     useEffect(() => fetchAllRestaurantProfile(dispatch), []);
-    console.log("res profile data",profileData)
+    console.log("res profile data-push",profileData.data)
 
     return (
 
@@ -28,7 +29,7 @@ const RestaurantProfile = ({setEditProfile, edit}) => {
                     );
                 })
             }
-
+          <NewRestaurant/>
 
         </ul>
 

@@ -26,7 +26,7 @@ export const updateCurrentRestaurantProfile = (dispatch, RestaurantProfile) =>
                          }));
 
 export const deleteMyRestaurant = (dispatch, RestaurantProfile) =>
-    fetch(`${PROFILE_API}/${RestaurantProfile.id}`, {
+    fetch(`${PROFILE_API}/foodie/deleteRestaurantByRestaurantId?restaurantId=${RestaurantProfile.id}`, {
         method: 'DELETE'
     }).then(response => dispatch({
                                      type: 'delete-my-restaurant',
@@ -34,7 +34,8 @@ export const deleteMyRestaurant = (dispatch, RestaurantProfile) =>
                                  }));
 
 export const postNewRestaurant = (dispatch, restaurant) =>
-    fetch(PROFILE_API, {
+    //restaurant.preventDefault();
+    fetch(`${PROFILE_API}/foodie/postRestaurant`, {
       method: 'POST',
       body: JSON.stringify(restaurant),
       headers: {
@@ -42,9 +43,9 @@ export const postNewRestaurant = (dispatch, restaurant) =>
       }
     })
     .then(response => response.json())
-    .then(RestaurantProfile =>
+    .then(name =>
         dispatch({
           type: 'create-new-restaurant',
-          RestaurantProfile
+          name
         })
     );

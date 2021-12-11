@@ -4,7 +4,6 @@ import {postNewRestaurant} from "../../services/myRestaurantProfileService";
 import {useDispatch} from "react-redux";
 
 const NewRestaurant = () => {
-  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [display_phone, setDisplay_phone] = useState('');
@@ -15,26 +14,27 @@ const NewRestaurant = () => {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
 
+  const dispatch = useDispatch();
+  console.log("post new restaurant", name);
   const CreateRestaurant = () => {
-    const restaurant = {
-      "name": name,
-      "phone": phone,
-      "display_phone" :display_phone,
-      "location":{
-        "address1": address,
-        "city": city,
-        "state": state,
-        "zip_code": zipCode,
-        "display_address": `${address}, ${city}, ${state} ${zipCode}`
-      },
-      "messaging":{
-        "use_case_text": description,
-      },
-      "categories":[
-        {"title": category}
-      ]
-    }
-    postNewRestaurant(dispatch, restaurant);
+    // const restaurant = {
+    //   "name": name,
+    //   "phone": phone,
+    //   "display_phone" :display_phone,
+    //   "location": `${address}, ${city}, ${state} ${zipCode}`,
+    //   "messaging":{
+    //     "use_case_text": description,
+    //   },
+    //   "categories":category,
+    //   "userId": 5
+    // }
+    postNewRestaurant(dispatch, {
+      name: name,
+      phone: phone,
+      display_phone :display_phone,
+      location: `${address}, ${city}, ${state} ${zipCode}`,
+      categories:category,
+    });
   }
 
   return (
@@ -73,7 +73,7 @@ const NewRestaurant = () => {
                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantCity"
                            value={city} onChange={e => setCity(e.target.value)}/>
                   </div>
-                  <label htmlFor="restaurantProvince" className="col-sm-4 col-form-label">Province</label>
+                  <label htmlFor="restaurantProvince" className="col-sm-4 col-form-label">State</label>
                   <div className="col-sm-8">
                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantProvince"
                            value={state} onChange={e => setState(e.target.value)}/>
