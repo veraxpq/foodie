@@ -30,9 +30,12 @@ const LoginComponent2 = () => {
         localStorage.setItem('userId',user.data.id);
         localStorage.setItem('token',user.data.token);
         localStorage.setItem('userType',user.data.userType);
+        localStorage.setItem('username',user.data.username);
         console.log('current userId', localStorage.getItem('userId'))
         console.log('current token', localStorage.getItem('token'))
         console.log('current dataType', localStorage.getItem('userType'))
+        console.log('current username', localStorage.getItem('username'))
+
         setRedirect(true);
     }
 
