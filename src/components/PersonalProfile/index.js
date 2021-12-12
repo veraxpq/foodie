@@ -19,7 +19,8 @@ const PersonalProfile = ({setEditProfile, edit}) => {
     //         .then(response => response.json());
     //     };
     // });
-    useEffect(()=>{fetchAllPersonalProfile(dispatch,userId)},[dispatch])
+    const userToken = localStorage.getItem("token");
+    useEffect(()=>{fetchAllPersonalProfile(dispatch,userId,userToken)},[dispatch])
     console.log("personal profileData after effect", profileData);
     return(
         <div>

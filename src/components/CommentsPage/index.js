@@ -19,9 +19,9 @@ const MyCommentsList = () => {
     //console.log("userData", userData )
     console.log("user id",userId)
 
+    const token = localStorage.getItem("token");
 
-
-    useEffect(() =>fetchAllMyComments(dispatch, userId), []);
+    useEffect(() =>fetchAllMyComments(dispatch, userId, token), []);
     console.log("all comments",comments)
 
 

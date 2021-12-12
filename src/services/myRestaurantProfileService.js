@@ -2,8 +2,14 @@ const PROFILE_API = "https://foodie-mysql-database.herokuapp.com";
 //const PROFILE_API = 'http://localhost:18081/getRestaurant?cityName=sanjose';
 //const PROFILE_API = 'http://localhost:5000/rest/my_restaurant_profile';
 
-export const fetchAllRestaurantProfile = (dispatch, userId) =>
-    fetch(`${PROFILE_API}/foodie/getRestaurantByUserId?id=${userId}`)
+export const fetchAllRestaurantProfile = (dispatch, userId,token) =>
+    fetch(`${PROFILE_API}/foodie/getRestaurantByUserId?id=${userId}`,{
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+            'authorization':`${token}`
+        }
+    })
         .then(response => response.json())
         .then(RestaurantProfile =>
                   dispatch({
@@ -25,21 +31,26 @@ export const updateCurrentRestaurantProfile = (dispatch, RestaurantProfile) =>
                              RestaurantProfile
                          }));
 
-export const deleteMyRestaurant = (dispatch, RestaurantProfile) =>
+export const deleteMyRestaurant = (dispatch, RestaurantProfile,token) =>
     fetch(`${PROFILE_API}/foodie/deleteRestaurantByRestaurantId?restaurantId=${RestaurantProfile.id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+            'content-type': 'application/json',
+            'authorization':`${token}`
+        }
     }).then(response => dispatch({
                                      type: 'delete-my-restaurant',
                                          RestaurantProfile
                                  }));
 
-export const postNewRestaurant = (dispatch, restaurant) =>
+export const postNewRestaurant = (dispatch, restaurant,token) =>
     //restaurant.preventDefault();
     fetch(`${PROFILE_API}/foodie/postRestaurant`, {
       method: 'POST',
       body: JSON.stringify(restaurant),
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'authorization':`${token}`
       }
     })
     .then(response => response.json())

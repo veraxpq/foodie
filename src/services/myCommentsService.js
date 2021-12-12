@@ -5,10 +5,16 @@ import {useSelector} from "react-redux";
 const COMMENT_API = 'https://foodie-mysql-database.herokuapp.com/foodie';
 
 
-export const fetchAllMyComments = (dispatch,userId) =>
+export const fetchAllMyComments = (dispatch,userId,token) =>
     // ${userId}
 
-    fetch(`${COMMENT_API}/getReviewsByUserId?id=${userId}`)
+    fetch(`${COMMENT_API}/getReviewsByUserId?id=${userId}` ,{
+    method: 'GET',
+        headers: {
+        'content-type': 'application/json',
+        'authorization':`${token}`
+    }
+})
         .then(response => response.json())
         .then(comments =>
                   dispatch({
@@ -21,6 +27,7 @@ export const deleteComment = (dispatch, comment, token) =>
     fetch(`${COMMENT_API}/deleteReviewById?reviewId=${comment.id}`, {
         method: 'DELETE',
         headers: {
+          'content-type': 'application/json',
           'authorization':`${token}`
         }
     }).then(response => dispatch({

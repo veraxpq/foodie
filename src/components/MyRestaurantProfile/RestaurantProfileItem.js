@@ -5,8 +5,10 @@ import {deleteMyRestaurant} from "../../services/myRestaurantProfileService";
 
 const RestaurantProfileItem = ({profile, setEditProfile}) => {
     const dispatch = useDispatch();
+    const userToken = localStorage.getItem("token");
+
     const deleteRestaurantClickHandler = () => {
-        deleteMyRestaurant(dispatch, profile);
+        deleteMyRestaurant(dispatch, profile,userToken);
     }
     console.log("my res profile: ", profile);
     return (

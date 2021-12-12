@@ -1,9 +1,15 @@
 const PROFILE_API = 'https://foodie-mysql-database.herokuapp.com';
 
 
-export const fetchAllPersonalProfile = (dispatch, id) =>
+export const fetchAllPersonalProfile = (dispatch, id,token) =>
     // ${PROFILE_API}/foodie/userInfo?id=5
-    fetch(`${PROFILE_API}/foodie/userInfo?id=${id}`)
+    fetch(`${PROFILE_API}/foodie/userInfo?id=${id}`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+            'authorization':`${token}`
+        }
+    })
         .then(response => response.json())
         .then(PersonalProfile =>
                   dispatch({

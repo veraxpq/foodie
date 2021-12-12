@@ -13,7 +13,8 @@ const RestaurantProfile = ({setEditProfile, edit}) => {
     // const userData = useSelector(selectAllUserData);
     const userId = localStorage.getItem("userId");
     const dispatch = useDispatch();
-    useEffect(() => fetchAllRestaurantProfile(dispatch, userId), []);
+    const token = localStorage.getItem("token");
+    useEffect(() => fetchAllRestaurantProfile(dispatch, userId,token), []);
     console.log("res user id",userId)
 
     return (

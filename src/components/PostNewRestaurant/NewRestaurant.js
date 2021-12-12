@@ -17,6 +17,7 @@ const NewRestaurant = () => {
   const dispatch = useDispatch();
   const newLocation = `${address}, ${city}, ${state} ${zipCode}`.toString();
   const userId = localStorage.getItem("userId");
+  const userToken = localStorage.getItem("token");
   const CreateRestaurant = () => {
     // const restaurant = {
     //   "name": name,
@@ -37,7 +38,7 @@ const NewRestaurant = () => {
       price:"$$",
       userid: userId,
       rating: 0,
-    });
+    },userToken);
   }
 
   return (
