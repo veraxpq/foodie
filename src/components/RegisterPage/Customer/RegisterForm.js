@@ -11,7 +11,7 @@ const RegisterForm = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [zipCode, setZipCode] = useState('');
-
+    const [returnValue, setReturnValue] = useState('');
     const CreateUser = () => {
         if (password !== confirmPassword) {
             alert("Please input the same passwords in the form.")
@@ -23,9 +23,10 @@ const RegisterForm = () => {
             zipCode,
             "userType": 1
         }
-        
-        createNewUser(dispatch, user);
+        setReturnValue(createNewUser(dispatch, user));
+        if (!returnValue.ok) alert("Unable to create account! Email is already registered.");
     }
+
     // const bioChangeHandler = (event) => {
     //     dispatch({
     //         type: 'update-bio',
