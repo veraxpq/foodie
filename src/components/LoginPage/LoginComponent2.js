@@ -2,9 +2,10 @@ import {Link} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-
+import {logInUser} from "../../services/logInService";
 const LOGIN_API = "https://foodie-mysql-database.herokuapp.com/foodie/login";
-const selectUsers = (state) => state.userReducer;
+
+const selectUsers = (state) => state.userInfo;
 const LoginComponent2 = () => {
 
     const [email, setEmail] = useState({});
@@ -14,6 +15,8 @@ const LoginComponent2 = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    // useEffect(()=>{logInUser(dispatch, email, password)},[dispatch]);
+    // console.log(loggedInUser);
     const loginClickHandler = async (e:SyntheticEvent) => {
         e.preventDefault();
         console.log("user input at logging in", {email, password})

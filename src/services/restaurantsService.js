@@ -20,10 +20,8 @@ export const createNewUser = (dispatch, user) =>
         }
     })
         .then(response => {
-            console.log(response)
             response.json()})
         .then(() => {
-            console.log("postsdddddddddddd")
             dispatch({
                 type: 'create-user',
                 user

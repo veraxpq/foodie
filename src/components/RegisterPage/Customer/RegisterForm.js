@@ -27,13 +27,6 @@ const RegisterForm = () => {
         if (!returnValue.ok) alert("Unable to create account! Email is already registered.");
     }
 
-    // const bioChangeHandler = (event) => {
-    //     dispatch({
-    //         type: 'update-bio',
-    //         value: event.target.value
-    //     })
-    // }
-
     return (
         <div className={"container"}>
             <div className={"row f-register-form-container"}>
