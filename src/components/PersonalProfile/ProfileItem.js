@@ -8,7 +8,8 @@ const ProfileItem = ({profile, setEditProfile}) => {
 
             <div>
 
-                <img src={profile.avatar} className="wd-profile-avatar ms-2"></img>
+                {/*<img src={profile.avatar} className="wd-profile-avatar ms-2"></img>*/}
+                <img src={"./images/foodie2.jpg"} className="wd-profile-avatar ms-2"></img>
                 <span>
                     <button onClick={()=>setEditProfile(true)} className="fa-pull-right rounded-pill mt-2 me-3 btn-primary">Edit profile</button>
                 </span>

@@ -15,7 +15,8 @@ const ProfileNavigationSidebar = (
             <div className="list-group">
                 <Link to="/home"
                       className="list-group-item">
-                    <i className="fas fa-utensils"></i> Home
+                    <i className="fas fa-utensils"></i>
+                    {/*<span className="d-none d-xl-block d-xxl-block ms-1">Home</span>*/}
                 </Link>
 
                 
