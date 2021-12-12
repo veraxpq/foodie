@@ -3,7 +3,9 @@ import {Link} from "react-router-dom";
 import {createNewUser} from "../../../services/restaurantsService";
 import {useDispatch} from "react-redux";
 import "./style.css";
+import {useNavigate} from "react-router-dom";
 
+const URL = "https://foodie-mysql-database.herokuapp.com/foodie/createUser";
 const RegisterForm = () => {
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
@@ -12,7 +14,9 @@ const RegisterForm = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [zipCode, setZipCode] = useState('');
     const [returnValue, setReturnValue] = useState('');
-    const CreateUser = () => {
+    const navigation = useNavigate();
+    function register(e){
+        e.preventDefault();
         if (password !== confirmPassword) {
             alert("Please input the same passwords in the form.")
         }
@@ -21,11 +25,41 @@ const RegisterForm = () => {
             username,
             password,
             zipCode,
-            "userType": 1
+            "userType": 0,
         }
-        setReturnValue(createNewUser(dispatch, user));
-        if (!returnValue.ok) alert("Unable to create account! Email is already registered.");
+        let resStatus = 0;
+        fetch(URL, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        })
+            .then(res => {
+                resStatus = res.status
+                return res.json()
+            })
+            .then(res => {
+                switch (resStatus) {
+                    case 201:
+                        console.log('success regsiter a business user')
+                        break
+                    case 400:
+                        console.log('user already exist')
+                        alert("Unable to create account! Email is already registered.")
+                        break
+                    case 500:
+                        console.log('server error, try again')
+                        break
+                    default:
+                        console.log('unhandled')
+                        navigation(`/login`)
+                        break
+                }
+            })
     }
+
 
     return (
         <div className={"container"}>
@@ -56,7 +90,7 @@ const RegisterForm = () => {
                             </div>
                             <div className={"mt-5"}>Already have an account? <Link to={"/login"}>Login</Link></div>
                             {/*<button onClick={CreateUser} type="submit" className="btn btn-primary f-register-submit mt-2">Submit</button>*/}
-                            <Link to={"/login"} type="submit" className="btn btn-primary f-register-submit mt-2" onClick={CreateUser}>Submit</Link>
+                            <Link to={"/login"} type="submit" className="btn btn-primary f-register-submit mt-2" onClick={register}>Submit</Link>
                         </fieldset>
                     </form>
                 </div>

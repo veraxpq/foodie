@@ -20,6 +20,7 @@ export const createNewUser = (dispatch, user) =>
         }
     })
         .then(response => {
+            console.log("in restaurant serverice",response.ok);
             response.json()})
         .then(() => {
             dispatch({

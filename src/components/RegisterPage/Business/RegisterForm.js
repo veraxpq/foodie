@@ -3,7 +3,8 @@ import {Link} from "react-router-dom";
 import "./style.css"
 import {useDispatch} from "react-redux";
 import {createNewRestaurant, createNewBusinessUser} from "../../../services/businessUserService";
-
+import {useNavigate} from "react-router-dom";
+const URL = "https://foodie-mysql-database.herokuapp.com/foodie/createUser";
 const BusinessRegisterForm = () => {
     const dispatch = useDispatch();
     const [email, setEmail] = useState('');
@@ -12,7 +13,9 @@ const BusinessRegisterForm = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [returnValue, setReturnValue] = useState('');
-    const CreateUser = () => {
+    const navigation = useNavigate();
+    function register(e){
+        e.preventDefault();
         if (password !== confirmPassword) {
             alert("Please input the same passwords in the form.")
         }
@@ -24,8 +27,37 @@ const BusinessRegisterForm = () => {
             address,
             "userType": 0,
         }
-        setReturnValue(createNewBusinessUser(dispatch, user));
-        if (!returnValue.ok) alert("Unable to create account! Email is already registered.");
+        let resStatus = 0;
+        fetch(URL, {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        })
+            .then(res => {
+                resStatus = res.status
+                return res.json()
+            })
+            .then(res => {
+                switch (resStatus) {
+                    case 201:
+                        console.log('success regsiter a business user')
+                        break
+                    case 400:
+                        console.log('user already exist')
+                        alert("Unable to create account! Email is already registered.")
+                        break
+                    case 500:
+                        console.log('server error, try again')
+                        break
+                    default:
+                        console.log('unhandled')
+                        navigation(`/login`)
+                        break
+                }
+            })
     }
 
     const [restaurantName, setRestaurantName] = useState('');
@@ -110,27 +142,10 @@ const BusinessRegisterForm = () => {
                                        id="restaurantAddress"
                                        onChange={e => setAddress(e.target.value)}
                                 />
-                                {/*<label htmlFor="restaurantCity" className="col-form-label">Restaurant*/}
-                                {/*    City</label>*/}
-                                {/*<input type="text" readOnly=""*/}
-                                {/*       className="form-control f-form-border"*/}
-                                {/*       id="restaurantCity"*/}
-                                {/*       onChange={e => setCity(e.target.value)}*/}
-                                {/*/>*/}
-                                {/*<label htmlFor="restaurantProvince" className="col-form-label">Restaurant*/}
-                                {/*    State</label>*/}
-                                {/*<input type="text" readOnly=""*/}
-                                {/*       className="form-control f-form-border"*/}
-                                {/*       id="restaurantProvince"*/}
-                                {/*       onChange={e => setState(e.target.value)}*/}
-                                {/*/>*/}
                             </div>
                             <div className={"mt-4"}>Already have an account? <Link
                                 to={"/login"}>Login</Link></div>
-                            {/*<button onClick={CreateUser} type="submit"*/}
-                            {/*        className="btn btn-primary f-register-submit mt-2">Submit*/}
-                            {/*</button>*/}
-                            <Link to={"/login"} type="submit" className="btn btn-primary f-register-submit mt-2" onClick={CreateUser}>Submit</Link>
+                            <Link to={"/login"} type="submit" className="btn btn-primary f-register-submit mt-2" onClick={register}>Submit</Link>
 
                         </fieldset>
                     </form>
