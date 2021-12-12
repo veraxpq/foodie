@@ -19,7 +19,6 @@ const TopBarComponent = () => {
     }
     function submitProfile(e){
         if (localStorage.getItem('userType') === "1") {
-            localStorage.clear();
             navigate(`/personal_profile`);
         }
         else navigate(`/business_profile`)
