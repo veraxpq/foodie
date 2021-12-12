@@ -10,10 +10,11 @@ const EditPersonalUserProfileComponent = ({profile, setEditProfile}) => {
     }, []);
     const dispatch = useDispatch();
 
-    const selectAllUserData = (state) => state.userInfo;
-    const userData = useSelector(selectAllUserData);
-    const userToken = userData.token
-    // console.log("token", userToken)
+    // const selectAllUserData = (state) => state.userInfo;
+    // const userData = useSelector(selectAllUserData);
+    //const userToken = userData.token
+    const userToken = localStorage.getItem("token");
+    console.log("token", userToken)
     const updateProfileClickHandler = () => {
 
         updateCurrentPersonalProfile(dispatch, localProfile,userToken);
