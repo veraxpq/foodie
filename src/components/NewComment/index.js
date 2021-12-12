@@ -39,12 +39,12 @@ const NewComment = () => {
 
   const commentClickHandler = () => {
     const comment = {
-      rating: 3,
+      rating: 2,
       text: newComment,
       username: userName,
       userId: userId,
       restaurantName: restaurant.data.name,
-      restaurantId: id
+      restaurantId: id,
     }
     postNewComment(dispatch, comment, token);
   }
