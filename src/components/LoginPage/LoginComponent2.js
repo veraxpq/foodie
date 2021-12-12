@@ -70,15 +70,14 @@ const LoginComponent2 = () => {
                                        placeholder="Password"
                                        onChange={(e) => setPassword( e.target.value)}/>
                             </div>
-                            <div>
-                                <Link to={"/findPassword"} className={"f-login-forget"}>
-                                    Forgot password
-                                </Link>
-                            </div>
+                            {/*<div>*/}
+                            {/*    <Link to={"/findPassword"} className={"f-login-forget"}>*/}
+                            {/*        Forgot password*/}
+                            {/*    </Link>*/}
+                            {/*</div>*/}
                             <div className={""}>
-                                <div className={"f-float-left"}><Link to={"/register"}>Create an account</Link></div>
-                                <div className={"f-float-right"}><Link to={"/registerForBusiness"}>Post your restaurant
-                                    in Foodie</Link></div>
+                                <div className={"f-float-left"}><Link to={"/register"}>Create personal account</Link></div>
+                                <div className={"f-float-right"}><Link to={"/registerForBusiness"}>Create business account</Link></div>
                             </div>
 
                             <button onClick={loginClickHandler} type="submit" className="btn btn-primary f-register-submit mt-2 mb-5">Submit</button>
