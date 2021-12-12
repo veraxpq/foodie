@@ -17,29 +17,36 @@ const NewComment = () => {
     value: 0,
     color: "lightgray",
     activeColor: "orange",
-    onChange: newValue => {
-      console.log(`Example 3: new value is ${newValue}`);
+    onChange: value => {
+      console.log(`new value is ${value}`);
     }
   };
   const [newComment, setNewComment] = useState('');
   const dispatch = useDispatch();
-  const profileData = useSelector(state => state.personalProfile); //locate current user
-  useEffect(() =>fetchAllPersonalProfile(dispatch), [])
+  //const profileData = useSelector(state => state.personalProfile); //locate current user
+  //useEffect(() =>fetchAllPersonalProfile(dispatch), [])
   const params = useParams();
   const id = params.restaurantId;
   const selectRestaurant = (state) => state.restaurantDetail
   const restaurant = useSelector(selectRestaurant);
   useEffect(() =>fetchAllDetail(dispatch, id), []);
+  const userName = localStorage.getItem("username");
+  const token = localStorage.getItem("token");
+  const userId = localStorage.getItem("userId");
+  console.log("test token", token);
+  console.log("test user id", userId);
+  console.log("test res id", id);
 
   const commentClickHandler = () => {
     const comment = {
-      rating: rate.value,
+      rating: 3,
       text: newComment,
-      username: profileData.username,
+      username: userName,
+      userId: userId,
       restaurantName: restaurant.data.name,
       restaurantId: id
     }
-    postNewComment(dispatch, comment);
+    postNewComment(dispatch, comment, token);
   }
 
   return(

@@ -22,17 +22,17 @@ const myComments = (state = my_comments, action) => {
             break;
 
         case 'create-comment':
-            const comment = {
-                id: (new Date()).getTime() + '',
-                "time_created": "12/15/2021",
-                ...action.text,
-                "rating": 3,
-                "userId": 5,
-                "username": "jose"
-            };
+            // const comment = {
+            //     id: (new Date()).getTime() + '',
+            //     "time_created": "12/15/2021",
+            //     ...action.text,
+            //     "rating": 3,
+            //     "userId": 5,
+            //     "username": "jose"
+            // };
             return (
                 {...state,
-                    "data":[action.comment, ...state.data]
+                    "data":[action.newComment, ...state.data]
                 }
             );
 

@@ -26,7 +26,8 @@ const RestaurantDetailComponent = ({restaurant}) => {
   const reviewList = useSelector(selectAllReviews);
   useEffect(() =>fetchAllReviews(dispatch,id), []);
   const reviews = reviewList.data && reviewList.data[0] && reviewList.data[0].reviews;
-  //console.log("restaurant reviews",reviews)
+  const location=restaurant.data.location.display_address.toString();
+  console.log("restaurant location",location)
   return (
       <>
         <TopBar/>
@@ -48,7 +49,7 @@ const RestaurantDetailComponent = ({restaurant}) => {
               <i className="fas fa-location-arrow"></i>
             </div>
             <div className="col-10 f-bold">
-              {restaurant.data.alias}
+              {location}
             </div>
           </div>
           <div className="row mt-1">

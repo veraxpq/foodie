@@ -44,7 +44,6 @@ export const postNewRestaurant = (dispatch, restaurant) =>
     })
     .then(response => response.json())
     .then(() => {
-      console.log("post res")
       dispatch({
         type: 'create-new-restaurant',
         restaurant

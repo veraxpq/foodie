@@ -7,6 +7,7 @@ import {deleteComment} from "../../services/myCommentsService";
 
 const CommentItem = ({comment}) => {
     const dispatch = useDispatch();
+    //const token = localStorage.getItem("token");
     const deleteCommentClickHandler = () => {
         deleteComment(dispatch, comment);
     }
