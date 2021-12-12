@@ -13,10 +13,12 @@ const EditBusinessUserProfileComponent =({profile, setEditProfile})=>{
     const selectAllUserData = (state) => state.userInfo;
     const userData = useSelector(selectAllUserData);
     const userToken = userData.token
+    console.log("business profile user info id in edit",userData.id)
+    console.log("business profile user token id in edit",userData.token)
+    console.log("get localStorage token in business profile",localStorage.getItem("token"))
 
     const updateProfileClickHandler = () => {
         updateCurrentBusinessProfile(dispatch, localProfile,userToken);
-
     }
 
 

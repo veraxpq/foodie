@@ -19,8 +19,9 @@ export const createNewUser = (dispatch, user) =>
             'content-type': 'application/json'
         }
     })
+        .then(response => {
+            response.json()})
         .then(() => {
-            console.log("postsdddddddddddd")
             dispatch({
                 type: 'create-user',
                 user

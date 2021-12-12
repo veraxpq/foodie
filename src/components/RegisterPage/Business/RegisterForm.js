@@ -11,7 +11,7 @@ const BusinessRegisterForm = () => {
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-
+    const [returnValue, setReturnValue] = useState('');
     const CreateUser = () => {
         if (password !== confirmPassword) {
             alert("Please input the same passwords in the form.")
@@ -24,7 +24,8 @@ const BusinessRegisterForm = () => {
             address,
             "userType": 0,
         }
-        createNewBusinessUser(dispatch, user);
+        setReturnValue(createNewBusinessUser(dispatch, user));
+        if (!returnValue.ok) alert("Unable to create account! Email is already registered.");
     }
 
     const [restaurantName, setRestaurantName] = useState('');
