@@ -17,20 +17,24 @@ export const fetchAllMyComments = (dispatch,userId) =>
                            })
         );
 
-export const deleteComment = (dispatch, comment) =>
+export const deleteComment = (dispatch, comment, token) =>
     fetch(`${COMMENT_API}/deleteReviewById?reviewId=${comment.id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+          'authorization':`${token}`
+        }
     }).then(response => dispatch({
                                      type: 'delete-comment',
                                          comment
                                  }));
 
-export const postNewComment = (dispatch, newComment) =>
-    fetch(COMMENT_API, {
+export const postNewComment = (dispatch, newComment, token) =>
+    fetch(`${COMMENT_API}/postReviews`, {
       method: 'POST',
       body: JSON.stringify(newComment),
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'authorization':`${token}`
       }
     })
     .then(response => response.json())
