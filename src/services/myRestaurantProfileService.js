@@ -1,9 +1,9 @@
-const PROFILE_API = "https://foodie-mysql-database.herokuapp.com/";
+const PROFILE_API = "https://foodie-mysql-database.herokuapp.com";
 //const PROFILE_API = 'http://localhost:18081/getRestaurant?cityName=sanjose';
 //const PROFILE_API = 'http://localhost:5000/rest/my_restaurant_profile';
 
-export const fetchAllRestaurantProfile = (dispatch) =>
-    fetch(`${PROFILE_API}/foodie/getRestaurantByUserId?id=5`)
+export const fetchAllRestaurantProfile = (dispatch, userId) =>
+    fetch(`${PROFILE_API}/foodie/getRestaurantByUserId?id=${userId}`)
         .then(response => response.json())
         .then(RestaurantProfile =>
                   dispatch({
@@ -43,9 +43,10 @@ export const postNewRestaurant = (dispatch, restaurant) =>
       }
     })
     .then(response => response.json())
-    .then(name =>
-        dispatch({
-          type: 'create-new-restaurant',
-          name
-        })
-    );
+    .then(() => {
+      console.log("post res")
+      dispatch({
+        type: 'create-new-restaurant',
+        restaurant
+      })
+    });

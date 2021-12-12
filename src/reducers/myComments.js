@@ -23,7 +23,7 @@ const myComments = (state = my_comments, action) => {
 
         case 'create-comment':
             const comment = {
-                _id: (new Date()).getTime() + '',
+                id: (new Date()).getTime() + '',
                 "time_created": "12/15/2021",
                 ...action.text,
                 "rating": 3,
@@ -32,7 +32,7 @@ const myComments = (state = my_comments, action) => {
             };
             return (
                 {...state,
-                    "data":state.data.push(comment)
+                    "data":[action.comment, ...state.data]
                 }
             );
 

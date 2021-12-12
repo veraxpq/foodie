@@ -34,11 +34,11 @@ export const postNewComment = (dispatch, newComment) =>
       }
     })
     .then(response => response.json())
-    .then(comment =>
-        dispatch({
-          type: 'create-comment',
-          comment
-        })
-    );
+    .then(() => {
+      dispatch({
+        type: 'create-comment',
+        newComment
+      })
+    });
 
 
