@@ -23,8 +23,8 @@ const RegisterForm = () => {
             zipCode,
             "userType": 1
         }
-        
-        createNewUser(dispatch, user);
+        const response = createNewUser(dispatch, user);
+        console.log("response", response);
     }
     // const bioChangeHandler = (event) => {
     //     dispatch({
