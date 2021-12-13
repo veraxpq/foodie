@@ -7,10 +7,15 @@ import {useSelector} from "react-redux";
 import SearchBar from "../SearchBar";
 import {getRestaurantByLocation, getRestaurantByTermAndLocation} from "../../services/searchRestaurantsServices";
 const SearchResult = () => {
-    const params = useParams();
-    const [searchedTerm, setSearchedTerm] = useState(params.term || '');
-    const [location, setLocation] = useState(params.location || '');
-    console.log(searchedTerm, location);
+    const queryString = window.location.search;
+    console.log("search reult url",queryString);
+    const urlParams = new URLSearchParams(queryString);
+    const term = urlParams.get('term');
+    const location = urlParams.get('cityName');
+    // const params = useParams();
+    // const term = params.term;
+    // const location = params.location;
+    console.log("search result index getting term and location", term, location);
     return(
         <div>
             <div>
@@ -21,10 +26,7 @@ const SearchResult = () => {
                     <SearchBar/>
                 </div>
             </div>
-            <div className="row mt-2 ms-2">
-                <div className="d-none col-1 col-lg-2 col-md-2 d-sm-block col-xxl-2 col-xl-2 d-xs-block ms-5 mt-5">
-                    <Category/>
-                </div>
+            <div className="row mt-2 ms-4">
                 <div className="col-10 col-lg-9 col-md-9 col-sm-9 col-xxl-9 col-xl-9 col-xs-10">
                     <div className="ms-5 pb-2 pt-2">
                         <h2>Search {location}</h2>

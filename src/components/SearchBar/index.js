@@ -2,22 +2,27 @@ import React, {useState}  from 'react';
 import {Link, useNavigate, useParams} from "react-router-dom";
 
 const SearchBar=()=>{
-    const params = useParams();
     const navigate = useNavigate();
-    const [term, setTerm] = useState(params.term || '');
-    const [location, setLocation] = useState(params.location || '');
-    console.log("user inputed search pair", {term, location})
+    const params = useParams();
+    const [term, setTerm] = useState(params.term|| '');
+    const [location, setLocation] = useState(params.location|| '');
+    console.log("user inputed search pair at search bar", {term, location})
     function submit(e) {
         if(term && location) {
             const encodedTerm = encodeURI(term);
             const encodedLocation = encodeURI(location);
+            console.log("user searched pair", {encodedTerm, encodedLocation})
             navigate(`/search?term=${encodedTerm}&cityName=${encodedLocation}`);
+            // navigate(`/search/term=${encodedTerm}&cityName=${encodedLocation}`);
         }
         if (!term && location){
             const encodedLocation = encodeURI(location);
             navigate(`/search?term=food&cityName=${encodedLocation}`)
+            // navigate(`/search/term=food&cityName=${encodedLocation}`)
         }
-        console.log(term, location);
+        if (!term && !location){
+            navigate(`/home`)
+        }
     }
     return(
         <form className="d-flex">
