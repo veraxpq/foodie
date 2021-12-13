@@ -14,7 +14,7 @@ const RestaurantList = () => {
     const dispatch = useDispatch();
     const userId = localStorage.getItem("userId");
     const token = localStorage.getItem("token");
-    var location = "02134";
+    var location = "98101";
     console.log("homepage userId and token",{userId, token})
     console.log(localStorage)
     // const businessUserProfile = useSelector(selectBusinessProfile);
@@ -33,7 +33,7 @@ const RestaurantList = () => {
         <>
             <div className={"f-restaurant-list-category-title"}>
                 <span className={"f-float-left"}>Restaurants Near You</span>
-                <Link to={"/search/restaurant/seattle"} className={"f-home-view-all"}>View All</Link>
+                <Link to={`/search?term=food&cityName=${location}`} className={"f-home-view-all"}>View All</Link>
             </div>
             <hr className="f-hr"/>
             <ul className={"f-restaurant-list-ul"}>
