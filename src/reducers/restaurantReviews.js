@@ -1,7 +1,6 @@
 import restaurantReviews from './data/reviews.json';
 
 const restaurantReviewList = (state = restaurantReviews, action) => {
-  console.log(state)
 
   switch (action.type) {
     case 'fetch-all-reviews':
