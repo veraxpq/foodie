@@ -11,23 +11,23 @@ import {fetchAllReviews} from "../../services/restaurantReviewService";
 
 const RestaurantDetailComponent = ({restaurant}) => {
   const dispatch = useDispatch();
-  const SaveRestaurant = () => {
-    const save_restaurant = {
-      "avatarIcon": restaurant.data.image_url,
-      "name": restaurant.data.name,
-      "rating" :restaurant.data.rating,
-      "tag": restaurant.categories.title,
-      "location": restaurant.locations.city
-    }
-    addSaved(dispatch, save_restaurant);
-  }
+  // const SaveRestaurant = () => {
+  //   const save_restaurant = {
+  //     "avatarIcon": restaurant.data.image_url,
+  //     "name": restaurant.data.name,
+  //     "rating" :restaurant.data.rating,
+  //     "tag": restaurant.categories.title,
+  //     "location": restaurant.locations.city
+  //   }
+  //   addSaved(dispatch, save_restaurant);
+  // }
   const id = restaurant.data && restaurant.data.id;
+  useEffect(() =>fetchAllReviews(dispatch,id), []);
   const selectAllReviews = (state) => state.restaurantReviewList;
   const reviewList = useSelector(selectAllReviews);
-  useEffect(() =>fetchAllReviews(dispatch,id), []);
   const reviews = reviewList.data && reviewList.data[0] && reviewList.data[0].reviews;
   const location=restaurant.data.location.display_address.toString();
-  console.log("restaurant location",location)
+  console.log("restaurantReviews",reviews)
   return (
       <>
         <TopBar/>
@@ -96,7 +96,8 @@ const RestaurantDetailComponent = ({restaurant}) => {
             <NewComment/>
           </div>
           <hr className="f-margin-right" style={{color:"darkgray"}}/>
-          <ReviewList reviews={reviews}/>
+          {/*<ReviewList reviews={reviews}/>*/}
+          <ReviewList/>
         </div>
       </>
   )

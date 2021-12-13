@@ -22,6 +22,7 @@ const NewComment = () => {
     }
   };
   const [newComment, setNewComment] = useState('');
+  const [rating, setRating] = useState('');
   const dispatch = useDispatch();
   //const profileData = useSelector(state => state.personalProfile); //locate current user
   //useEffect(() =>fetchAllPersonalProfile(dispatch), [])
@@ -39,12 +40,12 @@ const NewComment = () => {
 
   const commentClickHandler = () => {
     const comment = {
-      rating: 2,
+      rating: rating,
       text: newComment,
       username: userName,
       userId: userId,
       restaurantName: restaurant.data.name,
-      restaurantId: id,
+      // restaurantId: id,
     }
     postNewComment(dispatch, comment, token);
   }
@@ -56,8 +57,13 @@ const NewComment = () => {
             <div className="form-group row ">
               <b className="mb-2">Write a review</b>
               <label htmlFor="rating" className="col-sm-2 col-form-label">Rating: </label>
+              {/*<div className="col-sm-4">*/}
+              {/*  <ReactStars {...rate} />*/}
+              {/*</div>*/}
+              {/*<label htmlFor="rating" className="col-sm-4 col-form-label">Restaurant Name</label>*/}
               <div className="col-sm-4">
-                <ReactStars {...rate} />
+                <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="rating"
+                       value={rating} onChange={e => setRating(e.target.value)}/>
               </div>
             </div>
             <div className={"f-margin-right"}>
