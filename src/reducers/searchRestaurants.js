@@ -1,7 +1,6 @@
 import restaurants_result from './data/searchRestaurants.json';
 
 const searchRestaurants = (state = restaurants_result, action)=>{
-    console.log("state",state)
     switch(action.type){
         case 'fetch-all-restaurants-by-term-and-location':
             // console.log("action.restaurants",action.restaurants)

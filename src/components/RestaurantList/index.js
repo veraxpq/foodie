@@ -3,10 +3,9 @@ import RestaurantListItem from "./RestaurantListItem";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {getRestaurantByLocation} from "../../services/searchRestaurantsServices";
-import {fetchAllBusinessProfile} from "../../services/businessProfileService";
 import {fetchAllPersonalProfile} from "../../services/personalProfileService";
+
 const selectAllRestaurants = (state) => state.searchRestaurants;
-const selectBusinessProfile = (state) => state.businessProfile;
 const selectPersonalProfile = (state) => state.personalProfile;
 const PROFILE_API = 'https://foodie-mysql-database.herokuapp.com';
 const RestaurantList = () => {
@@ -15,20 +14,13 @@ const RestaurantList = () => {
     const userId = localStorage.getItem("userId");
     const token = localStorage.getItem("token");
     var location = "98101";
-    console.log("homepage userId and token",{userId, token})
-    console.log(localStorage)
-    // const businessUserProfile = useSelector(selectBusinessProfile);
-    // useEffect(()=>{fetchAllBusinessProfile(dispatch,userId,token)},[dispatch]);
-    // console.log("A business user logged in and at hoempage", businessUserProfile);
     const personalUserProfile = useSelector(selectPersonalProfile);
     useEffect(()=>{fetchAllPersonalProfile(dispatch,userId,token)},[dispatch]);
-    console.log("A personal user logged in and at hoempage", personalUserProfile);
     if (localStorage.getItem('userType')){
         location = personalUserProfile.data.zipCode;
     }
-    console.log("zipCode at homepage",location)
     useEffect(() => {getRestaurantByLocation(dispatch,location)} ,[dispatch]);
-    console.log("HomeRestaurants", restaurants);
+    console.log("Fetched restaurants at home page", restaurants);
     return (
         <>
             <div className={"f-restaurant-list-category-title"}>
@@ -38,9 +30,9 @@ const RestaurantList = () => {
             <hr className="f-hr"/>
             <ul className={"f-restaurant-list-ul"}>
                 {
+                    restaurants && restaurants.data && restaurants.data.businesses &&
                     restaurants.data.businesses.map(restaurant => {
                         return <RestaurantListItem restaurant = {restaurant}/>
-
                     })
                 }
             </ul>

@@ -7,25 +7,31 @@ import {useParams} from "react-router-dom";
 
 const selectAllRestaurants = (state) => state.searchRestaurants;
 const SearchResultComponent = () => {
-    const params = new URLSearchParams(document.location.search);
-    const term = params.get('term');
-    const location = params.get('cityName');
-    console.log("search result page get params", {term, location});
+    const queryString = window.location.search;
+    console.log("search reult url",queryString);
+    const urlParams = new URLSearchParams(queryString);
+    const term = urlParams.get('term');
+    const location = urlParams.get('cityName');
+    console.log("search result component get params", {term, location});
     const restaurants = useSelector(selectAllRestaurants);
     const dispatch = useDispatch();
     useEffect(()=>{
         getRestaurantByTermAndLocation(dispatch,term,location)},[dispatch])
-    const allRestaurants = restaurants.data;
-    //console.log("allRestaurants", restaurants);
+    // const restaurants = useState('');
+    // const renderResult = async() =>{
+    //
+    // }
+    console.log("Fetched restaurants at search result", restaurants);
     return(
-        // <div></div>
         <ul className="list-group">
             {
+                restaurants && restaurants.data && restaurants.data.businesses &&
                 restaurants.data.businesses.map(restaurant=>{
                     return(<RestaurantItem restaurant={restaurant}/>);
                 })
             }
         </ul>
+
     )
 }
 
