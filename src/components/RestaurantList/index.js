@@ -18,6 +18,7 @@ const RestaurantList = () => {
     useEffect(()=>{fetchAllPersonalProfile(dispatch,userId,token)},[dispatch]);
     if (localStorage.getItem('userType')){
         location = personalUserProfile.data.zipCode;
+        console.log("get user rpofile zipcode at home page", location);
     }
     useEffect(() => {getRestaurantByLocation(dispatch,location)} ,[dispatch]);
     console.log("Fetched restaurants at home page", restaurants);
