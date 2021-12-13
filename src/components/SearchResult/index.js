@@ -7,14 +7,16 @@ import {useSelector} from "react-redux";
 import SearchBar from "../SearchBar";
 import {getRestaurantByLocation, getRestaurantByTermAndLocation} from "../../services/searchRestaurantsServices";
 const SearchResult = () => {
-    const queryString = window.location.search;
-    console.log("search reult url",queryString);
-    const urlParams = new URLSearchParams(queryString);
-    const term = urlParams.get('term');
-    const location = urlParams.get('cityName');
+    // const queryString = window.location.search;
+    // console.log("search reult url",queryString);
+    // const urlParams = new URLSearchParams(queryString);
+    // const term = urlParams.get('term');
+    // const location = urlParams.get('cityName');
     // const params = useParams();
     // const term = params.term;
     // const location = params.location;
+    const term = localStorage.getItem('term');
+    const location = localStorage.getItem('location');
     console.log("search result index getting term and location", term, location);
     return(
         <div>
