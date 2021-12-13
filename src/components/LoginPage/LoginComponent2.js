@@ -7,16 +7,15 @@ const LOGIN_API = "https://foodie-mysql-database.herokuapp.com/foodie/login";
 
 const selectUsers = (state) => state.userInfo;
 const LoginComponent2 = () => {
-
     const [email, setEmail] = useState({});
     const [password, setPassword] = useState({});
     const [redirect, setRedirect] = useState(false);
-    const loggedInUser = useSelector(selectUsers);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    // useEffect(()=>{logInUser(dispatch, email, password)},[dispatch]);
-    // console.log(loggedInUser);
+    const loggedInUser = useSelector(selectUsers);
+    useEffect(()=>{logInUser(dispatch, email, password)},[dispatch]);
+    console.log("Get userInfo state at login", loggedInUser);
     const loginClickHandler = async (e:SyntheticEvent) => {
         e.preventDefault();
         console.log("user input at logging in", {email, password})
