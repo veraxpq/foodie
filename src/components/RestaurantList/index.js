@@ -12,9 +12,9 @@ const PROFILE_API = 'https://foodie-mysql-database.herokuapp.com';
 const RestaurantList = () => {
     const restaurants = useSelector(selectAllRestaurants);
     const dispatch = useDispatch();
-
     const userId = localStorage.getItem("userId");
     const token = localStorage.getItem("token");
+    var location = "02134";
     console.log("homepage userId and token",{userId, token})
     console.log(localStorage)
     // const businessUserProfile = useSelector(selectBusinessProfile);
@@ -23,8 +23,10 @@ const RestaurantList = () => {
     const personalUserProfile = useSelector(selectPersonalProfile);
     useEffect(()=>{fetchAllPersonalProfile(dispatch,userId,token)},[dispatch]);
     console.log("A personal user logged in and at hoempage", personalUserProfile);
-    const location = personalUserProfile.data.zipCode;
-    console.log("zipCoe at homepage",location)
+    if (localStorage.getItem('userType')){
+        location = personalUserProfile.data.zipCode;
+    }
+    console.log("zipCode at homepage",location)
     useEffect(() => {getRestaurantByLocation(dispatch,location)} ,[dispatch]);
     console.log("HomeRestaurants", restaurants);
     return (
