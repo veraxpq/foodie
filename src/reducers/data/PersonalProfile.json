@@ -1,14 +1,15 @@
-[
-  {
-    "zipCode": "123",
-    "password": "asdf",
+{
+  "data": {
+    "zipCode": "02134",
+    "password": "d1d7e84d9049900299ee9c0b2c04b11bfa9a0437afc0bf03d8ce0e3fb8523919f13fa3a5130c5ba7987679c6f6945ca87655e746eb5345bdc8131298fa5a9b20",
     "dayOfBirth": null,
     "description": null,
     "avatar": null,
-    "id": 5,
+    "id": 355,
     "userType": 1,
     "savedRestaurants": null,
-    "email": "12@gmail.com",
-    "username": "eeee"
-  }
-]
+    "email": "fff@ff.ff",
+    "username": "ffffffak"
+  },
+  "status": 1
+}

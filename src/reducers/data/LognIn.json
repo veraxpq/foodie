@@ -1,5 +1,8 @@
-[
-  {
-    "email": "12@gmail.com"
-  }
-]
+{
+    "email": "fff@ff.ff",
+    "username": "ffffffak",
+    "userType": 1,
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6ImZmZiIsImV4cCI6MTYzOTQyMDg0NywiaWF0IjoxNjM5NDEzNjQ3LCJlbWFpbCI6ImZmZkBmZi5mZiJ9.uzv7rG-1MWrd60TgpP2YwP3Uo0oVLuHKSquPV83sIr0",
+    "id": 355,
+    "zipCode": "02134"
+}

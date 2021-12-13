@@ -3,12 +3,28 @@ import RestaurantListItem from "./RestaurantListItem";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {getRestaurantByLocation} from "../../services/searchRestaurantsServices";
-
+import {fetchAllBusinessProfile} from "../../services/businessProfileService";
+import {fetchAllPersonalProfile} from "../../services/personalProfileService";
 const selectAllRestaurants = (state) => state.searchRestaurants;
+const selectBusinessProfile = (state) => state.businessProfile;
+const selectPersonalProfile = (state) => state.personalProfile;
+const PROFILE_API = 'https://foodie-mysql-database.herokuapp.com';
 const RestaurantList = () => {
     const restaurants = useSelector(selectAllRestaurants);
     const dispatch = useDispatch();
-    const location = "seattle";
+
+    const userId = localStorage.getItem("userId");
+    const token = localStorage.getItem("token");
+    console.log("homepage userId and token",{userId, token})
+    console.log(localStorage)
+    // const businessUserProfile = useSelector(selectBusinessProfile);
+    // useEffect(()=>{fetchAllBusinessProfile(dispatch,userId,token)},[dispatch]);
+    // console.log("A business user logged in and at hoempage", businessUserProfile);
+    const personalUserProfile = useSelector(selectPersonalProfile);
+    useEffect(()=>{fetchAllPersonalProfile(dispatch,userId,token)},[dispatch]);
+    console.log("A personal user logged in and at hoempage", personalUserProfile);
+    const location = personalUserProfile.data.zipCode;
+    console.log("zipCoe at homepage",location)
     useEffect(() => {getRestaurantByLocation(dispatch,location)} ,[dispatch]);
     console.log("HomeRestaurants", restaurants);
     return (
