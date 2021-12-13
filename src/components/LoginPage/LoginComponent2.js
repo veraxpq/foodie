@@ -2,17 +2,18 @@ import {Link} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-
+import {logInUser, fetchAllUser} from "../../services/logInService";
 const LOGIN_API = "https://foodie-mysql-database.herokuapp.com/foodie/login";
-const selectUsers = (state) => state.userReducer;
-const LoginComponent2 = () => {
 
+const selectUsers = (state) => state.userInfo;
+const LoginComponent2 = () => {
     const [email, setEmail] = useState({});
     const [password, setPassword] = useState({});
     const [redirect, setRedirect] = useState(false);
-    const loggedInUser = useSelector(selectUsers);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const loggedInUser = useSelector(selectUsers);
 
     const loginClickHandler = async (e:SyntheticEvent) => {
         e.preventDefault();
@@ -38,6 +39,9 @@ const LoginComponent2 = () => {
 
         setRedirect(true);
     }
+
+    useEffect(()=>{logInUser(dispatch, email, password)},[dispatch]);
+    console.log("Get userInfo state at login", loggedInUser);
 
     if (redirect){
         if (localStorage.getItem('userType') === "1") {navigate(`/personal_profile`);}
@@ -67,15 +71,14 @@ const LoginComponent2 = () => {
                                        placeholder="Password"
                                        onChange={(e) => setPassword( e.target.value)}/>
                             </div>
-                            <div>
-                                <Link to={"/findPassword"} className={"f-login-forget"}>
-                                    Forgot password
-                                </Link>
-                            </div>
+                            {/*<div>*/}
+                            {/*    <Link to={"/findPassword"} className={"f-login-forget"}>*/}
+                            {/*        Forgot password*/}
+                            {/*    </Link>*/}
+                            {/*</div>*/}
                             <div className={""}>
-                                <div className={"f-float-left"}><Link to={"/register"}>Create an account</Link></div>
-                                <div className={"f-float-right"}><Link to={"/registerForBusiness"}>Post your restaurant
-                                    in Foodie</Link></div>
+                                <div className={"f-float-left"}><Link to={"/register"}>Create personal account</Link></div>
+                                <div className={"f-float-right"}><Link to={"/registerForBusiness"}>Create business account</Link></div>
                             </div>
 
                             <button onClick={loginClickHandler} type="submit" className="btn btn-primary f-register-submit mt-2 mb-5">Submit</button>

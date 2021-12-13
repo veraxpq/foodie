@@ -6,16 +6,18 @@ import {useDispatch} from "react-redux";
 const NewRestaurant = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [display_phone, setDisplay_phone] = useState('');
+  //const [display_phone, setDisplay_phone] = useState('');
   const [address, setAddress] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
   const [zipCode, setZipCode] = useState('');
-  const [description, setDescription] = useState('');
+  //const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
 
   const dispatch = useDispatch();
-  console.log("post new restaurant", name);
+  const newLocation = `${address}, ${city}, ${state} ${zipCode}`.toString();
+  const userId = localStorage.getItem("userId");
+  const userToken = localStorage.getItem("token");
   const CreateRestaurant = () => {
     // const restaurant = {
     //   "name": name,
@@ -30,11 +32,13 @@ const NewRestaurant = () => {
     // }
     postNewRestaurant(dispatch, {
       name: name,
-      phone: phone,
-      display_phone :display_phone,
-      location: `${address}, ${city}, ${state} ${zipCode}`,
+      location: newLocation,
       categories:category,
-    });
+      imageUrl: "/images/restaurant4.png",
+      price:"$$",
+      userid: userId,
+      rating: 0,
+    },userToken);
   }
 
   return (
@@ -58,11 +62,11 @@ const NewRestaurant = () => {
                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantContact"
                            value={phone} onChange={e => setPhone(e.target.value)}/>
                   </div>
-                  <label htmlFor="restaurantPhone" className="col-sm-4 col-form-label">Display_phone</label>
-                  <div className="col-sm-8">
-                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantPhone"
-                           value={display_phone} onChange={e => setDisplay_phone(e.target.value)}/>
-                  </div>
+                  {/*<label htmlFor="restaurantPhone" className="col-sm-4 col-form-label">Display_phone</label>*/}
+                  {/*<div className="col-sm-8">*/}
+                  {/*  <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantPhone"*/}
+                  {/*         value={display_phone} onChange={e => setDisplay_phone(e.target.value)}/>*/}
+                  {/*</div>*/}
                   <label htmlFor="restaurantAddress" className="col-sm-4 col-form-label">Address</label>
                   <div className="col-sm-8">
                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantAddress"
@@ -83,11 +87,11 @@ const NewRestaurant = () => {
                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantZip"
                            value={zipCode} onChange={e => setZipCode(e.target.value)}/>
                   </div>
-                  <label htmlFor="description" className="col-sm-4 col-form-label">Description</label>
-                  <div className="col-sm-8">
-                    <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="description"
-                           value={description} onChange={e => setDescription(e.target.value)}/>
-                  </div>
+                  {/*<label htmlFor="description" className="col-sm-4 col-form-label">Description</label>*/}
+                  {/*<div className="col-sm-8">*/}
+                  {/*  <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="description"*/}
+                  {/*         value={description} onChange={e => setDescription(e.target.value)}/>*/}
+                  {/*</div>*/}
                   <label htmlFor="restaurantCategory" className="col-sm-4 col-form-label">Category</label>
                   <div className="col-sm-8">
                     <input type="text" readOnly="" className="form-control-plaintext f-form-border" id="restaurantCategory"

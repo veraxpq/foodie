@@ -6,15 +6,16 @@ const SearchBar=()=>{
     const navigate = useNavigate();
     const [term, setTerm] = useState(params.term || '');
     const [location, setLocation] = useState(params.location || '');
+    console.log("user inputed search pair", {term, location})
     function submit(e) {
         if(term && location) {
             const encodedTerm = encodeURI(term);
             const encodedLocation = encodeURI(location);
-            navigate(`/search/${encodedTerm}/${encodedLocation}`);
+            navigate(`/search?term=${encodedTerm}&cityName=${encodedLocation}`);
         }
         if (!term && location){
             const encodedLocation = encodeURI(location);
-            navigate(`/search/restaurant/${encodedLocation}`)
+            navigate(`/search?term=food&cityName=${encodedLocation}`)
         }
         console.log(term, location);
     }

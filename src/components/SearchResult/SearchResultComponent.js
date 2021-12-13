@@ -5,13 +5,12 @@ import RestaurantItem from "./RestaurantItem";
 import {getRestaurantByLocation, getRestaurantByTermAndLocation} from "../../services/searchRestaurantsServices";
 import {useParams} from "react-router-dom";
 
-
 const selectAllRestaurants = (state) => state.searchRestaurants;
 const SearchResultComponent = () => {
-    const params = useParams();
-    const term = params.term;
-    const location = params.location;
-    //console.log("search page params", term, location);
+    const params = new URLSearchParams(document.location.search);
+    const term = params.get('term');
+    const location = params.get('cityName');
+    console.log("search result page get params", {term, location});
     const restaurants = useSelector(selectAllRestaurants);
     const dispatch = useDispatch();
     useEffect(()=>{

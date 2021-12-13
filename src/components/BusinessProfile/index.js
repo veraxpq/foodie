@@ -14,7 +14,9 @@ const BusinessProfile = ({setEditProfile, edit}) => {
     const selectBusinessProfile = (state) => state.businessProfile;
     const profileData = useSelector(selectBusinessProfile);
     console.log("business profileData before effect",profileData)
-    useEffect(() => fetchAllBusinessProfile(dispatch, userId), [dispatch]);
+
+    const userToken = localStorage.getItem("token");
+    useEffect(() => fetchAllBusinessProfile(dispatch, userId,userToken), [dispatch]);
     console.log("business profileData after effect",profileData)
 
 //     return (

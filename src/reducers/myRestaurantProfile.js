@@ -2,7 +2,7 @@ import profileJSON from './data/myRestaurantProfile.json'
 
 
 const myRestaurantProfile = (state = profileJSON, action) => {
-    //action.preventDefault();
+    console.log("myRestaurantProfile state",state)
     switch (action.type) {
         case 'fetch-all-myRestaurant-profile':
             return(action.RestaurantProfile);
@@ -15,26 +15,31 @@ const myRestaurantProfile = (state = profileJSON, action) => {
 
         case 'delete-my-restaurant':
             return (
-                {...state, data: state.data.filter(restaurant => restaurant._id !== action.RestaurantProfile._id)
+                {...state, "data": state.data.filter(restaurant => restaurant.id !== action.RestaurantProfile.id)
                 }
             )
             break;
 
         case 'create-new-restaurant':
-            const restaurant = {
-                _id: (new Date()).getTime() + '',
-                "rating": 2,
-                "image_url": "/images/restaurant1.png", //need update
-                "userid": 5,
-                ...action.name,
-            };
+            // const restaurant = {
+            //     //id: (new Date()).getTime() + '',
+            //     "rating": 2,
+            //     "imageUrl": "/images/restaurant1.png", //need update
+            //     "userid": 585,
+            //     "price":"$$",
+            //     ...action.name,
+            // };
             // const name=action.name;
             // console.log("post new restaurant",restaurant);
             // console.log("post new name",name);
+            //console.log("name",restaurant.name);
             return (
                 {...state,
-                    data:[restaurant, ...state.data]
+                    "data":[action.restaurant, ...state.data]
                 }
+                // {...state,
+                //     "data":state.data.push(restaurant)
+                // }
             );
 
         default:

@@ -12,15 +12,16 @@ const MyCommentsList = () => {
     const comments = useSelector(selectAllCommentsData);
     const dispatch = useDispatch();
 
-    const selectAllUserData = (state) => state.userInfo;
-    const userData = useSelector(selectAllUserData);
-    const userId = userData.id
-    console.log("userData", userData )
+    // const selectAllUserData = (state) => state.userInfo;
+    // const userData = useSelector(selectAllUserData);
+    //const userId = userData.id
+    const userId = localStorage.getItem("userId");
+    //console.log("userData", userData )
     console.log("user id",userId)
 
+    const token = localStorage.getItem("token");
 
-
-    useEffect(() =>fetchAllMyComments(dispatch, userId), []);
+    useEffect(() =>fetchAllMyComments(dispatch, userId, token), []);
     console.log("all comments",comments)
 
 

@@ -18,4 +18,12 @@ export const createNewUser = (dispatch, user) =>
             'content-type': 'application/json'
         }
     })
-        .then(response => response.json())
+        .then(response => {
+            console.log("in restaurant serverice",response.ok);
+            response.json()})
+        .then(() => {
+            dispatch({
+                type: 'create-user',
+                user
+            })
+        })

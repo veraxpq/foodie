@@ -3,7 +3,8 @@ import logInJSON from './data/LognIn.json'
 const userInfo = (state = logInJSON, action) => {
     switch (action.type) {
         case 'fetch-all-user-info':
-            return( action.user);
+            console.log("userInfo reducer action", action)
+            return( action.data);
             break;
 
         case 'check-log-in-status':

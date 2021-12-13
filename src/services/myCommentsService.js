@@ -5,10 +5,16 @@ import {useSelector} from "react-redux";
 const COMMENT_API = 'https://foodie-mysql-database.herokuapp.com/foodie';
 
 
-export const fetchAllMyComments = (dispatch,userId) =>
+export const fetchAllMyComments = (dispatch,userId,token) =>
     // ${userId}
 
-    fetch(`${COMMENT_API}/getReviewsByUserId?id=${userId}`)
+    fetch(`${COMMENT_API}/getReviewsByUserId?id=${userId}` ,{
+    method: 'GET',
+        headers: {
+        'content-type': 'application/json',
+        'authorization':`${token}`
+    }
+})
         .then(response => response.json())
         .then(comments =>
                   dispatch({
@@ -17,28 +23,33 @@ export const fetchAllMyComments = (dispatch,userId) =>
                            })
         );
 
-export const deleteComment = (dispatch, comment) =>
+export const deleteComment = (dispatch, comment, token) =>
     fetch(`${COMMENT_API}/deleteReviewById?reviewId=${comment.id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: {
+          'content-type': 'application/json',
+          'authorization':`${token}`
+        }
     }).then(response => dispatch({
                                      type: 'delete-comment',
                                          comment
                                  }));
 
-export const postNewComment = (dispatch, newComment) =>
-    fetch(COMMENT_API, {
+export const postNewComment = (dispatch, newComment, token) =>
+    fetch(`${COMMENT_API}/postReviews`, {
       method: 'POST',
       body: JSON.stringify(newComment),
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'authorization':`${token}`
       }
     })
     .then(response => response.json())
-    .then(comment =>
-        dispatch({
-          type: 'create-comment',
-          comment
-        })
-    );
+    .then(() => {
+      dispatch({
+        type: 'create-comment',
+        newComment
+      })
+    });
 
 

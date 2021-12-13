@@ -14,20 +14,6 @@
         "router": "/comments"
 
 
-    },
-
-    {
-        "link": "../SavedRestaurantsScreen",
-        "icon":"fas fa-bookmark mt-1",
-        "text": "Saved Restaurants",
-        "router": "/saved_restaurants"
-    },
-
-    {
-        "link": "../ReservationsScreen",
-        "icon":"fas fa-calendar-check mt-1",
-        "text": "Reservations",
-        "router": "/reservations"
     }
 
 

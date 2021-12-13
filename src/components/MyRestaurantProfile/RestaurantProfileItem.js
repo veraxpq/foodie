@@ -5,10 +5,12 @@ import {deleteMyRestaurant} from "../../services/myRestaurantProfileService";
 
 const RestaurantProfileItem = ({profile, setEditProfile}) => {
     const dispatch = useDispatch();
-    const deleteRestaurantClickHandler = () => {
-        deleteMyRestaurant(dispatch, profile);
-    }
+    const userToken = localStorage.getItem("token");
 
+    const deleteRestaurantClickHandler = () => {
+        deleteMyRestaurant(dispatch, profile,userToken);
+    }
+    console.log("my res profile: ", profile);
     return (
         <>
 
@@ -25,7 +27,7 @@ const RestaurantProfileItem = ({profile, setEditProfile}) => {
                              className="img-fluid rounded float-start"/>
 
                     </div>
-                    <div className="col-6">
+                    <div className="col-9">
                         <h5>{profile.name}</h5>
                         <RatingView ratingValue={profile.rating}/>
                         <div>
@@ -43,14 +45,14 @@ const RestaurantProfileItem = ({profile, setEditProfile}) => {
                         </div>
 
                     </div>
-                    <div className="col-3">
-                        <button onClick={() => setEditProfile(true)}
-                                className="rounded-pill mt-2 me-3 btn-primary">Edit
-                            profile
-                        </button>
+                    {/*<div className="col-3">*/}
+                    {/*    <button onClick={() => setEditProfile(true)}*/}
+                    {/*            className="rounded-pill mt-2 me-3 btn-primary">Edit*/}
+                    {/*        profile*/}
+                    {/*    </button>*/}
 
 
-                    </div>
+                    {/*</div>*/}
                     <div className="col-1">
                         <i onClick={() => deleteRestaurantClickHandler(profile)} className="fas fa-trash-alt fa-pull-right"></i>
 

@@ -7,8 +7,9 @@ import {deleteComment} from "../../services/myCommentsService";
 
 const CommentItem = ({comment}) => {
     const dispatch = useDispatch();
+    const token = localStorage.getItem("token");
     const deleteCommentClickHandler = () => {
-        deleteComment(dispatch, comment);
+        deleteComment(dispatch, comment, token);
     }
 
 
@@ -27,7 +28,7 @@ const CommentItem = ({comment}) => {
 
                     {/*<h6 className="wd-comment-title-font">{comment.tag}</h6>*/}
                     {/*<h6 className="wd-comment-title-font">{comment.location}</h6>*/}
-                    <h6>Time Created: {comment.timeCreated} </h6>
+                    {/*<h6>Time Created: {comment.timeCreated} </h6>*/}
                     <RatingView ratingValue={comment.rating} />
 
                     <h6>{comment.text}</h6>
