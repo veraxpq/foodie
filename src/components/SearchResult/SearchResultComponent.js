@@ -10,19 +10,13 @@ const SearchResultComponent = () => {
     const queryString = window.location.search;
     console.log("search reult url",queryString);
     const urlParams = new URLSearchParams(queryString);
-    // const term = urlParams.get('term');
-    // const location = urlParams.get('cityName');
-    const term = localStorage.getItem('term');
-    const location = localStorage.getItem('location');
+    const term = urlParams.get('term');
+    const location = urlParams.get('cityName');
     console.log("search result component local storage", {term, location});
     const restaurants = useSelector(selectAllRestaurants);
     const dispatch = useDispatch();
     useEffect(()=>{
         getRestaurantByTermAndLocation(dispatch,term,location)},[dispatch])
-    // const restaurants = useState('');
-    // const renderResult = async() =>{
-    //
-    // }
     console.log("Fetched restaurants at search result", restaurants);
     return(
         <ul className="list-group">
