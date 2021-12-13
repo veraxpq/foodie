@@ -10,9 +10,11 @@ const SearchResultComponent = () => {
     const queryString = window.location.search;
     console.log("search reult url",queryString);
     const urlParams = new URLSearchParams(queryString);
-    const term = urlParams.get('term');
-    const location = urlParams.get('cityName');
-    console.log("search result component get params", {term, location});
+    // const term = urlParams.get('term');
+    // const location = urlParams.get('cityName');
+    const term = localStorage.getItem('term');
+    const location = localStorage.getItem('location');
+    console.log("search result component local storage", {term, location});
     const restaurants = useSelector(selectAllRestaurants);
     const dispatch = useDispatch();
     useEffect(()=>{
