@@ -55,8 +55,7 @@ function App() {
                     <Route path={"/privacy_policy"} element={<PrivacyPolicyPage/>}/>
 
                     <Route path={"/my_restaurant"} element={<RestaurantProfileScreen/>}/>
-                    <Route path={"/search/:term/:location"} element={<SearchResult/>}/>
-                    <Route path={"/search"} element={<SearchResult/>}/>
+                    <Route path={"/search/"} element={<SearchResult/>}/>
                     <Route path={"/restaurant_detail/:restaurantId"} element={<RestaurantDetailPage/>}/>
                     <Route path={"/post-new-restaurant"} element={<PostNewRestaurant/>}/>
                 </Routes>

@@ -34,7 +34,6 @@ const RestaurantListItem = (restaurant) => {
                     {/*<a href="#" className="btn btn-primary">Reserve</a>*/}
                 </div>
             </div>
-
         </li>
     )
 }

@@ -1,14 +1,22 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
+import {fetchAllPersonalProfile} from "../../services/personalProfileService";
 
-
+const selectPersonalProfile = (state) => state.personalProfile;
 const TopBarComponent = () => {
     // const selectAllUserData = (state) => state.userInfo;
     const navigate = useNavigate();
-    const userName = localStorage.getItem("username");
-    console.log("usename at topbar", userName)
+    const dispatch = useDispatch();
+    var userName = "";
+    const personalUserProfile = useSelector(selectPersonalProfile);
+    const userId = localStorage.getItem("userId");
+    const token = localStorage.getItem("token");
+    useEffect(()=>{fetchAllPersonalProfile(dispatch,userId,token)},[dispatch]);
+    if (localStorage.getItem('userType')){
+        userName = personalUserProfile.data.username;
+    }
 
     function submit(e) {
         if (localStorage.getItem('userId')) {
