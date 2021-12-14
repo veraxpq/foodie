@@ -34,18 +34,21 @@ const NewComment = () => {
   const userName = localStorage.getItem("username");
   const token = localStorage.getItem("token");
   const userId = localStorage.getItem("userId");
-  console.log("test token", token);
-  console.log("test user id", userId);
-  console.log("test res id", id);
+  // console.log("test token", token);
+  // console.log("test user id", userId);
+  // console.log("test res name", restaurant.data.name);
 
   const commentClickHandler = () => {
     const comment = {
       rating: rating,
       text: newComment,
-      username: userName,
       userId: userId,
+      user: {
+        name: userName,
+        id: userId
+      },
       restaurantName: restaurant.data.name,
-      // restaurantId: id,
+      restaurantId: id,
     }
     postNewComment(dispatch, comment, token);
   }

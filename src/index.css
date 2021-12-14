@@ -90,7 +90,8 @@ code {
   object-fit: cover;
 }
 .f-restaurant-item-card {
-  width: 18rem;
+  width: 25rem;
+  height: 25rem;
   float: left;
   margin: 5px 8px;
 }
