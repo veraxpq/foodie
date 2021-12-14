@@ -14,7 +14,7 @@ const TopBarComponent = () => {
     const userId = localStorage.getItem("userId");
     const token = localStorage.getItem("token");
     useEffect(()=>{fetchAllPersonalProfile(dispatch,userId,token)},[dispatch]);
-    if (localStorage.getItem('userType')){
+    if (localStorage.getItem('userType') && personalUserProfile && personalUserProfile.data && personalUserProfile.data.username){
         userName = personalUserProfile.data.username;
     }
 
