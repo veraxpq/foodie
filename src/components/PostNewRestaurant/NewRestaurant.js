@@ -18,27 +18,20 @@ const NewRestaurant = () => {
   const newLocation = `${address}, ${city}, ${state} ${zipCode}`.toString();
   const userId = localStorage.getItem("userId");
   const userToken = localStorage.getItem("token");
-  const CreateRestaurant = () => {
-    // const restaurant = {
-    //   "name": name,
-    //   "phone": phone,
-    //   "display_phone" :display_phone,
-    //   "location": `${address}, ${city}, ${state} ${zipCode}`,
-    //   "messaging":{
-    //     "use_case_text": description,
-    //   },
-    //   "categories":category,
-    //   "userId": 5
-    // }
-    postNewRestaurant(dispatch, {
-      name: name,
-      location: newLocation,
-      categories:category,
-      imageUrl: "/images/restaurant4.png",
-      price:"$$",
-      userid: userId,
-      rating: 0,
-    },userToken);
+  const CreateRestaurant = async (e) => {
+    if (name&&address&&city&&state&&zipCode&&phone&&category){
+      await postNewRestaurant(dispatch, {
+        name: name,
+        location: newLocation,
+        categories:category,
+        imageUrl: "/images/restaurant4.png",
+        price:"$$",
+        userid: userId,
+        rating: 0,
+      },userToken);
+      window.location.reload(false);
+    }
+    else alert("Please don't leave empty filed");
   }
 
   return (
@@ -99,7 +92,7 @@ const NewRestaurant = () => {
                   </div>
                 </div>
                 <br/>
-                <button onClick={CreateRestaurant} type="submit" className="btn btn-outline-dark f-register-submit btn-primary">Post</button>
+                <div onClick={CreateRestaurant} type="submit" className="btn btn-outline-dark f-register-submit btn-primary">Post</div>
               </fieldset>
             </form>
           </div>

@@ -25,7 +25,7 @@ const RegisterForm = () => {
             username,
             password,
             zipCode,
-            "userType": 0,
+            "userType": 1,
         }
         let resStatus = 0;
         fetch(URL, {

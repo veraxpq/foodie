@@ -15,7 +15,9 @@ export const fetchAllMyComments = (dispatch,userId,token) =>
         'authorization':`${token}`
     }
 })
-        .then(response => response.json())
+        .then(
+            response => response.json()
+        )
         .then(comments =>
                   dispatch({
                                type: 'fetch-all-comments',

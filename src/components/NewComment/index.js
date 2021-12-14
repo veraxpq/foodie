@@ -8,7 +8,7 @@ import {useParams} from "react-router-dom";
 
 
 
-
+const selectAllComments = (state) => state.yComments;
 const NewComment = () => {
   const rate = {
     size: 25,
@@ -21,6 +21,7 @@ const NewComment = () => {
       console.log(`new value is ${value}`);
     }
   };
+  const [allComments, setAllComments] = useSelector(selectAllComments)||'';
   const [newComment, setNewComment] = useState('');
   const [rating, setRating] = useState('');
   const dispatch = useDispatch();
@@ -38,24 +39,31 @@ const NewComment = () => {
   // console.log("test user id", userId);
   // console.log("test res name", restaurant.data.name);
 
-  const commentClickHandler = () => {
-    const comment = {
-      rating: rating,
-      text: newComment,
-      userId: userId,
-      user: {
-        name: userName,
-        id: userId
-      },
-      restaurantName: restaurant.data.name,
-      restaurantId: id,
+  const commentClickHandler = async (e) => {
+    if (rating && newComment) {
+      const comment = {
+        rating: rating,
+        text: newComment,
+        userId: userId,
+        user: {
+          name: userName,
+          id: userId
+        },
+        restaurantName: restaurant.data.name,
+        restaurantId: id,
+      }
+      await postNewComment(dispatch, comment, token);
+      window.location.reload(false);
     }
-    postNewComment(dispatch, comment, token);
-  }
+    else alert("Please don't leave empty filed");
+
+}
+
+
 
   return(
       <>
-        <form className={""}>
+        <div className={""}>
           <fieldset>
             <div className="form-group row ">
               <b className="mb-2">Write a review</b>
@@ -79,10 +87,11 @@ const NewComment = () => {
                           paddingTop: "15px"}}
                         placeholder="what do you think about the restaurant?"></textarea>
               <hr style={{color: "white"}}/>
+              {/*<button onClick={commentClickHandler} type="submit" className="btn btn-outline-dark btn-primary f-register-submit">Write a review</button>*/}
               <button onClick={commentClickHandler} type="submit" className="btn btn-outline-dark btn-primary f-register-submit">Write a review</button>
             </div>
           </fieldset>
-        </form>
+        </div>
       </>
   );
 }
