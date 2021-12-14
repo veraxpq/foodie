@@ -46,14 +46,13 @@ function App() {
                     <Route path={"/login"} element={<Login/>}/>
                     <Route path={"/findPassword"} element={<ForgotPassword/>}/>
                     <Route path={"/home"} element={<HomePage/>}/>
+                    <Route path={"/"} element={<HomePage/>}/>
                     <Route path={"/registerForBusiness"} element={<RegisterPageForBusiness/>}/>
                     <Route path={"/personal_profile"} element={<PersonalProfileScreen/>}/>
                     <Route path={"/saved_restaurants"} element={<SavedRestaurantsScreen/>}/>
                     <Route path={"/comments"} element={<MyCommentsScreen/>}/>
                     <Route path={"/business_profile"} element={<BusinessProfileScreen/>}/>
-
                     <Route path={"/privacy_policy"} element={<PrivacyPolicyPage/>}/>
-
                     <Route path={"/my_restaurant"} element={<RestaurantProfileScreen/>}/>
                     <Route path={"/search"} element={<SearchResult/>}/>
                     <Route path={"/restaurant_detail/:restaurantId"} element={<RestaurantDetailPage/>}/>

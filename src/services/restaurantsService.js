@@ -10,9 +10,8 @@ export const fetchAllRestaurants = (dispatch) =>
                 restaurants
             })
         );
-
 export const createNewUser = (dispatch, user) =>
-    fetch(USER_API, {
+     fetch(USER_API, {
         method: 'POST',
         body: JSON.stringify(user),
         headers: {
