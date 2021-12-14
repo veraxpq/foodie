@@ -6,7 +6,7 @@ import NewComment from "../NewComment";
 import {addSaved} from "../../services/savedRestaurantsService";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllReviews} from "../../services/restaurantReviewService";
-
+import {useParams} from "react-router-dom";
 
 
 const RestaurantDetailComponent = ({restaurant}) => {
@@ -21,7 +21,9 @@ const RestaurantDetailComponent = ({restaurant}) => {
   //   }
   //   addSaved(dispatch, save_restaurant);
   // }
-  const id = restaurant.data && restaurant.data.id;
+  // const id = restaurant.data && restaurant.data.id;
+  const params = useParams();
+  const id = params.restaurantId;
   useEffect(() =>fetchAllReviews(dispatch,id), []);
   // const selectAllReviews = (state) => state.restaurantReviewList;
   // const reviewList = useSelector(selectAllReviews);
