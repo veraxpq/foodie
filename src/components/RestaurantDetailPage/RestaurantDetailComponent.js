@@ -33,7 +33,7 @@ const RestaurantDetailComponent = ({restaurant}) => {
   // const reviewList = useSelector(selectAllReviews);
   // const reviews = reviewList.data
   //const reviews = reviewList.data && reviewList.data[0] && reviewList.data[0].reviews;
-  const location=restaurant.data.location.display_address.toString();
+  const location = restaurant&&restaurant.data&&restaurant.data.location&&restaurant.data.location.display_address&&restaurant.data.location.display_address.toString();
   //console.log("restaurantReviews",reviews)
   return (
       <>

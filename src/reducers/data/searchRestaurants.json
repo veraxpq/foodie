@@ -10,7 +10,7 @@
     "businesses": [
       {
         "distance": 4305.837194858549,
-        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/g2kEHVeJ6evBfoEESScQqA/o.jpg",
+        "image_url": "/images/placeholder.jpg",
         "rating": 2.5,
         "coordinates": {
           "latitude": 37.3276772923756,
@@ -59,7 +59,7 @@
       },
       {
         "distance": 9712.28399558625,
-        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/9h8ZRkv7FG8ul4H_Fk3dtg/o.jpg",
+        "image_url": "/images/placeholder.jpg",
         "rating": 2.5,
         "coordinates": {
           "latitude": 37.40372,
@@ -108,7 +108,7 @@
       },
       {
         "distance": 7381.761981926832,
-        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/QHbzX0CD0nchKeFApy6n3Q/o.jpg",
+        "image_url": "/images/placeholder.jpg",
         "rating": 3.0,
         "coordinates": {
           "latitude": 37.266664,

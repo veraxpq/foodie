@@ -3,6 +3,7 @@ import {RatingView} from "react-simple-star-rating";
 import React from "react";
 import {useDispatch} from "react-redux";
 import {deleteComment} from "../../services/myCommentsService";
+import {Link} from "react-router-dom";
 
 
 const CommentItem = ({comment}) => {
@@ -22,9 +23,11 @@ const CommentItem = ({comment}) => {
 
                 {/*</div>*/}
                 <div className="col-8">
-                    <h5 className="wd-black-topic-font">{comment.restaurantName}
-                        <i className="fas fa-check-circle ms-1"></i>
-                    </h5>
+                    <Link to={`/restaurant_detail/${comment.restaurantId}`}>
+                        <h5 className="wd-black-topic-font">{comment.restaurantName}
+                            <i className="fas fa-check-circle ms-1"></i>
+                        </h5>
+                    </Link>
 
                     {/*<h6 className="wd-comment-title-font">{comment.tag}</h6>*/}
                     {/*<h6 className="wd-comment-title-font">{comment.location}</h6>*/}
