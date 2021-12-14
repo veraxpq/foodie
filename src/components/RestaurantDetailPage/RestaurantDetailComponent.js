@@ -23,11 +23,12 @@ const RestaurantDetailComponent = ({restaurant}) => {
   // }
   const id = restaurant.data && restaurant.data.id;
   useEffect(() =>fetchAllReviews(dispatch,id), []);
-  const selectAllReviews = (state) => state.restaurantReviewList;
-  const reviewList = useSelector(selectAllReviews);
-  const reviews = reviewList.data && reviewList.data[0] && reviewList.data[0].reviews;
+  // const selectAllReviews = (state) => state.restaurantReviewList;
+  // const reviewList = useSelector(selectAllReviews);
+  // const reviews = reviewList.data
+  //const reviews = reviewList.data && reviewList.data[0] && reviewList.data[0].reviews;
   const location=restaurant.data.location.display_address.toString();
-  console.log("restaurantReviews",reviews)
+  //console.log("restaurantReviews",reviews)
   return (
       <>
         <TopBar/>

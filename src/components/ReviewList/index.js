@@ -32,7 +32,7 @@ const ReviewList = (
   useEffect(() =>fetchAllReviews(dispatch,id), []);
   const selectAllReviews = (state) => state.restaurantReviewList;
   const reviewList = useSelector(selectAllReviews);
-  console.log("res id for reviews", reviewList);
+  //console.log("res id for reviews", reviewList);
   //const reviews = reviewList.data && reviewList.data[0] && reviewList.data[0].reviews;
   //const params = useParams();
   //const id = params.restaurantId;
@@ -43,7 +43,7 @@ const ReviewList = (
   //console.log("restaurant reviews", item);
   return(
       <>
-        {reviewList.data && reviewList.data[0] && reviewList.data[0].reviews && reviewList.data[0].reviews.map(review => {
+        {reviewList.data && reviewList.data.map(review => {
           return(
               <ReviewItem review = {review}/>
           );
