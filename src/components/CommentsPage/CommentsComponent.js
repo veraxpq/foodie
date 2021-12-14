@@ -28,7 +28,7 @@ const CommentItem = ({comment}) => {
 
                     {/*<h6 className="wd-comment-title-font">{comment.tag}</h6>*/}
                     {/*<h6 className="wd-comment-title-font">{comment.location}</h6>*/}
-                    {/*<h6>Time Created: {comment.timeCreated} </h6>*/}
+                    <h6>Time Created: {comment.time_created} </h6>
                     <RatingView ratingValue={comment.rating} />
 
                     <h6>{comment.text}</h6>
