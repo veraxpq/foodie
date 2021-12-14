@@ -81,16 +81,16 @@ const TopBarComponent = () => {
                                 {/*        </div>*/}
                                 {/*    </div>*/}
                                 {/*</Link>*/}
-                                <Link to={"/search/restaurant/seattle"} className={"list-group-item dropdown-item"}>
-                                    <div className="row">
-                                        <div className="col-2">
-                                            <i className="fas fa-hashtag"></i>
-                                        </div>
-                                        <div className="d-none d-xl-block col-10">
-                                            Explore
-                                        </div>
-                                    </div>
-                                </Link>
+                                {/*<Link to={"/search/restaurant/seattle"} className={"list-group-item dropdown-item"}>*/}
+                                {/*    <div className="row">*/}
+                                {/*        <div className="col-2">*/}
+                                {/*            <i className="fas fa-hashtag"></i>*/}
+                                {/*        </div>*/}
+                                {/*        <div className="d-none d-xl-block col-10">*/}
+                                {/*            Explore*/}
+                                {/*        </div>*/}
+                                {/*    </div>*/}
+                                {/*</Link>*/}
                                 <div onClick={submitProfile} className={"list-group-item dropdown-item f-hand-cursor"}>
                                     <div className="row">
                                         <div className="col-2">
