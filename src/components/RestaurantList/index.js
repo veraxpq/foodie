@@ -16,7 +16,7 @@ const RestaurantList = () => {
     var location = "98101";
     const personalUserProfile = useSelector(selectPersonalProfile);
     useEffect(()=>{fetchAllPersonalProfile(dispatch,userId,token)},[dispatch]);
-    if (localStorage.getItem('userType')){
+    if (localStorage.getItem('userType') && personalUserProfile && personalUserProfile.data && personalUserProfile.data.zipCode){
         location = personalUserProfile.data.zipCode;
         console.log("get user rpofile zipcode at home page", location);
     }
