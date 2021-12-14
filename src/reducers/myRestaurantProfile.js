@@ -5,6 +5,7 @@ const myRestaurantProfile = (state = profileJSON, action) => {
     console.log("myRestaurantProfile state",state)
     switch (action.type) {
         case 'fetch-all-myRestaurant-profile':
+            console.log("fetch-all-myRestaurant-profile state",action.RestaurantProfile)
             return(action.RestaurantProfile);
             break;
 
@@ -21,26 +22,8 @@ const myRestaurantProfile = (state = profileJSON, action) => {
             break;
 
         case 'create-new-restaurant':
-            // const restaurant = {
-            //     //id: (new Date()).getTime() + '',
-            //     "rating": 2,
-            //     "imageUrl": "/images/restaurant1.png", //need update
-            //     "userid": 585,
-            //     "price":"$$",
-            //     ...action.name,
-            // };
-            // const name=action.name;
-            // console.log("post new restaurant",restaurant);
-            // console.log("post new name",name);
-            //console.log("name",restaurant.name);
-            return (
-                {...state,
-                    "data":[action.restaurant, ...state.data]
-                }
-                // {...state,
-                //     "data":state.data.push(restaurant)
-                // }
-            );
+            state.data.push(action.restaurant);
+            return (state);
 
         default:
             return state;

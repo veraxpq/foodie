@@ -1,26 +1,9 @@
-[
+{
+  "data": [
+    {
+    }
+  ],
+  "status": 0
+}
 
-      {
-        "restaurantName": "kfc",
-        "rating": 7.5,
-        "text": "awsome",
-        "userId": 5,
-        "username": "jose",
-        "restaurantId": "5"
-
-      },
-
-
-
-      {
-        "restaurantName": "panda express",
-        "rating": 7.5,
-        "text": "awsome",
-        "userId": 5,
-        "username": "jose",
-        "restaurantId": "5"
-
-      }
-
-]
 
