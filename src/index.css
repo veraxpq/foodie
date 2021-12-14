@@ -123,9 +123,13 @@ code {
   top: 0;
   width: 100%;
   background-color: white;
+  height: 45px;
+  z-index: 2;
 }
 .f-topbar-occupy {
   height: 45px;
+  background-color: white;
+  z-index: 2;
 }
 .nav-link {
   color: black;
