@@ -21,9 +21,13 @@ const RestaurantDetailComponent = ({restaurant}) => {
   //   }
   //   addSaved(dispatch, save_restaurant);
   // }
+
   // const id = restaurant.data && restaurant.data.id;
   const params = useParams();
   const id = params.restaurantId;
+
+  // const id = restaurant&&restaurant.data && restaurant.data.id;
+
   useEffect(() =>fetchAllReviews(dispatch,id), []);
   // const selectAllReviews = (state) => state.restaurantReviewList;
   // const reviewList = useSelector(selectAllReviews);

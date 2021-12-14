@@ -43,7 +43,7 @@ const ReviewList = (
   //console.log("restaurant reviews", item);
   return(
       <>
-        {reviewList.data && reviewList.data.map(review => {
+        {reviewList&&reviewList.data && reviewList.data.map(review => {
           return(
               <ReviewItem review = {review}/>
           );
