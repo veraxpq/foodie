@@ -109,5 +109,4 @@ const RestaurantDetailComponent = ({restaurant}) => {
       </>
   )
 }
-
 export default RestaurantDetailComponent;
