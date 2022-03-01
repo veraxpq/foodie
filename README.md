@@ -1,5 +1,8 @@
 Foodie is the final project I did in a team of four. Team members in our group are: Qing Peng, Yanjin Deng, Vivian, Victoria.
 
+Foodie is based on React + JavaScript + HTML + CSS + Node.JS + MongoDB, containing two user roles: customer and business.
+The website uses Yelp apis to search restaurants with locations and keywords users input, added save, score and comment functions for customers and restaurants management system for business users.
+
 ### Heroku Link
 https://foodie-vvds.herokuapp.com/home
 
