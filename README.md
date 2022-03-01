@@ -1,14 +1,16 @@
+Foodie is the final project I did in a team of four. Team members in our group are: Qing Peng, Yanjin Deng, Vivian, Victoria.
+
 ### Heroku Link
 https://foodie-vvds.herokuapp.com/home
 
 Sign up page:
-<img width="1059" alt="image" src="https://user-images.githubusercontent.com/62491611/156107087-6b5e19b9-6835-4eda-820f-9aea2c8d810a.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/62491611/156107087-6b5e19b9-6835-4eda-820f-9aea2c8d810a.png">
 
 Login page:
-<img width="1061" alt="image" src="https://user-images.githubusercontent.com/62491611/156107018-7f38e4fc-c752-44eb-9cdb-29abc22f6c8b.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/62491611/156107018-7f38e4fc-c752-44eb-9cdb-29abc22f6c8b.png">
 
 Home page:
-<img width="1061" alt="image" src="https://user-images.githubusercontent.com/62491611/156107203-51427def-a1a6-4c4e-aa0b-ebdcd34f3302.png">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/62491611/156107203-51427def-a1a6-4c4e-aa0b-ebdcd34f3302.png">
 
 
 
